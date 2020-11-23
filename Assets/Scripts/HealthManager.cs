@@ -8,4 +8,11 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private int m_AmountOfLive;
     #endregion
 
+    public void DeacreseLife( int damage)
+    {
+        m_AmountOfLive -= damage;
+        if (m_AmountOfLive <= 0)
+            Debug.Log("Dead");
+    }
+
 }
