@@ -19,4 +19,15 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] private bool IReload = false;
     #endregion
 
+
+    public virtual void Equip()
+    {
+
+    }
+
+    public virtual void UnEquip()
+    {
+        
+    }
+
 }
