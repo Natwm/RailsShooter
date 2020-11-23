@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class BulletsBehaviours : MonoBehaviour
 {
     #region PARAM
-
+    [SerializeField] private int m_Speed;
     #endregion
 }
