@@ -9,8 +9,13 @@ public class BodyPartBehaviours : MonoBehaviour
     [SerializeField] private int m_DamageMultiplicator;
     [SerializeField] private int m_DamageAdd;
     [SerializeField] private int m_AmountOfArmor;
-    [SerializeField] private HealthManager m_healthManager;
+    private HealthManager m_healthManager;
     #endregion
+
+    private void Start()
+    {
+        m_healthManager = GetComponentInParent<HealthManager>();
+    }
 
     private void Update()
     {
