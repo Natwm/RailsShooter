@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AmountOfLive: 100
+  hitParticules: {fileID: 6396357070376743099, guid: 3d4eaadf834f82c49961b2a38b2d4897,
+    type: 3}
 --- !u!1 &536004620399016724
 GameObject:
   m_ObjectHideFlags: 0
