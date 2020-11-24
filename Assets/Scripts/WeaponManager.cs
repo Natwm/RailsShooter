@@ -10,6 +10,7 @@ public class WeaponManager : MonoBehaviour
 
     #region PARAM
     [SerializeField] private List<WeaponsBehaviours> m_ListOfWeapon = new List<WeaponsBehaviours>();
+    [SerializeField] public GameObject CursorGO;
     #endregion
 
     private WeaponsBehaviours currentWeapon;

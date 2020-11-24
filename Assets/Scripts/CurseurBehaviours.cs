@@ -39,7 +39,6 @@ public class CurseurBehaviours : MonoBehaviour
     {
         Vector3 pos = Vector3.MoveTowards(transform.position, Input.mousePosition, mouseSpeed);
         float distanceBtwVector = Vector3.Distance(Input.mousePosition, lastPosition);
-        Debug.Log(distanceBtwVector);
 
         if (distanceBtwVector >= sensibility)
         {

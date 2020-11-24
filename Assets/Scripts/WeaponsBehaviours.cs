@@ -49,7 +49,8 @@ public class WeaponsBehaviours : MonoBehaviour
         if(currentNumberOfBullets > 0)
         {
             print("Shoot");
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Camera.main.transform.forward);
+            Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward);
             Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
@@ -67,6 +68,7 @@ public class WeaponsBehaviours : MonoBehaviour
                     if(hit.transform.gameObject.layer == 8)
                     {
                         Debug.Log("Ennemy touched");
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
                     }
                     if(hit.transform.gameObject.layer == 9)
                     {

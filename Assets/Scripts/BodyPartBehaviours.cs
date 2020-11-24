@@ -20,7 +20,7 @@ public class BodyPartBehaviours : MonoBehaviour
         }
     }
 
-    void GetDamage(int amountOfDamage)
+    public void GetDamage(int amountOfDamage)
     {
         int damageGive;
         int damageRecieve;
