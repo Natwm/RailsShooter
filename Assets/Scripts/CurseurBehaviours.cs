@@ -26,13 +26,6 @@ public class CurseurBehaviours : MonoBehaviour
             transform.position = Input.mousePosition;
         else
             MoveToCurseur();
-
-        CalculeLastPos();
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TiredMove();
-        }
     }
 
     void MoveToCurseur()
@@ -46,13 +39,4 @@ public class CurseurBehaviours : MonoBehaviour
         }
     }
 
-    void CalculeLastPos()
-    {
-
-    }
-
-    void TiredMove()
-    {
-        Debug.Log("Move");
-    }
 }
