@@ -19,6 +19,8 @@ public class WeaponManager : MonoBehaviour
         if(instance != null)
             Debug.LogWarning("Multiple instance of same Singleton : WeaponManager");
         instance = this;
+
+        currentWeapon = m_ListOfWeapon[0];
     }
 
     public void SwapWeaponUp()
@@ -53,5 +55,23 @@ public class WeaponManager : MonoBehaviour
     public WeaponsBehaviours GetCurrentWeapon()
     {
         return currentWeapon;
+    }
+
+    public void Shoot()
+    {
+        currentWeapon.Shoot();
+    }
+
+    public void Reload()
+    {
+        currentWeapon.Reload();
+    }
+
+    void Update(){
+        if(Input.GetMouseButtonDown(0))
+            Shoot();
+        
+        if(Input.GetKeyDown("r"))
+            Reload();
     }
 }
