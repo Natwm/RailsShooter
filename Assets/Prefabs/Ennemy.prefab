@@ -174,7 +174,8 @@ MonoBehaviour:
   m_TotalNumberOfBullets: 100
   m_NumberOfBulletsPerMagazine: 6
   m_ReloadTime: 1
-  m_projectilePrefab: {fileID: 0}
+  m_projectilePrefab: {fileID: 1829570582478251891, guid: 7bf73f0df64721744bd150eef5589ac4,
+    type: 3}
   projectileSpeed: 50
   raycasRadius: 0.1
   AutoReload: 1
