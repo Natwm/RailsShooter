@@ -26,6 +26,8 @@ public class EnnemyBehaviours : MonoBehaviour
     private bool canDoAction;
     private bool isRotating;
 
+    private Rigidbody rb;
+
     private enum Status
     {
         NONE,
@@ -48,6 +50,7 @@ public class EnnemyBehaviours : MonoBehaviour
         SetListOfPOsition();
 
         player = FindObjectOfType<PlayerController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -94,25 +97,34 @@ public class EnnemyBehaviours : MonoBehaviour
     #region IA
     void EnnemyDoNothing()
     {
+        Debug.Log("EnnemyDoNothing");
         Timer waitTimer = new Timer(waitTime, NewAction);
+        waitTimer.Play();
     }
 
     void EnnemyStopAndReload()
     {
+        Debug.Log("reload");
         EnnemyDoNothing();
         weaponManager.Reload();
         Timer waitTimer = new Timer(waitTime, NewAction);
+        waitTimer.Play();
     }
 
     void EnnemyHide()
     {
         //play Animation hide
+        Debug.Log("Hide");
+        NewAction();
     }
 
     void EnnemyMovement()
     {
         CalculeRotation(listOfPosition[m_MouvementIndex]);
-        transform.position = Vector3.Lerp(transform.position, listOfPosition[m_MouvementIndex], speed * 1 * Time.deltaTime);
+        if (!isRotating)
+            transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
+            //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);
+
         if (Vector3.Distance(transform.position, listOfPosition[m_MouvementIndex]) < minDistance)
         {
             m_MouvementIndex = NewAction(m_MouvementIndex);
@@ -133,6 +145,7 @@ public class EnnemyBehaviours : MonoBehaviour
             Debug.Log("shoot");
             //weaponManager.Shoot();
             Timer waitTimer = new Timer(waitTime, NewAction);
+            waitTimer.Play();
         }
     }
     #endregion
@@ -150,7 +163,7 @@ public class EnnemyBehaviours : MonoBehaviour
         Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, rotationSpeed * Time.deltaTime);
 
-        if(1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < 1f)
+        if(1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < .1f)
             isRotating = false;
 
     }
@@ -167,10 +180,10 @@ public class EnnemyBehaviours : MonoBehaviour
     void NewAction()
     {
         m_ActionIndex++;
-        if (m_ActionIndex >= listOfPosition.Count)
+        if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
 
-        Debug.Log(listOfPosition.Count);
+        Debug.Log(listOfAction.Count);
         canDoAction = true;
     }
 
