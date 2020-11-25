@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class Timer {
-	private float time = 0f;
+	protected float time = 0f;
 	public float endTime;
 	public delegate void TimerFunction () ;
 	public event TimerFunction OnTimerEnd;
 	public event TimerFunction OnTimerUpdate;
-	private TimerState state = TimerState.PAUSED;
-	private bool isReversed = false;
+	protected TimerState state = TimerState.PAUSED;
+	protected bool isReversed = false;
 
 
 	/// <summary>
@@ -96,7 +96,7 @@ public class Timer {
 		Play ();
 	}
 
-	public void Update(float delta){
+	public virtual void Update(float delta){
 		if (state == TimerState.UPDATING ){
 			if (OnTimerUpdate != null)
 				OnTimerUpdate();
