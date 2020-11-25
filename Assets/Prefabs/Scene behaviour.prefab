@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2f0356268169d40a9fb5aa87e3709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowMotionBaseDuration: 5
+  slowMotionGain: 0.5
   normalFlowTime: 1
   slowMotionFlowTime: 0.1
   FlowTimeLerpValue: 0.2
