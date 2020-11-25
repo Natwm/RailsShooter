@@ -5,11 +5,14 @@ using UnityEngine;
 public class BodyPartBehaviours : MonoBehaviour
 {
     #region PARAM
+
     [Min(1)]
     [SerializeField] private int m_DamageMultiplicator;
     [SerializeField] private int m_DamageAdd;
     [SerializeField] private int m_AmountOfArmor;
     private HealthManager m_healthManager;
+
+
     #endregion
 
     private void Start()
