@@ -8,6 +8,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Space]
     [Header("INFORMATIONS")]
     [SerializeField] protected int m_Damage;
+    [SerializeField] protected float m_FireRate;
     [SerializeField] protected LayerMask bulletCollisionLayerMask;
 
     [Space]
@@ -30,7 +31,8 @@ public class WeaponsBehaviours : MonoBehaviour
     [Header("FLAG")]
     [SerializeField] protected bool AutoReload = false;
     [SerializeField] protected bool UseProjectile = true;
-    private bool IReload;
+    private Timer fireRateTimer, reloadTimer;
+
     #endregion
 
 
@@ -46,14 +48,14 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot()
     {
-        if(currentNumberOfBullets > 0)
+        if(currentNumberOfBullets > 0 && fireRateTimer.IsFinished() == true)
         {
-            print("Shoot");
             Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward);
             Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
+            fireRateTimer.ResetPlay();
 
             RaycastHit hit;            
             if(UseProjectile == true)
@@ -88,21 +90,18 @@ public class WeaponsBehaviours : MonoBehaviour
         
         if(currentNumberOfBullets == 0 && AutoReload == true)
         {
-            Debug.Log("Reload");
             Reload();
         }
     }
 
     public virtual void Reload()
     {
-        IReload = true;
-        Timer t = new Timer(m_ReloadTime, RefillMagazine);
-        t.Play();
+        if(reloadTimer.IsStarted() == false)
+            reloadTimer.ResetPlay();
     }
 
     public virtual void RefillMagazine()
     {
-        IReload = false;
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
         m_TotalNumberOfBullets -= currentNumberOfBullets;
     }
@@ -110,5 +109,8 @@ public class WeaponsBehaviours : MonoBehaviour
     void Start()
     {
         RefillMagazine();
+        fireRateTimer = new Timer(m_FireRate);
+        fireRateTimer.Play();
+        reloadTimer = new Timer(m_ReloadTime, RefillMagazine);
     }
 }

@@ -55,8 +55,6 @@ public class CurseurBehaviours : MonoBehaviour
 
         if (!isMoving)
         {
-            Debug.Log("je ne bouge pas");
-
             if (!tiredTimer.IsStarted())
             {
                 tiredTimer.ResetPlay();

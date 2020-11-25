@@ -69,7 +69,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
             Shoot();
         
         if(Input.GetKeyDown("r"))

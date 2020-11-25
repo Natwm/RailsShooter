@@ -38,4 +38,9 @@ public class BulletsBehaviours : MonoBehaviour
         timeToLive = new Timer(5, OnPoolEnter);
         timeToLive.ResetPlay();
     }
+
+    void Update()
+    {
+        transform.rotation = Quaternion.Euler(GetComponent<Rigidbody>().velocity);
+    }
 }
