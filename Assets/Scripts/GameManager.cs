@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    #region PARAM
+    public static GameManager instance;
 
+    #region PARAM
+    public PlayerController player;
     #endregion
+
+    void Awake()
+    {
+        if(instance != null)
+            Debug.LogWarning("Multiple instance of same Singleton : GameManager");
+        instance = this;
+    }
 }

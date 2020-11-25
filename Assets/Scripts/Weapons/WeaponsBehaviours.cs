@@ -7,29 +7,29 @@ public class WeaponsBehaviours : MonoBehaviour
     #region PARAM
     [Space]
     [Header("INFORMATIONS")]
-    [SerializeField] private int m_Damage;
-    [SerializeField] private LayerMask bulletCollisionLayerMask;
+    [SerializeField] protected int m_Damage;
+    [SerializeField] protected LayerMask bulletCollisionLayerMask;
 
     [Space]
     [Header("MAGAZINE")]
     [SerializeField] private int m_TotalNumberOfBullets;
     [SerializeField] private int m_NumberOfBulletsPerMagazine;
     [SerializeField] private int m_ReloadTime;
-    private int currentNumberOfBullets;
+    protected int currentNumberOfBullets;
 
     [Space]
     [Header("PROJECTILE")]
-    [SerializeField] private GameObject m_projectilePrefab;
-    [SerializeField] private float projectileSpeed;
+    [SerializeField] protected GameObject m_projectilePrefab;
+    [SerializeField] protected float projectileSpeed;
 
     [Space]
     [Header("RAYCAST SHOOT")]
-    [SerializeField] private float raycasRadius;
+    [SerializeField] protected float raycasRadius;
 
     [Space]
     [Header("FLAG")]
-    [SerializeField] private bool AutoReload = false;
-    [SerializeField] private bool UseProjectile = true;
+    [SerializeField] protected bool AutoReload = false;
+    [SerializeField] protected bool UseProjectile = true;
     private bool IReload;
     #endregion
 
@@ -85,9 +85,9 @@ public class WeaponsBehaviours : MonoBehaviour
         
         
         if(currentNumberOfBullets == 0 && AutoReload == true)
-            {
-                Debug.Log("Reload");
-                Reload();
+        {
+            Debug.Log("Reload");
+            Reload();
         }
     }
 
