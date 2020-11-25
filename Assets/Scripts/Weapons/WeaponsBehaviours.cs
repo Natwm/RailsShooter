@@ -58,8 +58,11 @@ public class WeaponsBehaviours : MonoBehaviour
             RaycastHit hit;            
             if(UseProjectile == true)
             {
-                Debug.DrawLine(Camera.main.transform.position, Camera.main.transform.position + direction * 100, Color.green, 10);
-                Debug.LogWarning("No projectile yet");
+                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                projectile.transform.position = Camera.main.transform.position;
+                projectile.transform.rotation = Quaternion.Euler(direction);
+                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage);
             }
             else
             {
@@ -67,12 +70,11 @@ public class WeaponsBehaviours : MonoBehaviour
                 {
                     if(hit.transform.gameObject.layer == 8)
                     {
-                        Debug.Log("Ennemy touched");
                         hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
                     }
                     if(hit.transform.gameObject.layer == 9)
                     {
-                        Debug.Log("Obstacle touched");
+                        // obstacle touched
                     }
                 }
                 else
