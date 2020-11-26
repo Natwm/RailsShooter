@@ -372,6 +372,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95363a0fb9de8748a9da2d0cc8911fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &894588739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7459193833032316654, guid: b021d0609ce25f24b915636e3f890008,
+    type: 3}
+  m_PrefabInstance: {fileID: 7459193833957500275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &894588745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894588739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1701693075
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +509,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: shootSound
+      value: event:/Arme/Tir1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: reloadSound
+      value: event:/Arme/Recharge
+      objectReference: {fileID: 0}
     - target: {fileID: 536004620363863736, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_Name
@@ -772,6 +799,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: reloadSound
+      value: event:/Arme/Recharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: shootSound
+      value: event:/Arme/Tir2
+      objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -841,6 +878,21 @@ PrefabInstance:
         type: 3}
       propertyPath: UseProjectile
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: AutoReload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: shootSound
+      value: event:/Arme/Tir1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: reloadSound
+      value: event:/Arme/Recharge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}

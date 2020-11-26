@@ -58,6 +58,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot()
     {
+        print(reloadTimer.IsFinished());
         if(currentNumberOfBullets > 0 && fireRateTimer.IsFinished() == true)
         {
             Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
@@ -65,8 +66,7 @@ public class WeaponsBehaviours : MonoBehaviour
             Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
-            Debug.Log(currentNumberOfBullets);
-            //shootEffect.start();
+            shootEffect.start();
             fireRateTimer.ResetPlay();
             
             RaycastHit hit;            
@@ -109,14 +109,17 @@ public class WeaponsBehaviours : MonoBehaviour
     public virtual void Reload()
     {
         if(reloadTimer.IsStarted() == false)
+        {
             reloadTimer.ResetPlay();
+            reloadEffect.start();   
+        }
     }
 
     public virtual void RefillMagazine()
     {
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
         m_TotalNumberOfBullets -= currentNumberOfBullets;
-        reloadEffect.start();
+        // reloadEffect.start();
     }
 
     void Start()

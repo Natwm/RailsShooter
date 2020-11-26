@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1746466920852475961}
   - component: {fileID: 1746466920852475962}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 10
+  m_FireRate: 0
   bulletCollisionLayerMask:
     serializedVersion: 2
     m_Bits: 768
@@ -54,5 +55,7 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 50
   raycasRadius: 0.1
+  shootSound: event:/Arme/Tir1
+  reloadSound: event:/Arme/Recharge
   AutoReload: 1
   UseProjectile: 0

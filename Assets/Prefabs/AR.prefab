@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 10
+  m_FireRate: 0
   bulletCollisionLayerMask:
     serializedVersion: 2
     m_Bits: 768
@@ -54,5 +55,7 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 50
   raycasRadius: 0.1
+  shootSound: event:/Arme/Tir2
+  reloadSound: event:/Arme/Recharge
   AutoReload: 1
   UseProjectile: 1
