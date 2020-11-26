@@ -72,7 +72,7 @@ public class EnnemyBehaviours : MonoBehaviour
 
     void DoAction(Status action)
     {
-        Debug.Log(action);
+        //Debug.Log(action);
         switch (action)
         {
             case Status.NONE:
@@ -98,7 +98,7 @@ public class EnnemyBehaviours : MonoBehaviour
     #region IA
     void EnnemyDoNothing()
     {
-        Debug.Log("EnnemyDoNothing");
+        //Debug.Log("EnnemyDoNothing");
         Timer waitTimer = new Timer(waitTime, NewAction);
         waitTimer.Play();
     }
@@ -185,7 +185,7 @@ public class EnnemyBehaviours : MonoBehaviour
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
 
-        Debug.Log(listOfAction.Count);
+
         canDoAction = true;
     }
 

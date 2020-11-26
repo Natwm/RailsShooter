@@ -43,8 +43,7 @@ public class BodyPartBehaviours : MonoBehaviour
         if (m_AmountOfArmor > 0)
             m_AmountOfArmor -= damageRecieve;
 
-
-        if(damageRecieve > 0)
+        if(damageGive > 0)
             m_healthManager.DeacreseLife(damageGive);
         else
             Debug.Log("not enought"); 

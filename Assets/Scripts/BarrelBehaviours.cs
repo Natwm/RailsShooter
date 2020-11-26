@@ -1,0 +1,62 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BarrelBehaviours : HealthManager
+{
+    [Space]
+    [Header("Explosion Info")]
+    [SerializeField] private int m_ExplosionDamage;
+
+    [Space]
+    [Header ("Explosion Param")]
+    [SerializeField] private Transform m_ExplosionTransform;
+    [SerializeField] private float m_ExplosionRadius;
+    [SerializeField] private LayerMask m_ExplosionLayer;
+
+    #region Start | Update
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            base.DeacreseLife(1);
+        }
+    }
+    #endregion
+
+    public override void Kill()
+    {
+        Debug.Log("Explosion");
+        GameObject objectCheck = null;
+
+        Collider[] list = Physics.OverlapSphere(m_ExplosionTransform.position, m_ExplosionRadius, m_ExplosionLayer);
+
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i].gameObject != this.transform.GetChild(0).gameObject)
+            {
+                if (objectCheck == null || list[i].transform.parent != objectCheck.transform.parent)
+                {
+                    if (list[i].gameObject.GetComponent<BodyPartBehaviours>() != null)
+                    {
+                        Debug.Log(list[i].gameObject.name);
+                        list[i].gameObject.GetComponent<BodyPartBehaviours>().GetDamage(m_ExplosionDamage);
+                    }  
+                }
+                objectCheck = list[i].gameObject;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(m_ExplosionTransform.position, m_ExplosionRadius);
+    }
+}

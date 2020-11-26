@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class CurseurBehaviours : MonoBehaviour
 {
+    #region Param
     [Space]
     [Header("Mouse Param")]
     [SerializeField] private float mouseSpeed;
@@ -14,22 +15,22 @@ public class CurseurBehaviours : MonoBehaviour
     [Space]
     [Header("Shaking Param")]
     [SerializeField] private float strengthShake = 2f;
-    
+
 
     [Space]
     [Header("Recule Param")]
-    [SerializeField] private float reculeMultiplicator = 2f;
-    [SerializeField] private float reculeShakeStrength = 2f;
-    [SerializeField] private float reculeShakeDuration = 2f;
-    [SerializeField] private float reculeDuration = .5f;
+    private float m_ReculeMultiplicator = 2f;
+    private float m_ReculeShakeStrength = 2f;
+    private float m_ReculeShakeDuration = 2f;
+    private float m_ReculeDuration = .5f;
 
     public bool followMouse = false;
     private bool isMoving = false;
     private Vector3 lastPosition;
 
     private Timer tiredTimer;
+    #endregion
 
-    
 
     private void Start()
     {
@@ -45,7 +46,7 @@ public class CurseurBehaviours : MonoBehaviour
         {
             WeaponRecul();
         }
-        
+
         lastPosition = transform.position;
 
         if (followMouse)
@@ -59,7 +60,7 @@ public class CurseurBehaviours : MonoBehaviour
             {
                 tiredTimer.ResetPlay();
             }
-            
+
         }
         else
         {
@@ -86,13 +87,21 @@ public class CurseurBehaviours : MonoBehaviour
 
     public void WeaponShake()
     {
-        transform.DOShakePosition(50000f,strengthShake).SetId("tiredShake"); ;
+        transform.DOShakePosition(50000f, strengthShake).SetId("tiredShake"); ;
     }
 
     void WeaponRecul()
     {
-        transform.DOShakePosition(reculeShakeDuration, reculeShakeStrength);
-        transform.DOMoveY(transform.position.y + reculeMultiplicator, reculeDuration);
+        transform.DOShakePosition(m_ReculeShakeDuration, m_ReculeShakeStrength);
+        transform.DOMoveY(transform.position.y + m_ReculeMultiplicator, m_ReculeDuration);
+    }
+
+    public void UpdateReculParam(float reculeMultiplicator, float reculeShakeStrength, float reculeShakeDuration, float reculeDuration)
+    {
+        m_ReculeMultiplicator = reculeMultiplicator;
+        m_ReculeShakeStrength = reculeShakeStrength;
+        m_ReculeShakeDuration = reculeShakeDuration;
+        m_ReculeDuration = reculeDuration;
     }
 
 }
