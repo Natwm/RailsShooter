@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9063608318123930367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gase/GasVolume
+  m_EditorClassIdentifier: 
+  Name: GasVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8969310048145721773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +32,7 @@ MonoBehaviour:
   Path: event:/Player/WalkDirt
   guid: 781e916052e5a34593f0373609ddba84
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -38,7 +55,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsPierre
   guid: 95272ba72154014aa012e2d5be9c29e8
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -61,7 +78,7 @@ MonoBehaviour:
   Path: event:/Player/WalkRock
   guid: f8273a9018568242b545339e273edd3a
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -84,7 +101,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsMetal
   guid: 9bb102cd512b584eb689f118ff18e099
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -107,7 +124,7 @@ MonoBehaviour:
   Path: event:/Arme/DouilleEject
   guid: 6043456b5677f34ea0ac9e64a1d930f0
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -130,7 +147,7 @@ MonoBehaviour:
   Path: event:/Impacts/VitreBrise
   guid: f5f0b9687301c547b1ca552d70ddbec1
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -153,7 +170,7 @@ MonoBehaviour:
   Path: event:/Arme/Tir1
   guid: 0f6a2fb4c048a64a8d1bff6965fbf97b
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -177,7 +194,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3981224160856968205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +210,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsVerre
   guid: bc156d1e0a5ee042b80557bf1643a306
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -216,7 +233,7 @@ MonoBehaviour:
   Path: event:/Arme/Tir2
   guid: 853f0a0f28f9e445a853a2cde3cfac7e
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -224,6 +241,66 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 110
+--- !u!114 &-347011153294896212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\julie\OneDrive\Documents\GitHub\RailsShooter\railFMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 637420019108881884
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 749792
+  Exists: 1
+--- !u!114 &-310683724808118305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gase/GasVolume
+  m_EditorClassIdentifier: 
+  Name: GasVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-200096167361688849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SlowMotion/BulletTimeStart
+  m_EditorClassIdentifier: 
+  Path: event:/SlowMotion/BulletTimeStart
+  guid: 0ea0e7238862af4682e40044939190e8
+  Banks:
+  - {fileID: -347011153294896212}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1769
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1295752062723131497}
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   EditorEvents:
   - {fileID: 163509516864733411}
   - {fileID: -6710169606746554267}
@@ -257,11 +334,13 @@ MonoBehaviour:
   - {fileID: 4817214645011033900}
   - {fileID: -6947186172048845947}
   - {fileID: -7523353697746675839}
+  - {fileID: -200096167361688849}
+  - {fileID: 288285182880848260}
   MasterBanks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   StringsBanks:
   - {fileID: 1295752062723131497}
-  stringsBankWriteTime: 637419809290468607
+  stringsBankWriteTime: 637420019108921779
   cacheVersion: 3
 --- !u!114 &163509516864733411
 MonoBehaviour:
@@ -278,7 +357,7 @@ MonoBehaviour:
   Path: event:/Arme/Recharge
   guid: 0245c07d2e197f46bec923bd4c6b48d9
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -286,6 +365,46 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &288285182880848260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SlowMotion/BulletTimeStop
+  m_EditorClassIdentifier: 
+  Path: event:/SlowMotion/BulletTimeStop
+  guid: 6459495e219451459a941a55347e2fee
+  Banks:
+  - {fileID: -347011153294896212}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1527
+--- !u!114 &443262631226012486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SlowMotion/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &453780620854367630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +424,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 721888
-  Exists: 1
+  Exists: 0
 --- !u!114 &1295752062723131497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,11 +438,11 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: railFMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637419809290468607
+  lastModified: 637420019108921779
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1506
+    Value: 1608
   Exists: 1
 --- !u!114 &1901312459492055131
 MonoBehaviour:
@@ -340,7 +459,7 @@ MonoBehaviour:
   Path: event:/Decors/GaseExplosion
   guid: a2a64affdc16ae4eb525fa26a89c9ee0
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -363,7 +482,7 @@ MonoBehaviour:
   Path: event:/Arme/DouilleSol
   guid: 6b074a82cd94174cbeb1fec2394036c6
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -386,7 +505,7 @@ MonoBehaviour:
   Path: event:/Arme/Zoom
   guid: 2ae61512f01b8f499185d3b88e5ab3b2
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -409,12 +528,12 @@ MonoBehaviour:
   Path: snapshot:/SlowMotion
   guid: 57f81f7fabc0dc43980df1c8378cd578
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5293812667585912148}
+  - {fileID: 443262631226012486}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -433,12 +552,12 @@ MonoBehaviour:
   Path: event:/Decors/Gase
   guid: ee64f334b178ef439d49220992f3baff
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7825170857456692208}
+  - {fileID: -9063608318123930367}
   MinDistance: 1
   MaxDistance: 20
   Length: 3500
@@ -457,7 +576,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactEnnemis
   guid: 149c807030ab8e4fb21f6e44b67053cc
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -465,6 +584,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 90
+--- !u!114 &5443984104442668807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SlowMotion/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &5993419608837072093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SlowMotion/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
 --- !u!114 &7771926875864652099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +633,7 @@ MonoBehaviour:
   Path: event:/Arme/Sniper
   guid: 1f2ddec9ba79fb4cb2bde62e1ef1b6dc
   Banks:
-  - {fileID: 453780620854367630}
+  - {fileID: -347011153294896212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -488,6 +641,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2550
+--- !u!114 &7812183949794449585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gase/GasVolume
+  m_EditorClassIdentifier: 
+  Name: GasVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &7825170857456692208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,4 +674,4 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
