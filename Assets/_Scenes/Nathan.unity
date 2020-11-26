@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 931058590, guid: b021d0609ce25f24b915636e3f890008, type: 3}
+      propertyPath: slowMotionSnapshot
+      value: snapshot:/SlowMotion
+      objectReference: {fileID: 0}
     - target: {fileID: 7459193833032316652, guid: b021d0609ce25f24b915636e3f890008,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,7 +616,7 @@ PrefabInstance:
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
@@ -622,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -12.8
       objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
@@ -692,11 +696,16 @@ PrefabInstance:
     - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: UseProjectile
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_Damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: m_FireRate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8638176467121321967, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
@@ -731,8 +740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AmountOfLive: 2
-  hitSound: 
-  deathSound: 
+  hitSound: event:/Impacts/ImpactDecorsPierre
+  deathSound: event:/Player/WalkRock
 --- !u!114 &757508105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
