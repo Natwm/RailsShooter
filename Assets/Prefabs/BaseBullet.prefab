@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6591766876540560278}
   - component: {fileID: 5017220035629622116}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BaseBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f799e072412985b4683c1db6cc4d5f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 0
+  wallHitSound: event:/Impacts/ImpactDecorsMetal
+  groundHitSound: event:/Impacts/ImpactDecorsPierre
 --- !u!136 &6591766876540560278
 CapsuleCollider:
   m_ObjectHideFlags: 0

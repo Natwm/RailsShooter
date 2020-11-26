@@ -13,6 +13,7 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
             Vector3 direction = targetPosition - transform.position;
 
             currentNumberOfBullets --;
+            
 
             RaycastHit hit;            
             if(UseProjectile == true)

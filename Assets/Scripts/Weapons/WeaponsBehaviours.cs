@@ -28,12 +28,22 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] protected float raycasRadius;
 
     [Space]
+    [Header("Sound")]
+    FMOD.Studio.EventInstance shootEffect;
+    [FMODUnity.EventRef] [SerializeField] private string shootSound;
+    FMOD.Studio.EventInstance reloadEffect;
+    [FMODUnity.EventRef] [SerializeField] private string reloadSound;
+
+
+    [Space]
     [Header("FLAG")]
     [SerializeField] protected bool AutoReload = false;
     [SerializeField] protected bool UseProjectile = true;
     private Timer fireRateTimer, reloadTimer;
 
     #endregion
+
+    
 
 
     public virtual void Equip()
@@ -55,8 +65,10 @@ public class WeaponsBehaviours : MonoBehaviour
             Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
+            Debug.Log(currentNumberOfBullets);
+            //shootEffect.start();
             fireRateTimer.ResetPlay();
-
+            
             RaycastHit hit;            
             if(UseProjectile == true)
             {
@@ -104,6 +116,7 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
         m_TotalNumberOfBullets -= currentNumberOfBullets;
+        reloadEffect.start();
     }
 
     void Start()
@@ -112,5 +125,12 @@ public class WeaponsBehaviours : MonoBehaviour
         fireRateTimer = new Timer(m_FireRate);
         fireRateTimer.Play();
         reloadTimer = new Timer(m_ReloadTime, RefillMagazine);
+
+        shootEffect = FMODUnity.RuntimeManager.CreateInstance(shootSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(shootEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        reloadEffect = FMODUnity.RuntimeManager.CreateInstance(reloadSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(reloadEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
     }
 }

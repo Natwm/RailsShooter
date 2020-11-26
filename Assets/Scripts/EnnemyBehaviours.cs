@@ -26,7 +26,7 @@ public class EnnemyBehaviours : MonoBehaviour
     private bool canDoAction;
     private bool isRotating;
 
-    private Rigidbody rb;
+    private EnnemyWeaponsBehaviours weapon;
 
     private enum Status
     {
@@ -39,6 +39,8 @@ public class EnnemyBehaviours : MonoBehaviour
 
     [SerializeField] private List<Status> listOfAction;
 
+
+
     private void Start()
     {
         m_ActionIndex = 0;
@@ -50,7 +52,8 @@ public class EnnemyBehaviours : MonoBehaviour
         SetListOfPOsition();
 
         player = FindObjectOfType<PlayerController>();
-        rb = GetComponent<Rigidbody>();
+        weapon = GetComponentInChildren<EnnemyWeaponsBehaviours>();
+
     }
 
     private void Update()
@@ -59,11 +62,9 @@ public class EnnemyBehaviours : MonoBehaviour
         if (canDoAction || isRotating)
         {
             canDoAction = false;
-            Debug.Log(listOfAction[m_ActionIndex]);
-            Debug.Log(m_ActionIndex);
+
             DoAction(listOfAction[m_ActionIndex]);
-            //EnnemyMovement();
-            //CalculeRotation(listOfPosition[m_MouvementIndex]);
+
         }
 
 
@@ -143,7 +144,8 @@ public class EnnemyBehaviours : MonoBehaviour
         if (!isRotating)
         {
             Debug.Log("shoot");
-            //weaponManager.Shoot();
+
+            weapon.Shoot();
             Timer waitTimer = new Timer(waitTime, NewAction);
             waitTimer.Play();
         }
