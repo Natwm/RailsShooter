@@ -13,30 +13,32 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
             Vector3 direction = targetPosition - transform.position;
 
             currentNumberOfBullets --;
-            
+            shootEffect.start();
+            fireRateTimer.ResetPlay();
 
-            RaycastHit hit;            
-            if(UseProjectile == true)
+            RaycastHit hit;
+            if (UseProjectile == true)
             {
-                Debug.DrawLine(transform.position, transform.position + direction * 100, Color.green, 10);
-                Debug.LogWarning("No projectile yet");
+                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                projectile.transform.position = Camera.main.transform.position;
+                projectile.transform.rotation = Quaternion.Euler(direction);
+                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage);
             }
             else
             {
-                if(Physics.SphereCast(transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
+                if (Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
                 {
-                    if(hit.transform.gameObject.layer == 10)
+                    if (hit.transform.gameObject.layer == 8)
                     {
-                        Debug.Log("Player touched");
                         hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
                     }
-                    if(hit.transform.gameObject.layer == 9)
+                    if (hit.transform.gameObject.layer == 9)
                     {
-                        Debug.Log("Obstacle touched");
+                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage);
                     }
-                    if(hit.transform.gameObject.layer == 8)
+                    if (hit.transform.gameObject.layer == 10)
                     {
-                        Debug.Log("Ally touched");
                         hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
                     }
                 }
@@ -47,12 +49,13 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
             }
 
         }
-        
-        
-        if(currentNumberOfBullets == 0 && AutoReload == true)
+
+
+        if (currentNumberOfBullets == 0 && AutoReload == true)
         {
-            Debug.Log("Reload");
             Reload();
         }
+
     }
+
 }

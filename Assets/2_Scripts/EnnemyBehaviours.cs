@@ -27,6 +27,7 @@ public class EnnemyBehaviours : MonoBehaviour
     private bool isRotating;
 
     private EnnemyWeaponsBehaviours weapon;
+    private Animator m_animator;
 
     private enum Status
     {
@@ -39,7 +40,7 @@ public class EnnemyBehaviours : MonoBehaviour
 
     [SerializeField] private List<Status> listOfAction;
 
-
+    public Animator Animator { get => m_animator; set => m_animator = value; }
 
     private void Start()
     {
@@ -54,6 +55,7 @@ public class EnnemyBehaviours : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         weapon = GetComponentInChildren<EnnemyWeaponsBehaviours>();
 
+        m_animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -98,6 +100,8 @@ public class EnnemyBehaviours : MonoBehaviour
     #region IA
     void EnnemyDoNothing()
     {
+        if (m_animator.GetBool("Trigger_Walk"))
+            m_animator.SetBool("Trigger_Walk", false);
         //Debug.Log("EnnemyDoNothing");
         Timer waitTimer = new Timer(waitTime, NewAction);
         waitTimer.Play();
@@ -114,6 +118,8 @@ public class EnnemyBehaviours : MonoBehaviour
 
     void EnnemyHide()
     {
+        if (m_animator.GetBool("Trigger_Walk"))
+            m_animator.SetBool("Trigger_Walk", false);
         //play Animation hide
         Debug.Log("Hide");
         NewAction();
@@ -121,6 +127,9 @@ public class EnnemyBehaviours : MonoBehaviour
 
     void EnnemyMovement()
     {
+        if(!m_animator.GetBool("Trigger_Walk"))
+            m_animator.SetBool("Trigger_Walk", true);
+
         CalculeRotation(listOfPosition[m_MouvementIndex]);
         if (!isRotating)
             transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
@@ -140,11 +149,13 @@ public class EnnemyBehaviours : MonoBehaviour
 
     void EnnemyShoot()
     {
+        if (m_animator.GetBool("Trigger_Walk"))
+            m_animator.SetBool("Trigger_Walk", false);
         CalculeRotation(player.transform.position);
         if (!isRotating)
         {
             Debug.Log("shoot");
-
+            m_animator.SetTrigger("Trigger_Shoot");
             weapon.Shoot();
             Timer waitTimer = new Timer(waitTime, NewAction);
             waitTimer.Play();
@@ -196,6 +207,7 @@ public class EnnemyBehaviours : MonoBehaviour
         for (int i = 0; i < m_PositionHolderGO.transform.childCount; i++)
         {
             listOfPosition.Add(m_PositionHolderGO.transform.GetChild(i).position);
+            Vector3 pos = new Vector3(m_PositionHolderGO.transform.GetChild(i).position.x, 0, m_PositionHolderGO.transform.GetChild(i).position.z);
         }
     }
     #endregion
