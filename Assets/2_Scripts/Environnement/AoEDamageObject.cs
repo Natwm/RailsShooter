@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarrelBehaviours : HealthManager
+public class AoEDamageObject : HealthManager
 {
     [Space]
     [Header("Explosion Info")]
@@ -31,7 +31,7 @@ public class BarrelBehaviours : HealthManager
     }
     #endregion
 
-    public override void Kill()
+    protected override void Death()
     {
         Debug.Log("Explosion");
         GameObject objectCheck = null;
