@@ -45,7 +45,5 @@ public class BodyPartBehaviours : MonoBehaviour
 
         if(damageGive > 0)
             m_healthManager.DeacreseLife(damageGive);
-        else
-            Debug.Log("not enought"); 
     }
 }

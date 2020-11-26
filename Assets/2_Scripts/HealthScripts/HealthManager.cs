@@ -6,6 +6,7 @@ public class HealthManager : MonoBehaviour
 {
     #region PARAM
     [SerializeField] private int m_AmountOfLive;
+    [SerializeField] private Animator animator;
 
     FMOD.Studio.EventInstance hitSoundEffect;
     [FMODUnity.EventRef] [SerializeField] private string hitSound;
@@ -34,7 +35,7 @@ public class HealthManager : MonoBehaviour
         else
         {
             hitSoundEffect.start();
-            GetComponent<EnnemyBehaviours>().Animator.SetTrigger("Trigger_Hit");
+            animator.SetTrigger("Trigger_Hit");
         }
             
     }
@@ -42,7 +43,7 @@ public class HealthManager : MonoBehaviour
     protected virtual void Death()
     {
         Debug.Log("Dead");
-        GetComponent<EnnemyBehaviours>().Animator.SetTrigger("Trigger_Die");
+        animator.SetTrigger("Trigger_Die");
         deathSoundEffect.start();
         //Destroy(gameObject,1f);
     }

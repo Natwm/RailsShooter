@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749792006}
   - component: {fileID: 1749792007}
-  - component: {fileID: 1749792008}
+  - component: {fileID: 1465842485}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_DamageAdd: 0
   m_AmountOfArmor: 0
   m_healthManager: {fileID: 757508104}
---- !u!65 &1749792008
-BoxCollider:
+--- !u!136 &1465842485
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -58,9 +58,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: -0.5}
 --- !u!1 &1942438055
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AmountOfLive: 2
+  animator: {fileID: 0}
   hitSound: event:/Impacts/ImpactDecorsPierre
   deathSound: event:/Player/WalkRock
 --- !u!1001 &1774035008554251190
