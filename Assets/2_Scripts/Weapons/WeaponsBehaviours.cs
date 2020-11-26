@@ -29,9 +29,9 @@ public class WeaponsBehaviours : MonoBehaviour
 
     [Space]
     [Header("Sound")]
-    FMOD.Studio.EventInstance shootEffect;
+    protected FMOD.Studio.EventInstance shootEffect;
     [FMODUnity.EventRef] [SerializeField] private string shootSound;
-    FMOD.Studio.EventInstance reloadEffect;
+    protected FMOD.Studio.EventInstance reloadEffect;
     [FMODUnity.EventRef] [SerializeField] private string reloadSound;
 
 
@@ -39,7 +39,8 @@ public class WeaponsBehaviours : MonoBehaviour
     [Header("FLAG")]
     [SerializeField] protected bool AutoReload = false;
     [SerializeField] protected bool UseProjectile = true;
-    private Timer fireRateTimer, reloadTimer;
+
+    protected Timer fireRateTimer, reloadTimer;
 
     #endregion
 

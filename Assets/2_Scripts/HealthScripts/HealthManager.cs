@@ -34,6 +34,7 @@ public class HealthManager : MonoBehaviour
         else
         {
             hitSoundEffect.start();
+            GetComponent<EnnemyBehaviours>().Animator.SetTrigger("Trigger_Hit");
         }
             
     }
@@ -41,7 +42,8 @@ public class HealthManager : MonoBehaviour
     protected virtual void Death()
     {
         Debug.Log("Dead");
+        GetComponent<EnnemyBehaviours>().Animator.SetTrigger("Trigger_Die");
         deathSoundEffect.start();
-        Destroy(gameObject,1f);
+        //Destroy(gameObject,1f);
     }
 }
