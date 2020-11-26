@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnnemyBehaviours : MonoBehaviour
+public class EnnemyBehaviours : HealthManager
 {
     private List<Vector3> listOfPosition = new List<Vector3>();
     public GameObject m_PositionHolderGO;
@@ -56,6 +56,8 @@ public class EnnemyBehaviours : MonoBehaviour
         weapon = GetComponentInChildren<EnnemyWeaponsBehaviours>();
 
         m_animator = GetComponentInChildren<Animator>();
+
+        GameManager.instance.IncreaseAmountofEnnemy();
     }
 
     private void Update()
@@ -66,10 +68,7 @@ public class EnnemyBehaviours : MonoBehaviour
             canDoAction = false;
 
             DoAction(listOfAction[m_ActionIndex]);
-
         }
-
-
     }
 
     void DoAction(Status action)
@@ -198,6 +197,12 @@ public class EnnemyBehaviours : MonoBehaviour
 
 
         canDoAction = true;
+    }
+
+    protected override void Death()
+    {
+        GameManager.instance.DecreaseAmountofEnnemy();
+        Destroy(this.gameObject);
     }
 
     #region Getter && Setter

@@ -11,7 +11,7 @@ public class HealthManager : MonoBehaviour
     FMOD.Studio.EventInstance hitSoundEffect;
     [FMODUnity.EventRef] [SerializeField] private string hitSound;
 
-    FMOD.Studio.EventInstance deathSoundEffect;
+    protected FMOD.Studio.EventInstance deathSoundEffect;
     [FMODUnity.EventRef] [SerializeField] private string deathSound;
     #endregion
 

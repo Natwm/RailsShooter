@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1749792006}
   - component: {fileID: 1749792007}
   - component: {fileID: 1465842485}
+  - component: {fileID: 1749792009}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_DamageMultiplicator: 1
   m_DamageAdd: 0
   m_AmountOfArmor: 0
-  m_healthManager: {fileID: 757508104}
+  m_healthManager: {fileID: 0}
 --- !u!136 &1465842485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62,6 +63,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: -0.5}
+--- !u!54 &1749792009
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749792005}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1942438055
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942438056}
   - component: {fileID: 1942438057}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9054126557662614219}
   - component: {fileID: 5314331975709366839}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8638176466994600536}
   - component: {fileID: 8755890222572902515}
-  - component: {fileID: 757508104}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -202,21 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e67c8dd607ac144b8c1e85c44fad57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &757508104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8638176466994600537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfcbff3aa0594994b8b230508351382b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   m_AmountOfLive: 2
   animator: {fileID: 0}
-  hitSound: event:/Impacts/ImpactDecorsPierre
+  hitSound: event:/Impacts/VitreBrise
   deathSound: event:/Player/WalkRock
 --- !u!1001 &1774035008554251190
 PrefabInstance:
@@ -229,6 +233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AR
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494840856889109568, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5305334942727496430, guid: 6f2e8399697b87d4a803070476604528,
         type: 3}

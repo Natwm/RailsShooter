@@ -365,7 +365,7 @@ MonoBehaviour:
   m_DamageMultiplicator: 2
   m_DamageAdd: 0
   m_AmountOfArmor: 0
-  m_healthManager: {fileID: 536004620363863739}
+  m_healthManager: {fileID: 0}
 --- !u!1 &536004620363863736
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +375,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536004620363863738}
-  - component: {fileID: 536004620363863739}
   - component: {fileID: 205966804}
   - component: {fileID: 1160136753}
   m_Layer: 8
@@ -403,22 +402,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &536004620363863739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536004620363863736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfcbff3aa0594994b8b230508351382b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AmountOfLive: 2
-  animator: {fileID: 6332396366158891686}
-  hitSound: event:/Impacts/ImpactEnnemis
-  deathSound: event:/Impacts/VitreBrise
 --- !u!114 &205966804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e5d2bff0cacd4ea12f10b680c71b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AmountOfLive: 2
+  animator: {fileID: 6332396366158891686}
+  hitSound: event:/Impacts/ImpactDecorsPierre
+  deathSound: event:/Ennemis/DieHerc
   m_PositionHolderGO: {fileID: 138296907}
   speed: 1.5
   rotationSpeed: 1
@@ -500,8 +487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DamageMultiplicator: 1
   m_DamageAdd: 0
-  m_AmountOfArmor: 0
-  m_healthManager: {fileID: 536004620363863739}
+  m_AmountOfArmor: 1
+  m_healthManager: {fileID: 0}
 --- !u!136 &5792670100307127402
 CapsuleCollider:
   m_ObjectHideFlags: 0
