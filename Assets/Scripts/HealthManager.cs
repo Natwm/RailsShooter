@@ -26,15 +26,22 @@ public class HealthManager : MonoBehaviour
     public void DeacreseLife( int damage)
     {
         m_AmountOfLive -= damage;
+        
         if (m_AmountOfLive <= 0)
         {
-            Debug.Log("Dead");
-            deathSoundEffect.start();
-            Destroy(gameObject,1f);
+            Death();
         }
         else
+        {
             hitSoundEffect.start();
+        }
             
     }
 
+    protected virtual void Death()
+    {
+        Debug.Log("Dead");
+        deathSoundEffect.start();
+        Destroy(gameObject,1f);
+    }
 }
