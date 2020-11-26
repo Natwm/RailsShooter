@@ -92,6 +92,7 @@ MonoBehaviour:
   - {fileID: 8638176467121321965}
   - {fileID: 5662217562174913843}
   CursorGO: {fileID: 0}
+  weaponSwapDuration: 0
 --- !u!1 &8638176466994600537
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +205,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: m_FireRate
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2e8399697b87d4a803070476604528, type: 3}
 --- !u!4 &5854386450170564952 stripped
@@ -290,6 +296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: UseProjectile
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b30dd069f982e54f8fd668ee531e722, type: 3}

@@ -39,7 +39,10 @@ public class BulletsBehaviours : MonoBehaviour
 
         if(other.gameObject.layer == 9)
         {
-            Debug.Log(other.gameObject.GetComponent<Renderer>().material.name);
+            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage);
+
+            // Debug.Log(other.gameObject.GetComponent<Renderer>().material.name);
+            
             switch (other.gameObject.GetComponent<Renderer>().material.name)
             {
                 case "Ground (Instance)":
@@ -51,6 +54,7 @@ public class BulletsBehaviours : MonoBehaviour
                     break;
             }
             
+            this.OnPoolEnter();
         }
     }
 

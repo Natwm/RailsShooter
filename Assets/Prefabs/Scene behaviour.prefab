@@ -76,6 +76,7 @@ MonoBehaviour:
   normalFlowTime: 1
   slowMotionFlowTime: 0.1
   FlowTimeLerpValue: 0.2
+  slowMotionSnapshot: snapshot:/SlowMotion
 --- !u!114 &894588745
 MonoBehaviour:
   m_ObjectHideFlags: 0

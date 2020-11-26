@@ -87,7 +87,7 @@ public class WeaponsBehaviours : MonoBehaviour
                     }
                     if(hit.transform.gameObject.layer == 9)
                     {
-                        // obstacle touched
+                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage);
                     }
                 }
                 else
