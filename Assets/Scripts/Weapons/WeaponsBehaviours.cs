@@ -58,8 +58,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot()
     {
-        print(reloadTimer.IsFinished());
-        if(currentNumberOfBullets > 0 && fireRateTimer.IsFinished() == true)
+        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false)
         {
             Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward);

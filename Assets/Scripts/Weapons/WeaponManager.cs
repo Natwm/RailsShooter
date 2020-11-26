@@ -58,6 +58,8 @@ public class WeaponManager : MonoBehaviour
         currentWeapon.UnEquip();
         weapon.Equip();
         currentWeapon = weapon;
+
+        Debug.Log("Swap Weapon (" + currentWeapon.name + ") : Play Sound here");
     }
 
     public WeaponsBehaviours GetCurrentWeapon()
@@ -79,7 +81,8 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetMouseButton(0))
             Shoot();
         
-            
+        if(Input.GetKeyDown("e"))
+            SwapWeaponDown();
         
         if(Input.GetKeyDown("r"))
             Reload();
