@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{97368a76-c248-40e4-b940-00175d39bc15}">
+        <property name="assetPath">
+            <value>die_grunts-002.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.4462811791383221</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{5f1e017d-19b0-4a39-b6ee-44dd150ff959}</destination>
+        </relationship>
+    </object>
+</objects>
