@@ -15,6 +15,11 @@ public class TimeController : MonoBehaviour
     [SerializeField] private float slowMotionFlowTime = 0.1f;
     [SerializeField] private float FlowTimeLerpValue = 0.2f;
 
+    [Space]
+    [Header("Sound")]
+    FMOD.Studio.EventInstance slowMotionEffect;
+    [FMODUnity.EventRef] [SerializeField] private string slowMotionSnapshot; 
+
 
     private float targetFlowTime = 1;
     private float baseFixedDeltaTime;
@@ -25,6 +30,14 @@ public class TimeController : MonoBehaviour
         targetFlowTime = 1;
         baseFixedDeltaTime = Time.fixedDeltaTime;
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
+    }
+
+    private void Start()
+    {
+        slowMotionEffect = FMODUnity.RuntimeManager.CreateInstance(slowMotionSnapshot);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(slowMotionEffect, GameManager.instance.player.transform, GameManager.instance.player.GetComponent<Rigidbody>());
+        slowMotionEffect.start();
+        slowMotionEffect.setParameterValue("Instance", 0f);
     }
 
     void SetTime(float secondDuration)
@@ -38,8 +51,6 @@ public class TimeController : MonoBehaviour
             StartSlowMotion();
         if(Input.GetKeyDown("[-]"))
             MaintainSlowMotion();
-
-        
     }
 
     void FixedUpdate()
@@ -51,7 +62,7 @@ public class TimeController : MonoBehaviour
     public void StartSlowMotion()
     {
         SetTime(slowMotionFlowTime);
-        
+        slowMotionEffect.setParameterValue("Intensity", 100f);
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
         slowMotionTimer.ResetPlay();
     }
@@ -69,5 +80,6 @@ public class TimeController : MonoBehaviour
     private void EndSlowMotion()
     {
         SetTime(normalFlowTime);
+        slowMotionEffect.setParameterValue("Intensity", 0f);
     }
 }
