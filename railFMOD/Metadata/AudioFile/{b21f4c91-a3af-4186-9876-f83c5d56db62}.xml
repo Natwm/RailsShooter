@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b21f4c91-a3af-4186-9876-f83c5d56db62}">
+        <property name="assetPath">
+            <value>Wall-Hit 1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.63395833333333329</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{5f1e017d-19b0-4a39-b6ee-44dd150ff959}</destination>
+        </relationship>
+    </object>
+</objects>

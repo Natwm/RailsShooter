@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7f690476-93dd-48c8-b1d9-915dda39ef88}">
+        <property name="assetPath">
+            <value>rounds-001.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.5861451247165532</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{5f1e017d-19b0-4a39-b6ee-44dd150ff959}</destination>
+        </relationship>
+    </object>
+</objects>

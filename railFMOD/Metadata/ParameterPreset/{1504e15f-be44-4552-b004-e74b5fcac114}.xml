@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{1504e15f-be44-4552-b004-e74b5fcac114}">
+        <property name="name">
+            <value>GasVolume</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4a901db8-af81-4da3-8418-5ebcfc904f69}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{c147a521-a190-4ce1-9a64-0f31149e9bc5}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{c147a521-a190-4ce1-9a64-0f31149e9bc5}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>2.4000000953674316</value>
+        </property>
+    </object>
+</objects>
