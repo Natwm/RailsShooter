@@ -12,10 +12,11 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private List<WeaponsBehaviours> m_ListOfWeapon = new List<WeaponsBehaviours>();
     [SerializeField] public GameObject CursorGO;
 
-
+    [SerializeField] private float weaponSwapDuration;
 
     #endregion
 
+    private Timer weaponSwapTimer;
     private WeaponsBehaviours currentWeapon;
 
     private void Awake()
@@ -25,10 +26,7 @@ public class WeaponManager : MonoBehaviour
         instance = this;
 
         currentWeapon = m_ListOfWeapon[0];
-    }
-
-    private void Start()
-    {
+        weaponSwapTimer = new Timer(weaponSwapDuration);
     }
 
     public void SwapWeaponUp()
@@ -55,6 +53,7 @@ public class WeaponManager : MonoBehaviour
 
     private void SwapWeapon(WeaponsBehaviours weapon)
     {
+        weaponSwapTimer.ResetPlay();
         currentWeapon.UnEquip();
         weapon.Equip();
         currentWeapon = weapon;
@@ -69,7 +68,10 @@ public class WeaponManager : MonoBehaviour
 
     public void Shoot()
     {
-        currentWeapon.Shoot();
+        if(weaponSwapTimer.IsStarted() == false)
+        {
+            currentWeapon.Shoot();
+        }
     }
 
     public void Reload()
