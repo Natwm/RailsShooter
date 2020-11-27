@@ -13,6 +13,8 @@ public class BulletsBehaviours : MonoBehaviour
 
     FMOD.Studio.EventInstance groundHitEffect;
     [FMODUnity.EventRef] [SerializeField] private string groundHitSound;
+
+    [SerializeField] private LayerMask DamagebleLayer;
     #endregion
 
     private BulletPool bulletPool;
@@ -41,7 +43,7 @@ public class BulletsBehaviours : MonoBehaviour
             }
         }
 
-        if(other.gameObject.layer == 9)
+        if(other.gameObject.layer == DamagebleLayer)
         {
             other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter);
             

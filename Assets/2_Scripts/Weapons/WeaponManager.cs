@@ -14,10 +14,14 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] private float weaponSwapDuration;
 
+    [SerializeField] private Animator weaponAnimator;
+
     #endregion
 
     private Timer weaponSwapTimer;
     private WeaponsBehaviours currentWeapon;
+
+    public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
 
     private void Awake()
     {
@@ -70,12 +74,14 @@ public class WeaponManager : MonoBehaviour
     {
         if(weaponSwapTimer.IsStarted() == false)
         {
+            weaponAnimator.SetTrigger("Trigger_Shoot");
             currentWeapon.Shoot();
         }
     }
 
     public void Reload()
     {
+        weaponAnimator.SetTrigger("Trigger_Reload");
         currentWeapon.Reload();
     }
 

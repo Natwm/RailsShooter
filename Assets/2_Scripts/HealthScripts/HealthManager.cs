@@ -5,14 +5,14 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     #region PARAM
-    [SerializeField] private int m_AmountOfLive;
-    [SerializeField] private Animator animator;
+    [SerializeField] protected int m_AmountOfLive;
+    [SerializeField] protected Animator animator;
 
-    FMOD.Studio.EventInstance hitSoundEffect;
-    [FMODUnity.EventRef] [SerializeField] private string hitSound;
+    protected FMOD.Studio.EventInstance hitSoundEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string hitSound;
 
     protected FMOD.Studio.EventInstance deathSoundEffect;
-    [FMODUnity.EventRef] [SerializeField] private string deathSound;
+    [FMODUnity.EventRef] [SerializeField] protected string deathSound;
     #endregion
 
     private void Start()
@@ -24,7 +24,7 @@ public class HealthManager : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
-    public void DeacreseLife( int damage)
+    public virtual void DeacreseLife( int damage)
     {
         m_AmountOfLive -= damage;
         
@@ -35,7 +35,6 @@ public class HealthManager : MonoBehaviour
         else
         {
             hitSoundEffect.start();
-            animator.SetTrigger("Trigger_Hit");
         }
             
     }
