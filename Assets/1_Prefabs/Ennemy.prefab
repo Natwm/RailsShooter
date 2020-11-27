@@ -365,7 +365,7 @@ MonoBehaviour:
   m_DamageMultiplicator: 2
   m_DamageAdd: 0
   m_AmountOfArmor: 0
-  m_healthManager: {fileID: 0}
+  m_healthManager: {fileID: 205966804}
 --- !u!1 &536004620363863736
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_DamageMultiplicator: 1
   m_DamageAdd: 0
   m_AmountOfArmor: 1
-  m_healthManager: {fileID: 0}
+  m_healthManager: {fileID: 205966804}
 --- !u!136 &5792670100307127402
 CapsuleCollider:
   m_ObjectHideFlags: 0
