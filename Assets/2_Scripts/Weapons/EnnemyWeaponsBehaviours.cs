@@ -6,6 +6,7 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
 {
     public override void Shoot()
     {
+        Debug.Log("shoot");
         if(currentNumberOfBullets > 0)
         {
             print("Ennemy Shoot");

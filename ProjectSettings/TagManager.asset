@@ -34,8 +34,8 @@ TagManager:
   - 
   - 
   - Meubles
-  - 
-  - 
+  - Particles
+  - Player_Weapon
   - 
   m_SortingLayers:
   - name: Default

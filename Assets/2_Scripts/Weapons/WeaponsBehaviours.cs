@@ -105,6 +105,7 @@ public class WeaponsBehaviours : MonoBehaviour
         
         if(currentNumberOfBullets == 0 && AutoReload == true)
         {
+            WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             Reload();
         }
     }
