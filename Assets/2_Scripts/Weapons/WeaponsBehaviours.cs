@@ -28,7 +28,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] protected float raycasRadius;
 
     [Space]
-    [Header("Sound")]
+    [Header("SOUND")]
     protected FMOD.Studio.EventInstance shootEffect;
     [FMODUnity.EventRef] [SerializeField] private string shootSound;
     protected FMOD.Studio.EventInstance reloadEffect;
@@ -40,6 +40,9 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] protected bool AutoReload = false;
     [SerializeField] protected bool UseProjectile = true;
 
+    [Space]
+    [Header("OTHER")]
+    [SerializeField] protected HealthManager myHealthManager;
     protected Timer fireRateTimer, reloadTimer;
 
     #endregion
@@ -76,7 +79,7 @@ public class WeaponsBehaviours : MonoBehaviour
                 projectile.transform.position = Camera.main.transform.position;
                 projectile.transform.rotation = Quaternion.Euler(direction);
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage);
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
             }
             else
             {
@@ -84,11 +87,11 @@ public class WeaponsBehaviours : MonoBehaviour
                 {
                     if(hit.transform.gameObject.layer == 8)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
                     }
                     if(hit.transform.gameObject.layer == 9)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage);
+                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage, myHealthManager);
                     }
                 }
                 else

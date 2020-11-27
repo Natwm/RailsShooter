@@ -10,26 +10,16 @@ public class BodyPartBehaviours : MonoBehaviour
     [SerializeField] private int m_DamageMultiplicator;
     [SerializeField] private int m_DamageAdd;
     [SerializeField] private int m_AmountOfArmor;
-    [SerializeField] private HealthManager m_healthManager;
+    [SerializeField] public HealthManager m_healthManager;
 
 
     #endregion
 
-    private void Start()
+    public void GetDamage(int amountOfDamage, HealthManager shooter)
     {
-        //m_healthManager = GetComponentInParent<HealthManager>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GetDamage(4);
-        }
-    }
-
-    public void GetDamage(int amountOfDamage)
-    {
+        if(m_healthManager == shooter)
+            return;
+        
         int damageGive;
         int damageRecieve;
 

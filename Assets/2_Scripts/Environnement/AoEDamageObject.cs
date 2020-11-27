@@ -47,7 +47,7 @@ public class AoEDamageObject : HealthManager
                     if (list[i].gameObject.GetComponent<BodyPartBehaviours>() != null)
                     {
                         Debug.Log(list[i].gameObject.name);
-                        list[i].gameObject.GetComponent<BodyPartBehaviours>().GetDamage(m_ExplosionDamage);
+                        list[i].gameObject.GetComponent<BodyPartBehaviours>().GetDamage(m_ExplosionDamage, this);
                     }  
                 }
                 objectCheck = list[i].gameObject;

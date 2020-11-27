@@ -6,6 +6,7 @@ public class BulletsBehaviours : MonoBehaviour
 {
     #region PARAM
     private int damage;
+    private HealthManager shooter;
 
     FMOD.Studio.EventInstance wallHitEffect;
     [FMODUnity.EventRef] [SerializeField] private string wallHitSound;
@@ -33,15 +34,16 @@ public class BulletsBehaviours : MonoBehaviour
     {
         if(other.gameObject.layer == 8 || other.gameObject.layer == 10)
         {
-            other.GetComponent<BodyPartBehaviours>().GetDamage(damage);
-            this.OnPoolEnter();
+            if(other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
+            {
+                other.GetComponent<BodyPartBehaviours>().GetDamage(damage, shooter);
+                this.OnPoolEnter();
+            }
         }
 
         if(other.gameObject.layer == 9)
         {
-            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage);
-
-            // Debug.Log(other.gameObject.GetComponent<Renderer>().material.name);
+            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter);
             
             switch (other.gameObject.GetComponent<Renderer>().material.name)
             {
@@ -58,9 +60,10 @@ public class BulletsBehaviours : MonoBehaviour
         }
     }
 
-    public void Launch(int damage)
+    public void Launch(int damage, HealthManager shooter)
     {
         this.damage = damage;
+        this.shooter = shooter;
         timeToLive = new Timer(5, OnPoolEnter);
         timeToLive.ResetPlay();
     }

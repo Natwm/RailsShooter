@@ -23,7 +23,7 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
                 projectile.transform.position = Camera.main.transform.position;
                 projectile.transform.rotation = Quaternion.Euler(direction);
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage);
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
             }
             else
             {
@@ -31,15 +31,15 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
                 {
                     if (hit.transform.gameObject.layer == 8)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
                     }
                     if (hit.transform.gameObject.layer == 9)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage);
+                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage, myHealthManager);
                     }
                     if (hit.transform.gameObject.layer == 10)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage);
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
                     }
                 }
                 else
