@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnnemyBehaviours : HealthManager
 {
@@ -29,12 +30,19 @@ public class EnnemyBehaviours : HealthManager
     private EnnemyWeaponsBehaviours weapon;
     private Animator m_animator;
 
+    private NavMeshAgent agent;
+
+    private Timer attackTimer;
+    [SerializeField] private float timeBtwAttack;
+
     private enum Status
     {
         NONE,
         STOP,
-        HIDE,
+        HIDE_UP,
+        HIDE_DOWN,
         MOVE,
+        RUSH,
         SHOOT,
     }
 
@@ -58,12 +66,16 @@ public class EnnemyBehaviours : HealthManager
         m_animator = GetComponentInChildren<Animator>();
 
         GameManager.instance.IncreaseAmountofEnnemy();
+
+        agent = GetComponent<NavMeshAgent>();
+
+        attackTimer = new Timer(timeBtwAttack, weapon.Shoot);
     }
 
     private void Update()
     {
-
-        if (canDoAction || isRotating)
+        //EnnemyMovement();
+        if (canDoAction)
         {
             canDoAction = false;
 
@@ -82,11 +94,16 @@ public class EnnemyBehaviours : HealthManager
             case Status.STOP:
                 EnnemyStopAndReload();
                 break;
-            case Status.HIDE:
-                EnnemyHide();
+            case Status.HIDE_UP:
+                EnnemyHideUp();
+                break;
+            case Status.HIDE_DOWN:
                 break;
             case Status.MOVE:
                 EnnemyMovement();
+                break;
+            case Status.RUSH:
+                Rush();
                 break;
             case Status.SHOOT:
                 EnnemyShoot();
@@ -99,8 +116,8 @@ public class EnnemyBehaviours : HealthManager
     #region IA
     void EnnemyDoNothing()
     {
-        if (m_animator.GetBool("Trigger_Walk"))
-            m_animator.SetBool("Trigger_Walk", false);
+        if (m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", false);
         //Debug.Log("EnnemyDoNothing");
         Timer waitTimer = new Timer(waitTime, NewAction);
         waitTimer.Play();
@@ -111,28 +128,61 @@ public class EnnemyBehaviours : HealthManager
         Debug.Log("reload");
         EnnemyDoNothing();
         weaponManager.Reload();
+
+        m_animator.SetTrigger("Trigger_Reload");
+
         Timer waitTimer = new Timer(waitTime, NewAction);
         waitTimer.Play();
     }
 
-    void EnnemyHide()
+    void EnnemyHideUp()
     {
-        if (m_animator.GetBool("Trigger_Walk"))
-            m_animator.SetBool("Trigger_Walk", false);
+        if (m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", false);
         //play Animation hide
         Debug.Log("Hide");
         NewAction();
     }
 
+    void EnnemyHideDown()
+    {
+        if (m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", false);
+        //play Animation hide
+        Debug.Log("Hide");
+        NewAction();
+    }
+
+    void Rush()
+    {
+        if (Vector3.Distance(transform.position, player.gameObject.transform.position) < minDistancePlayer)
+        {
+            if (m_animator.GetBool("IsWalking"))
+                m_animator.SetBool("IsWalking", false);
+            agent.SetDestination(transform.position);
+            attackTimer.ResetPlay();
+        }
+        else
+        {
+            if (!m_animator.GetBool("IsWalking"))
+                m_animator.SetBool("IsWalking", true);
+            agent.SetDestination(player.gameObject.transform.position);
+        }
+        canDoAction = true;
+    }
+
     void EnnemyMovement()
     {
-        if(!m_animator.GetBool("Trigger_Walk"))
-            m_animator.SetBool("Trigger_Walk", true);
+        
+       if (!m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", true);
 
         CalculeRotation(listOfPosition[m_MouvementIndex]);
-        if (!isRotating)
+        /*if (!isRotating)
             transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
-            //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);
+            //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);*/
+
+        agent.SetDestination(listOfPosition[m_MouvementIndex]);
 
         if (Vector3.Distance(transform.position, listOfPosition[m_MouvementIndex]) < minDistance)
         {
@@ -195,14 +245,30 @@ public class EnnemyBehaviours : HealthManager
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
 
-
         canDoAction = true;
+    }
+
+    public override void DeacreseLife(int damage)
+    {
+        m_AmountOfLive -= damage;
+
+        if (m_AmountOfLive <= 0)
+        {
+            Death();
+        }
+        else
+        {
+            hitSoundEffect.start();
+            animator.SetTrigger("Trigger_Hit");
+        }
     }
 
     protected override void Death()
     {
+        m_animator.SetTrigger("Trigger_Die");
+
         GameManager.instance.DecreaseAmountofEnnemy();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,2);
     }
 
     #region Getter && Setter

@@ -41,12 +41,6 @@ public class CurseurBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            WeaponRecul();
-        }
-
         lastPosition = transform.position;
 
         if (followMouse)
@@ -54,18 +48,17 @@ public class CurseurBehaviours : MonoBehaviour
         else
             MoveToCurseur();
 
-        if (!isMoving)
+       /* if (!isMoving)
         {
             if (!tiredTimer.IsStarted())
             {
                 tiredTimer.ResetPlay();
             }
-
         }
         else
         {
             tiredTimer.Pause();
-        }
+        }*/
     }
 
     void MoveToCurseur()
