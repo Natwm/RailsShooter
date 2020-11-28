@@ -5,8 +5,28 @@ using UnityEngine.AI;
 
 public class EnnemyBehaviours : HealthManager
 {
-    private List<Vector3> listOfPosition = new List<Vector3>();
-    public GameObject m_PositionHolderGO;
+
+    private enum Status
+    {
+        NONE,
+        STOP,
+        HIDE_UP,
+        HIDE_DOWN,
+        MOVE,
+        RUSH,
+        HIDE_LEFT,
+        HIDE_RIGHT,
+        SHOOT,
+    }
+
+    public bool loopAction;
+
+    [Space]
+    [Header("Position GO")]
+    private List<Vector3> listOfPosition_Action = new List<Vector3>();
+    private List<Vector3> listOfPosition_Ronde = new List<Vector3>();
+    public GameObject m_PositionHolderGO_Action;
+    public GameObject m_PositionHolderGO_PreAction;
 
     [Space]
     [SerializeField] private float speed;
@@ -23,6 +43,7 @@ public class EnnemyBehaviours : HealthManager
 
     private int m_MouvementIndex;
     private int m_ActionIndex;
+    private int m_PreActionIndex;
 
     private bool canDoAction;
     private bool isRotating;
@@ -37,20 +58,12 @@ public class EnnemyBehaviours : HealthManager
 
     Timer waitTimer;
 
-    private enum Status
-    {
-        NONE,
-        STOP,
-        HIDE_UP,
-        HIDE_DOWN,
-        MOVE,
-        RUSH,
-        RUN_TO_HIDE_LEFT,
-        RUN_TO_HIDE_RIGHT,
-        SHOOT,
-    }
-
+    [Space]
+    [Header ("IA")]
+    [Tooltip (" This parameter content all action the ennemie can do before the actione phase ")]
+    [SerializeField] private List<Status> listOfPreAction;
     [SerializeField] private List<Status> listOfAction;
+    
 
     public Animator Animator { get => m_animator; set => m_animator = value; }
 
@@ -79,16 +92,24 @@ public class EnnemyBehaviours : HealthManager
 
     private void Update()
     {
-        //EnnemyMovement();
-        if (canDoAction)
+        if (GameManager.instance.canAction)
         {
-            canDoAction = false;
+            if (canDoAction)
+            {
+                canDoAction = false;
 
-            DoAction(listOfAction[m_ActionIndex]);
+                DoAction(listOfAction[m_ActionIndex], listOfPosition_Action);
+            }
         }
+        else
+        {
+            DoAction(listOfPreAction[m_ActionIndex],listOfPosition_Ronde);
+        }
+        //EnnemyMovement();
+        
     }
 
-    void DoAction(Status action)
+    void DoAction(Status action, List<Vector3> positions)
     {
         Debug.Log(action);
         switch (action)
@@ -105,15 +126,15 @@ public class EnnemyBehaviours : HealthManager
             case Status.HIDE_DOWN:
                 break;
             case Status.MOVE:
-                EnnemyMovement();
+                EnnemyMovement(positions);
                 break;
             case Status.RUSH:
                 Rush();
                 break;
-            case Status.RUN_TO_HIDE_LEFT:
+            case Status.HIDE_LEFT:
                 HideLeft();
                 break;
-            case Status.RUN_TO_HIDE_RIGHT:
+            case Status.HIDE_RIGHT:
                 HideRight();
                 break;
             case Status.SHOOT:
@@ -212,14 +233,14 @@ public class EnnemyBehaviours : HealthManager
         if (!m_animator.GetBool("IsWalking"))
             m_animator.SetBool("IsWalking", true);
 
-        CalculeRotation(listOfPosition[m_MouvementIndex]);
+        CalculeRotation(listOfPosition_Action[m_MouvementIndex]);
         /*if (!isRotating)
             transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
             //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);*/
 
-        agent.SetDestination(listOfPosition[m_MouvementIndex]);
+        agent.SetDestination(listOfPosition_Action[m_MouvementIndex]);
 
-        if (Vector3.Distance(transform.position, listOfPosition[m_MouvementIndex]) < minDistance)
+        if (Vector3.Distance(transform.position, listOfPosition_Action[m_MouvementIndex]) < minDistance)
         {
             //
             //animation roulade
@@ -232,7 +253,7 @@ public class EnnemyBehaviours : HealthManager
         }
     }
 
-    void EnnemyMovement()
+    void EnnemyMovement(List<Vector3> listOfPosition)
     {
         if (m_animator.GetBool("IsHidingLeft"))
             m_animator.SetBool("IsHidingLeft", false);
@@ -253,7 +274,10 @@ public class EnnemyBehaviours : HealthManager
         if (Vector3.Distance(transform.position, listOfPosition[m_MouvementIndex]) < minDistance)
         {
             m_MouvementIndex = NewAction(m_MouvementIndex);
-            NewAction();
+            if (GameManager.instance.canAction)
+                NewAction();
+            else
+                NewPreAction();
         }
         else
         {
@@ -308,7 +332,7 @@ public class EnnemyBehaviours : HealthManager
     int NewAction(int index)
     {
         index++;
-        if (index >= listOfPosition.Count)
+        if (index >= listOfPosition_Action.Count)
             index = 0;
 
         return index;
@@ -319,6 +343,15 @@ public class EnnemyBehaviours : HealthManager
         m_ActionIndex++;
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
+
+        canDoAction = true;
+    }
+
+    void NewPreAction()
+    {
+        m_PreActionIndex++;
+        if (m_PreActionIndex >= listOfPreAction.Count)
+            m_PreActionIndex = 0;
 
         canDoAction = true;
     }
@@ -350,10 +383,14 @@ public class EnnemyBehaviours : HealthManager
 
     void SetListOfPOsition()
     {
-        for (int i = 0; i < m_PositionHolderGO.transform.childCount; i++)
+        for (int i = 0; i < m_PositionHolderGO_Action.transform.childCount; i++)
         {
-            listOfPosition.Add(m_PositionHolderGO.transform.GetChild(i).position);
-            Vector3 pos = new Vector3(m_PositionHolderGO.transform.GetChild(i).position.x, 0, m_PositionHolderGO.transform.GetChild(i).position.z);
+            listOfPosition_Action.Add(m_PositionHolderGO_Action.transform.GetChild(i).position);
+        }
+
+        for (int i = 0; i < m_PositionHolderGO_PreAction.transform.childCount; i++)
+        {
+            listOfPosition_Ronde.Add(m_PositionHolderGO_PreAction.transform.GetChild(i).position);
         }
     }
     #endregion
@@ -361,9 +398,14 @@ public class EnnemyBehaviours : HealthManager
     #region Gizmo
     private void OnDrawGizmos()
     {
-        for (int i = 1; i < m_PositionHolderGO.transform.childCount; i++)
+        for (int i = 1; i < m_PositionHolderGO_Action.transform.childCount; i++)
         {
-            Gizmos.DrawLine(m_PositionHolderGO.transform.GetChild(i - 1).position, m_PositionHolderGO.transform.GetChild(i).position);
+            Gizmos.DrawLine(m_PositionHolderGO_Action.transform.GetChild(i - 1).position, m_PositionHolderGO_Action.transform.GetChild(i).position);
+        }
+
+        for (int i = 1; i < m_PositionHolderGO_PreAction.transform.childCount; i++)
+        {
+            Gizmos.DrawLine(m_PositionHolderGO_PreAction.transform.GetChild(i - 1).position, m_PositionHolderGO_PreAction.transform.GetChild(i).position);
         }
     }
     #endregion

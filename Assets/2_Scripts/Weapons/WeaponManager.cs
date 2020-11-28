@@ -79,8 +79,14 @@ public class WeaponManager : MonoBehaviour
     {
         if(weaponSwapTimer.IsStarted() == false)
         {
+            if (!GameManager.instance.canAction)
+                GameManager.instance.canAction = true;
+
+            if (!TimeController.instance.SlowMotionTimer.IsStarted() && !TimeController.instance.isActivedOnce)
+            {
+                TimeController.instance.StartSlowMotion();
+            }
             currentWeapon.Shoot(weaponAnimator);
-            
         }
     }
 

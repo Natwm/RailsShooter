@@ -25,8 +25,16 @@ public class TimeController : MonoBehaviour
     private float baseFixedDeltaTime;
     private TimeNonAffectedTimer slowMotionTimer;
 
+    public bool isActivedOnce = false;
+
+    public TimeNonAffectedTimer SlowMotionTimer { get => slowMotionTimer; set => slowMotionTimer = value; }
+
     void Awake()
     {
+        if (instance != null)
+            Debug.LogWarning("Multiple instance of same Singleton : GameManager");
+        instance = this;
+
         targetFlowTime = 1;
         baseFixedDeltaTime = Time.fixedDeltaTime;
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
@@ -64,6 +72,9 @@ public class TimeController : MonoBehaviour
         SetTime(slowMotionFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 100f);
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
+
+        isActivedOnce = true;
+
         slowMotionTimer.ResetPlay();
     }
 

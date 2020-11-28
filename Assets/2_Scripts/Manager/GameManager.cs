@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
 
     private int amountOfEnnemy;
+
+    public bool canAction;
     #endregion
 
     void Awake()
