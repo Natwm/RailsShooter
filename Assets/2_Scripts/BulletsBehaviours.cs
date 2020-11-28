@@ -15,6 +15,9 @@ public class BulletsBehaviours : MonoBehaviour
     [FMODUnity.EventRef] [SerializeField] private string groundHitSound;
 
     [SerializeField] private LayerMask DamagebleLayer;
+
+    [SerializeField] private GameObject hitHumanParticules;
+    [SerializeField] private GameObject hitDecorsParticules;
     #endregion
 
     private BulletPool bulletPool;
@@ -31,12 +34,21 @@ public class BulletsBehaviours : MonoBehaviour
         bulletPool.AddBullet(this);
         this.gameObject.SetActive(false);
     }
+    public Quaternion CalculeRotation(Vector3 pos)
+    {
+        return Quaternion.LookRotation(GameManager.instance.player.transform.position - pos);
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 8 || other.gameObject.layer == 10)
         {
-            if(other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
+            if(other.gameObject.layer == 8)
+            {
+                GameObject bulletParticule = Instantiate(hitHumanParticules, transform.position, Quaternion.identity);
+                bulletParticule.transform.LookAt(GameManager.instance.player.transform.position);
+            }
+                if (other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
             {
                 other.GetComponent<BodyPartBehaviours>().GetDamage(damage, shooter);
                 this.OnPoolEnter();
@@ -46,7 +58,7 @@ public class BulletsBehaviours : MonoBehaviour
         if(other.gameObject.layer == DamagebleLayer)
         {
             other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter);
-            
+            Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
             switch (other.gameObject.GetComponent<Renderer>().material.name)
             {
                 case "Ground (Instance)":
