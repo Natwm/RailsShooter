@@ -35,6 +35,8 @@ public class EnnemyBehaviours : HealthManager
     private Timer attackTimer;
     [SerializeField] private float timeBtwAttack;
 
+    Timer waitTimer;
+
     private enum Status
     {
         NONE,
@@ -43,6 +45,8 @@ public class EnnemyBehaviours : HealthManager
         HIDE_DOWN,
         MOVE,
         RUSH,
+        RUN_TO_HIDE_LEFT,
+        RUN_TO_HIDE_RIGHT,
         SHOOT,
     }
 
@@ -69,7 +73,8 @@ public class EnnemyBehaviours : HealthManager
 
         agent = GetComponent<NavMeshAgent>();
 
-        attackTimer = new Timer(timeBtwAttack, weapon.Shoot);
+        attackTimer = new Timer(timeBtwAttack);
+        waitTimer = new Timer(waitTime, NewAction);
     }
 
     private void Update()
@@ -85,7 +90,7 @@ public class EnnemyBehaviours : HealthManager
 
     void DoAction(Status action)
     {
-        //Debug.Log(action);
+        Debug.Log(action);
         switch (action)
         {
             case Status.NONE:
@@ -105,6 +110,12 @@ public class EnnemyBehaviours : HealthManager
             case Status.RUSH:
                 Rush();
                 break;
+            case Status.RUN_TO_HIDE_LEFT:
+                HideLeft();
+                break;
+            case Status.RUN_TO_HIDE_RIGHT:
+                HideRight();
+                break;
             case Status.SHOOT:
                 EnnemyShoot();
                 break;
@@ -114,13 +125,14 @@ public class EnnemyBehaviours : HealthManager
     }
 
     #region IA
+
     void EnnemyDoNothing()
     {
         if (m_animator.GetBool("IsWalking"))
             m_animator.SetBool("IsWalking", false);
         //Debug.Log("EnnemyDoNothing");
-        Timer waitTimer = new Timer(waitTime, NewAction);
-        waitTimer.Play();
+
+        waitTimer.ResetPlay();
     }
 
     void EnnemyStopAndReload()
@@ -153,14 +165,38 @@ public class EnnemyBehaviours : HealthManager
         NewAction();
     }
 
+    void HideLeft()
+    {
+        if (m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", false);
+
+        if (!m_animator.GetBool("IsHidingLeft"))
+            m_animator.SetBool("IsHidingLeft", true);
+
+        EnnemyDoNothing();
+    }
+
+    void HideRight()
+    {
+        if (m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", false);
+
+        if (!m_animator.GetBool("IsHidingRight"))
+            m_animator.SetBool("IsHidingRight", true);
+
+        EnnemyDoNothing();
+    }
+
     void Rush()
     {
+        agent.speed *= 2.5f;
         if (Vector3.Distance(transform.position, player.gameObject.transform.position) < minDistancePlayer)
         {
             if (m_animator.GetBool("IsWalking"))
                 m_animator.SetBool("IsWalking", false);
             agent.SetDestination(transform.position);
             attackTimer.ResetPlay();
+            weapon.Shoot();
         }
         else
         {
@@ -171,10 +207,40 @@ public class EnnemyBehaviours : HealthManager
         canDoAction = true;
     }
 
+    void Roulade()
+    {
+        if (!m_animator.GetBool("IsWalking"))
+            m_animator.SetBool("IsWalking", true);
+
+        CalculeRotation(listOfPosition[m_MouvementIndex]);
+        /*if (!isRotating)
+            transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
+            //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);*/
+
+        agent.SetDestination(listOfPosition[m_MouvementIndex]);
+
+        if (Vector3.Distance(transform.position, listOfPosition[m_MouvementIndex]) < minDistance)
+        {
+            //
+            //animation roulade
+            m_MouvementIndex = NewAction(m_MouvementIndex);
+            NewAction();
+        }
+        else
+        {
+            canDoAction = true;
+        }
+    }
+
     void EnnemyMovement()
     {
-        
-       if (!m_animator.GetBool("IsWalking"))
+        if (m_animator.GetBool("IsHidingLeft"))
+            m_animator.SetBool("IsHidingLeft", false);
+
+        if (m_animator.GetBool("IsHidingRight"))
+            m_animator.SetBool("IsHidingRight", false);
+
+        if (!m_animator.GetBool("IsWalking"))
             m_animator.SetBool("IsWalking", true);
 
         CalculeRotation(listOfPosition[m_MouvementIndex]);
@@ -193,7 +259,7 @@ public class EnnemyBehaviours : HealthManager
         {
             canDoAction = true;
         }
-        
+
     }
 
     void EnnemyShoot()
@@ -201,6 +267,7 @@ public class EnnemyBehaviours : HealthManager
         if (m_animator.GetBool("Trigger_Walk"))
             m_animator.SetBool("Trigger_Walk", false);
         CalculeRotation(player.transform.position);
+
         if (!isRotating)
         {
             Debug.Log("shoot");
@@ -209,23 +276,31 @@ public class EnnemyBehaviours : HealthManager
             Timer waitTimer = new Timer(waitTime, NewAction);
             waitTimer.Play();
         }
+        else
+        {
+            canDoAction = true;
+            Debug.Log("Rotation");
+        }
+            
     }
+
     #endregion
 
     void PlayerDetection()
     {
-    /*if (Vector3.Distance(transform.position, player.transform.position) <= minDistancePlayer)
-            Debug.Log("shoot");*/
+        /*if (Vector3.Distance(transform.position, player.transform.position) <= minDistancePlayer)
+                Debug.Log("shoot");*/
     }
 
     public void CalculeRotation(Vector3 position)
     {
+        
         isRotating = true;
 
         Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, rotationSpeed * Time.deltaTime);
 
-        if(1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < .1f)
+        if (1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < .01f)
             isRotating = false;
 
     }
@@ -268,7 +343,7 @@ public class EnnemyBehaviours : HealthManager
         m_animator.SetTrigger("Trigger_Die");
 
         GameManager.instance.DecreaseAmountofEnnemy();
-        Destroy(this.gameObject,2);
+        Destroy(this.gameObject, 2);
     }
 
     #region Getter && Setter
