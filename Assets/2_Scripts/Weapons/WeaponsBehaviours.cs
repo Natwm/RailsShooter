@@ -60,16 +60,17 @@ public class WeaponsBehaviours : MonoBehaviour
         
     }
 
-    public virtual void Shoot()
+    public virtual void Shoot(Animator anim)
     {
         if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false)
         {
+            anim.SetTrigger("Trigger_Shoot");
             Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward);
             Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
-            shootEffect.start();
+            //shootEffect.start();
             fireRateTimer.ResetPlay();
             
             RaycastHit hit;            

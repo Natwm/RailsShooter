@@ -57,6 +57,11 @@ public class WeaponManager : MonoBehaviour
 
     private void SwapWeapon(WeaponsBehaviours weapon)
     {
+        if (weapon.name == "AR")
+            weaponAnimator.SetTrigger("Trigger_SwitchToAuto");
+        else
+            weaponAnimator.SetTrigger("Trigger_SwitchToGun");
+
         weaponSwapTimer.ResetPlay();
         currentWeapon.UnEquip();
         weapon.Equip();
@@ -74,8 +79,8 @@ public class WeaponManager : MonoBehaviour
     {
         if(weaponSwapTimer.IsStarted() == false)
         {
-            weaponAnimator.SetTrigger("Trigger_Shoot");
-            currentWeapon.Shoot();
+            currentWeapon.Shoot(weaponAnimator);
+            
         }
     }
 

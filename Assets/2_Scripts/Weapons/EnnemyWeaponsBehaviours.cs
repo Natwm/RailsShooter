@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnnemyWeaponsBehaviours : WeaponsBehaviours
 {
-    public override void Shoot()
+    public override void Shoot(Animator anim)
     {
         Debug.Log("shoot");
         if(currentNumberOfBullets > 0)
