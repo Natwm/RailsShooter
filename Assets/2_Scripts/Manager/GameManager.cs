@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private int amountOfEnnemy;
 
     public bool canAction;
+
+    private bool endGame;
     #endregion
 
     void Awake()
@@ -22,14 +24,26 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && endGame)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
     public void GameOver()
     {
+        endGame = true;
         Debug.Log("GameOver");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        CanvaManager.instance.EndGame("Défaite");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GameWin()
     {
+        endGame = true;
+        CanvaManager.instance.EndGame("Victoire");
         Debug.Log("Win");
     }
 
