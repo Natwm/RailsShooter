@@ -641,12 +641,6 @@ Transform:
   m_Father: {fileID: 1698567568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &266550622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7310026365800562269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &277992084
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463794499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 0, z: 0.89999986}
+  m_LocalPosition: {x: 1.26, y: 0, z: 1.0599997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1893227728}
@@ -1376,21 +1370,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707e5d2bff0cacd4ea12f10b680c71b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AmountOfLive: 2
+  m_AmountOfLive: 5
   animator: {fileID: 248831015}
   hitSound: event:/Impacts/ImpactDecorsPierre
   deathSound: event:/Ennemis/DieHerc
   loopAction: 0
   m_PositionHolderGO_Action: {fileID: 1893227727}
-  m_PositionHolderGO_PreAction: {fileID: 266550622}
+  m_PositionHolderGO_PreAction: {fileID: 182729789}
   speed: 1.5
   rotationSpeed: 2
   minDistance: 1
   minDistancePlayer: 2
-  waitTime: 5
+  waitTime: 0.5
   timeBtwAttack: 1
-  listOfPreAction: 
-  listOfAction: 04000000040000000400000004000000080000000800000008000000080000000800000008000000
+  listOfPreAction: 0400000007000000
+  listOfAction: 0400000007000000
 --- !u!4 &629638860
 Transform:
   m_ObjectHideFlags: 0
@@ -1868,7 +1862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801572707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.94, y: 0, z: 2.27}
+  m_LocalPosition: {x: 1.8000001, y: 0, z: 4.6899996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926910564}
@@ -1989,7 +1983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911505584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.50999975, y: 0, z: -0.9900001}
+  m_LocalPosition: {x: -0.50999975, y: 0, z: 1.1700001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926910564}
@@ -2316,7 +2310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112604521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4499998, y: 0, z: 0.5399997}
+  m_LocalPosition: {x: -2.5899997, y: 0, z: 1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926910564}
@@ -3180,7 +3174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723080937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 0, z: 3.4499998}
+  m_LocalPosition: {x: 2.2, y: 0, z: 0.8000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182729790}
@@ -3303,7 +3297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798055399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3900003, y: 0, z: -0.74000025}
+  m_LocalPosition: {x: 1.3900003, y: 0, z: 2.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 926910564}
@@ -3333,7 +3327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805252155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15, y: 0, z: 0.5399997}
+  m_LocalPosition: {x: -0.53, y: 0, z: -6.1899996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182729790}
@@ -3363,7 +3357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852150034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.22, y: 0, z: 1.5999999}
+  m_LocalPosition: {x: 2.22, y: 0, z: -2.3199997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182729790}
@@ -3457,7 +3451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936825438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 0, z: 0.89999986}
+  m_LocalPosition: {x: -0.42999995, y: 0, z: -2.4399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 182729790}
@@ -6076,7 +6070,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1000
+  m_Intensity: 10000
   m_Range: 10
   m_SpotAngle: 21.6554
   m_InnerSpotAngle: 1
@@ -15705,7 +15699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &8842687523672894884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16028,7 +16022,7 @@ MonoBehaviour:
   animator: {fileID: 8555714567503121547}
   hitSound: event:/Impacts/ImpactDecorsPierre
   deathSound: event:/Ennemis/DieHerc
-  loopAction: 0
+  loopAction: 1
   m_PositionHolderGO_Action: {fileID: 9063437279037949713}
   m_PositionHolderGO_PreAction: {fileID: 926910563}
   speed: 1.5
