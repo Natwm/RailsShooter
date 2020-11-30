@@ -240,7 +240,7 @@ public class EnnemyBehaviours : HealthManager
                 animator.SetBool("IsWalking", false);
             agent.SetDestination(transform.position);
             attackTimer.ResetPlay();
-            weapon.Shoot(animator);
+            weapon.Shoot(animator, Vector3.zero);
         }
         else
         {
@@ -319,7 +319,7 @@ public class EnnemyBehaviours : HealthManager
         {
             Debug.Log("shoot");
             animator.SetTrigger("Trigger_Shoot");
-            weapon.Shoot(animator);
+            weapon.Shoot(animator, Vector3.zero);
             Timer waitTimer = new Timer(waitTime, NewAction);
             waitTimer.Play();
         }
