@@ -22,6 +22,8 @@ public class ParticleManagement : MonoBehaviour
     public ParticleSystem shoot_aotu;
     public ParticleSystem douillasse;
 
+    public EnnemyWeaponsBehaviours weapon;
+
     public void PlayShoot()
     {
         shoot.Play();
@@ -45,8 +47,9 @@ public class ParticleManagement : MonoBehaviour
     {
         shoot.gameObject.SetActive(true);
         shoot.Play();
-
         Bang.start();
+
+        weapon.Shoot(GetComponent<Animator>(), Vector3.zero);
     }
 
     void Start()

@@ -14,7 +14,7 @@ public class RopeMaintainedObject : HealthManager
         rig.isKinematic = true;
     }
 
-    protected override void Death()
+    protected override void Death(GameObject bullet)
     {
         rig.isKinematic = false;
         ropeTransform.gameObject.SetActive(false);

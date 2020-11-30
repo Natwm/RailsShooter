@@ -15,7 +15,7 @@ public class BodyPartBehaviours : MonoBehaviour
 
     #endregion
 
-    public void GetDamage(int amountOfDamage, HealthManager shooter)
+    public void GetDamage(int amountOfDamage, HealthManager shooter, GameObject bullet)
     {
 
         if (m_healthManager == shooter)
@@ -36,6 +36,6 @@ public class BodyPartBehaviours : MonoBehaviour
             m_AmountOfArmor -= damageRecieve;
 
         if (damageGive > 0)
-            m_healthManager.DeacreseLife(damageGive);
+            m_healthManager.DeacreseLife(damageGive, bullet);
     }
 }

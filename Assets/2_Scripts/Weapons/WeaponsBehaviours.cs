@@ -67,6 +67,8 @@ public class WeaponsBehaviours : MonoBehaviour
             anim.SetTrigger("Trigger_Shoot");
 
             currentNumberOfBullets --;
+
+            GameObject projectile = null;
             //shootEffect.start();
             fireRateTimer.ResetPlay();
             
@@ -79,7 +81,7 @@ public class WeaponsBehaviours : MonoBehaviour
                 if(UseProjectile == true)
                 {
                     direction = hit.point - transform.position;
-                    GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                    projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
                     projectile.transform.position = transform.position;
                     projectile.transform.rotation = Quaternion.Euler(direction);
                     projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
@@ -89,13 +91,13 @@ public class WeaponsBehaviours : MonoBehaviour
                 {
                     if(hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9)
                     {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager,projectile);
                     }
                 }
             }
             else
             {
-                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
                 projectile.transform.position = transform.position;
                 projectile.transform.rotation = transform.rotation;
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;

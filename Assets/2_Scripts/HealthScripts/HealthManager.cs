@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
 
     protected FMOD.Studio.EventInstance deathSoundEffect;
     [FMODUnity.EventRef] [SerializeField] protected string deathSound;
+
     #endregion
 
     private void Start()
@@ -24,13 +25,13 @@ public class HealthManager : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
-    public virtual void DeacreseLife( int damage)
+    public virtual void DeacreseLife( int damage, GameObject Bullet)
     {
         m_AmountOfLive -= damage;
         
         if (m_AmountOfLive <= 0)
         {
-            Death();
+            Death(Bullet);
         }
         else
         {
@@ -39,11 +40,12 @@ public class HealthManager : MonoBehaviour
             
     }
 
-    protected virtual void Death()
+    protected virtual void Death(GameObject Bullet)
     {
         Debug.Log("Dead");
         animator.SetTrigger("Trigger_Die");
         deathSoundEffect.start();
+
         //Destroy(gameObject,1f);
     }
 }

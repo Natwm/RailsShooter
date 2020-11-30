@@ -50,7 +50,7 @@ public class DestructibleObject : HealthManager
         Destroy(this.gameObject);
     }
 
-    protected override void Death()
+    protected override void Death(GameObject bullet)
     {
         if(shouldDisappear == true)
         {
