@@ -116,7 +116,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Reload()
     {
-        if(reloadTimer.IsStarted() == false)
+        if(reloadTimer.IsStarted() == false && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
         {
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             reloadTimer.ResetPlay();
