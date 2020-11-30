@@ -59,8 +59,6 @@ public class TimeController : MonoBehaviour
             StartSlowMotion();
         if(Input.GetKeyDown("[-]"))
             MaintainSlowMotion();
-
-        print(slowMotionTimer.Time);
     }
 
     void FixedUpdate()
