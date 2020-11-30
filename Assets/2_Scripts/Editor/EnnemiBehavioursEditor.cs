@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(EnnemyBehaviours))]
 public class EnnemiBehavioursEditor : Editor
 {
-    [DrawGizmo(GizmoType.NonSelected)]
+    [DrawGizmo(GizmoType.Selected)]
     static void DrawPathInfos(EnnemyBehaviours target, GizmoType gizmoType)
     {
         // text area permet de dessiner le texte dans une "case" (plus lisible)

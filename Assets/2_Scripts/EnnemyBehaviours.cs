@@ -467,6 +467,9 @@ public class EnnemyBehaviours : HealthManager
         animator.SetTrigger("Trigger_Die");
         colliders.SetActive(false);
 
+        Destroy(m_PositionHolderGO_Action);
+        Destroy(m_PositionHolderGO_PreAction);
+
         GameManager.instance.DecreaseAmountofEnnemy();
         Destroy(this.gameObject,1);
     }

@@ -36,6 +36,7 @@ public class AoEDamageObject : HealthManager
                 objectCheck = list[i].gameObject;
             }
         }
+        Destroy(this.gameObject);
     }
 
     private void OnDrawGizmos()
