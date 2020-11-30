@@ -1720,17 +1720,17 @@ MonoBehaviour:
   listOfPreAction:
   - ennemiState: 4
     waitTime: 0
-    overrideSpeed: 0
-    speed: 2
+    overrideSpeed: 1
+    speed: 3
     overrideRotationSpeed: 0
     rotationSpeed: 2.5
     amountOfShoot: 1
-  - ennemiState: 8
-    waitTime: 1
-    overrideSpeed: 0
-    speed: 0
-    overrideRotationSpeed: 0
-    rotationSpeed: 1
+  - ennemiState: 6
+    waitTime: 5
+    overrideSpeed: 1
+    speed: 5
+    overrideRotationSpeed: 1
+    rotationSpeed: 5
     amountOfShoot: 2
   - ennemiState: 4
     waitTime: 1

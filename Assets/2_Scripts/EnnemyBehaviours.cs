@@ -108,7 +108,6 @@ public class EnnemyBehaviours : HealthManager
 
     void DoAction(EnnemiAction action, List<Vector3> positions)
     {
-        Debug.Log(action);
         switch (action.ennemiState)
         {
             case EnnemiAction.Status.NONE:
