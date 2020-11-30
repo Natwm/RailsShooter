@@ -15,7 +15,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Header("MAGAZINE")]
     [SerializeField] private int m_TotalNumberOfBullets;
     [SerializeField] private int m_NumberOfBulletsPerMagazine;
-    [SerializeField] private int m_ReloadTime;
+    [SerializeField] private float m_ReloadTime;
     protected int currentNumberOfBullets;
 
     [Space]
@@ -62,7 +62,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot(Animator anim, Vector3 direction)
     {
-        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false)
+        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false && reloadTimer.IsStarted() == false)
         {
             anim.SetTrigger("Trigger_Shoot");
 
@@ -70,32 +70,36 @@ public class WeaponsBehaviours : MonoBehaviour
             //shootEffect.start();
             fireRateTimer.ResetPlay();
             
-            RaycastHit hit;            
-            if(UseProjectile == true)
+            RaycastHit hit;
+
+            Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
+
+            if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
-                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
-                projectile.transform.position = transform.position;
-                projectile.transform.rotation = Quaternion.Euler(direction);
-                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
-            }
-            else
-            {
-                if(Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
+                if(UseProjectile == true)
                 {
-                    if(hit.transform.gameObject.layer == 8)
-                    {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
-                    }
-                    if(hit.transform.gameObject.layer == 9)
-                    {
-                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage, myHealthManager);
-                    }
+                    direction = hit.point - transform.position;
+                    GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                    projectile.transform.position = transform.position;
+                    projectile.transform.rotation = Quaternion.Euler(direction);
+                    projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                    projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
                 }
                 else
                 {
-                    // doesn't touch
+                    if(hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9)
+                    {
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
+                    }
                 }
+            }
+            else
+            {
+                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                projectile.transform.position = transform.position;
+                projectile.transform.rotation = transform.rotation;
+                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
             }
 
         }
@@ -112,15 +116,16 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         if(reloadTimer.IsStarted() == false)
         {
+            WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             reloadTimer.ResetPlay();
-            reloadEffect.start();   
+            reloadEffect.start();
         }
     }
 
     public virtual void RefillMagazine()
     {
+        m_TotalNumberOfBullets -= (m_NumberOfBulletsPerMagazine - currentNumberOfBullets);
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
-        m_TotalNumberOfBullets -= currentNumberOfBullets;
         // reloadEffect.start();
     }
 

@@ -224,8 +224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536004619938305276}
-  - component: {fileID: 536004619938305278}
   - component: {fileID: 536004619938305279}
+  - component: {fileID: 536004619938305278}
   m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
@@ -247,19 +247,6 @@ Transform:
   m_Father: {fileID: 5266489124267711014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &536004619938305278
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536004619938305277}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &536004619938305279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +263,19 @@ MonoBehaviour:
   m_DamageAdd: 0
   m_AmountOfArmor: 0
   m_healthManager: {fileID: 205966804}
+--- !u!135 &536004619938305278
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536004619938305277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &536004620363863736
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,13 +328,18 @@ MonoBehaviour:
   animator: {fileID: 0}
   hitSound: event:/Impacts/ImpactDecorsPierre
   deathSound: event:/Ennemis/DieHerc
-  m_PositionHolderGO: {fileID: 138296907}
-  speed: 1.5
-  rotationSpeed: 1
+  loopAction: 0
+  m_PositionHolderGO_Action: {fileID: 0}
+  m_PositionHolderGO_PreAction: {fileID: 0}
+  colliders: {fileID: 0}
   minDistance: 1
   minDistancePlayer: 2
   waitTime: 0.5
-  listOfAction: 03000000
+  ennemiSpeed: 0
+  ennemiRotationSpeed: 0
+  NBShoot_remaning: 0
+  listOfPreAction: []
+  listOfAction: []
 --- !u!54 &1160136753
 Rigidbody:
   m_ObjectHideFlags: 0

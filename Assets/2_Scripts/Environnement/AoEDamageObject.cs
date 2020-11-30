@@ -14,23 +14,6 @@ public class AoEDamageObject : HealthManager
     [SerializeField] private float m_ExplosionRadius;
     [SerializeField] private LayerMask m_ExplosionLayer;
 
-    #region Start | Update
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            base.DeacreseLife(1);
-        }
-    }
-    #endregion
-
     protected override void Death()
     {
         Debug.Log("Explosion");
@@ -53,6 +36,7 @@ public class AoEDamageObject : HealthManager
                 objectCheck = list[i].gameObject;
             }
         }
+        Destroy(this.gameObject);
     }
 
     private void OnDrawGizmos()

@@ -494,6 +494,16 @@ PrefabInstance:
       propertyPath: myHealthManager
       value: 
       objectReference: {fileID: 8755890222572902515}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: m_ReloadTime
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2e8399697b87d4a803070476604528, type: 3}
 --- !u!4 &5854386450170564952 stripped
@@ -606,6 +616,16 @@ PrefabInstance:
       propertyPath: myHealthManager
       value: 
       objectReference: {fileID: 8755890222572902515}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: m_ReloadTime
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b30dd069f982e54f8fd668ee531e722, type: 3}
 --- !u!4 &8638176467121321966 stripped

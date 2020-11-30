@@ -94,13 +94,12 @@ public class WeaponManager : MonoBehaviour
 
     public void Reload()
     {
-        weaponAnimator.SetTrigger("Trigger_Reload");
         currentWeapon.Reload();
     }
 
     void Update(){
         Vector3 cursorPosition =  CursorGO.GetComponent<RectTransform>().anchoredPosition;
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 10);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 5);
         direction = mousePosition - Camera.main.transform.position;
 
         transform.rotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * rotationSpeed);
