@@ -71,31 +71,33 @@ public class WeaponsBehaviours : MonoBehaviour
             fireRateTimer.ResetPlay();
             
             RaycastHit hit;            
-            if(UseProjectile == true)
+
+            if(Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
-                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
-                projectile.transform.position = transform.position;
-                projectile.transform.rotation = Quaternion.Euler(direction);
-                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
-            }
-            else
-            {
-                if(Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
+                if(UseProjectile == true)
                 {
-                    if(hit.transform.gameObject.layer == 8)
-                    {
-                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
-                    }
-                    if(hit.transform.gameObject.layer == 9)
-                    {
-                        hit.transform.GetComponent<BodyPartBehaviours>()?.GetDamage(m_Damage, myHealthManager);
-                    }
+                    direction = hit.point - transform.position;
+                    GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                    projectile.transform.position = transform.position;
+                    projectile.transform.rotation = Quaternion.Euler(direction);
+                    projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                    projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
                 }
                 else
                 {
-                    // doesn't touch
+                    if(hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9)
+                    {
+                        hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager);
+                    }
                 }
+            }
+            else
+            {
+                GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
+                projectile.transform.position = transform.position;
+                projectile.transform.rotation = transform.rotation;
+                projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
             }
 
         }
