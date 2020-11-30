@@ -15,7 +15,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Header("MAGAZINE")]
     [SerializeField] private int m_TotalNumberOfBullets;
     [SerializeField] private int m_NumberOfBulletsPerMagazine;
-    [SerializeField] private int m_ReloadTime;
+    [SerializeField] private float m_ReloadTime;
     protected int currentNumberOfBullets;
 
     [Space]
@@ -62,7 +62,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot(Animator anim, Vector3 direction)
     {
-        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false)
+        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false && reloadTimer.IsStarted() == false)
         {
             anim.SetTrigger("Trigger_Shoot");
 
