@@ -93,4 +93,9 @@ public class TimeController : MonoBehaviour
         SetTime(normalFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 0f);
     }
+
+    public bool IsSlowMotion()
+    {
+        return slowMotionTimer.IsStarted();
+    }
 }
