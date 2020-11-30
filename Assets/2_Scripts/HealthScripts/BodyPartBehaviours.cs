@@ -17,13 +17,15 @@ public class BodyPartBehaviours : MonoBehaviour
 
     public void GetDamage(int amountOfDamage, HealthManager shooter)
     {
-        if(m_healthManager == shooter)
+
+        if (m_healthManager == shooter)
             return;
         
         int damageGive;
         int damageRecieve;
 
         damageRecieve = (amountOfDamage * m_DamageMultiplicator) + m_DamageAdd;
+
 
         if (m_AmountOfArmor > 0)
             damageGive = damageRecieve - m_AmountOfArmor;
@@ -33,7 +35,7 @@ public class BodyPartBehaviours : MonoBehaviour
         if (m_AmountOfArmor > 0)
             m_AmountOfArmor -= damageRecieve;
 
-        if(damageGive > 0)
+        if (damageGive > 0)
             m_healthManager.DeacreseLife(damageGive);
     }
 }

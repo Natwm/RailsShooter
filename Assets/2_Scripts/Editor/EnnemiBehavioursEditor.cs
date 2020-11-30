@@ -6,24 +6,23 @@ using UnityEditor;
 [CustomEditor(typeof(EnnemyBehaviours))]
 public class EnnemiBehavioursEditor : Editor
 {
-
-    private void OnSceneGUI()
+    [DrawGizmo(GizmoType.NonSelected)]
+    static void DrawPathInfos(EnnemyBehaviours target, GizmoType gizmoType)
     {
-        EnnemyBehaviours t = target as EnnemyBehaviours;
-        EnnemiAction.Status ennemiStatus = t.GetCurrentState();
-
-        for (int i = 0; i < t.m_PositionHolderGO_PreAction.transform.childCount; i++)
+        // text area permet de dessiner le texte dans une "case" (plus lisible)
+        GUI.skin.textArea.fontSize = 30;
+        GUI.contentColor = Color.green;
+        for (int i = 0; i < target.m_PositionHolderGO_Action.transform.childCount; i++)
         {
-            Handles.Label(t.m_PositionHolderGO_PreAction.transform.GetChild(i).position, i.ToString());
+            Handles.Label(target.m_PositionHolderGO_Action.transform.GetChild(i).position, (i + 1).ToString(), GUI.skin.textArea);
         }
 
-        for (int i = 0; i < t.m_PositionHolderGO_Action.transform.childCount; i++)
+        for (int i = 0; i < target.m_PositionHolderGO_PreAction.transform.childCount; i++)
         {
-            Handles.Label(t.m_PositionHolderGO_Action.transform.GetChild(i).position, i.ToString());
-
+            Handles.Label(target.m_PositionHolderGO_PreAction.transform.GetChild(i).position, (i+1).ToString(), GUI.skin.textArea);
         }
 
-        //Handles.Label(t.transform.position, ennemiStatus.ToString());
+        Handles.Label(target.transform.position, target.GetCurrentState().ToString(), GUI.skin.textArea);
     }
 
 }
