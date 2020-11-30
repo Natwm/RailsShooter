@@ -474,6 +474,7 @@ public class EnnemyBehaviours : HealthManager
 
         GameManager.instance.DecreaseAmountofEnnemy();
         m_Ragdoll.Ragdoll(Bullet.transform.position);
+        TimeController.instance.MaintainSlowMotion();
         //Destroy(this.gameObject,1);
     }
 
