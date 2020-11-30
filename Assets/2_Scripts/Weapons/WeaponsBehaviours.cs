@@ -116,8 +116,9 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         if(reloadTimer.IsStarted() == false)
         {
+            WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             reloadTimer.ResetPlay();
-            reloadEffect.start();   
+            reloadEffect.start();
         }
     }
 

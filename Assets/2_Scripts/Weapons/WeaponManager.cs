@@ -94,7 +94,6 @@ public class WeaponManager : MonoBehaviour
 
     public void Reload()
     {
-        weaponAnimator.SetTrigger("Trigger_Reload");
         currentWeapon.Reload();
     }
 
