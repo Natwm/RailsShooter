@@ -86,7 +86,12 @@ public class WeaponManager : MonoBehaviour
             {
                 TimeController.instance.StartSlowMotion();
             }
-            currentWeapon.Shoot(weaponAnimator);
+
+            Vector3 cursorPosition =  CursorGO.GetComponent<RectTransform>().anchoredPosition;
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 10);
+            Vector3 direction = mousePosition - Camera.main.transform.position;
+
+            currentWeapon.Shoot(weaponAnimator, direction);
         }
     }
 
