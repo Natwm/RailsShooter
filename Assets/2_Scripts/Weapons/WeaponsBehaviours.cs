@@ -70,7 +70,9 @@ public class WeaponsBehaviours : MonoBehaviour
             //shootEffect.start();
             fireRateTimer.ResetPlay();
             
-            RaycastHit hit;            
+            RaycastHit hit;
+
+            Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
 
             if(Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {

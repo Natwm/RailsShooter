@@ -2611,6 +2611,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 536004619938305276, guid: ca27377a28cdc484cad83acf8b56e4ff,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.138
+      objectReference: {fileID: 0}
+    - target: {fileID: 536004619938305278, guid: ca27377a28cdc484cad83acf8b56e4ff,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 536004620363863736, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_Name
@@ -2619,17 +2629,17 @@ PrefabInstance:
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
-        type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
+        type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
@@ -2669,6 +2679,11 @@ PrefabInstance:
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 536004620399016723, guid: ca27377a28cdc484cad83acf8b56e4ff,
+        type: 3}
+      propertyPath: m_AmountOfArmor
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7874635722021181300, guid: ca27377a28cdc484cad83acf8b56e4ff,

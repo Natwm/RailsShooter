@@ -810,6 +810,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3330726813298044821, guid: fb3afa80e55d41043a2e50cf21da41da,
+        type: 3}
+      propertyPath: followMouse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3330726813298044823, guid: fb3afa80e55d41043a2e50cf21da41da,
         type: 3}
       propertyPath: m_Name
@@ -903,6 +908,11 @@ PrefabInstance:
       propertyPath: CursorGO
       value: 
       objectReference: {fileID: 662876217}
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -962,6 +972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
