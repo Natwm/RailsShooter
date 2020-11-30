@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class EnnemyWeaponsBehaviours : WeaponsBehaviours
 {
-    public override void Shoot(Animator anim)
+    public override void Shoot(Animator anim, Vector3 direction)
     {
-        Debug.Log("shoot");
         if(currentNumberOfBullets > 0)
         {
             print("Ennemy Shoot");
             Vector3 targetPosition = GameManager.instance.player.transform.position;
-            Vector3 direction = targetPosition - transform.position;
+            direction = targetPosition - transform.position;
 
             currentNumberOfBullets --;
             shootEffect.start();

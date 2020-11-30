@@ -224,7 +224,7 @@ public class EnnemyBehaviours : HealthManager
             if (animator.GetBool("IsWalking"))
                 animator.SetBool("IsWalking", false);
             agent.SetDestination(transform.position);
-            weapon.Shoot(animator);
+            weapon.Shoot(animator, Vector3.zero);
         }
         else
         {
@@ -313,7 +313,7 @@ public class EnnemyBehaviours : HealthManager
 
             if(NBShoot_remaning > 0)
             {
-                weapon.Shoot(animator);
+                weapon.Shoot(animator, Vector3.zero);
                 canDoAction = true;
                 waitShoot.ResetPlay();
             }

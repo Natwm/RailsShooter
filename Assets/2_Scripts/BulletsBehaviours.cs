@@ -78,6 +78,10 @@ public class BulletsBehaviours : MonoBehaviour
     {
         this.damage = damage;
         this.shooter = shooter;
+
+        TrailRenderer tr = transform.GetChild(1).GetComponent<TrailRenderer>();
+        tr.Clear();
+
         timeToLive = new Timer(5, OnPoolEnter);
         timeToLive.ResetPlay();
     }

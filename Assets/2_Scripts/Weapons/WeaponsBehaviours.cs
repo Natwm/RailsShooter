@@ -60,14 +60,11 @@ public class WeaponsBehaviours : MonoBehaviour
         
     }
 
-    public virtual void Shoot(Animator anim)
+    public virtual void Shoot(Animator anim, Vector3 direction)
     {
         if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false)
         {
             anim.SetTrigger("Trigger_Shoot");
-            Vector3 cursorPosition =  WeaponManager.instance.CursorGO.GetComponent<RectTransform>().anchoredPosition;
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward);
-            Vector3 direction = mousePosition - Camera.main.transform.position;
 
             currentNumberOfBullets --;
             //shootEffect.start();
@@ -77,7 +74,7 @@ public class WeaponsBehaviours : MonoBehaviour
             if(UseProjectile == true)
             {
                 GameObject projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
-                projectile.transform.position = Camera.main.transform.position;
+                projectile.transform.position = transform.position;
                 projectile.transform.rotation = Quaternion.Euler(direction);
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
                 projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);

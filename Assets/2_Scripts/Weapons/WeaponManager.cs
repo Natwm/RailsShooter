@@ -20,6 +20,7 @@ public class WeaponManager : MonoBehaviour
 
     private Timer weaponSwapTimer;
     private WeaponsBehaviours currentWeapon;
+    private Vector3 direction;
 
     public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
 
@@ -86,7 +87,8 @@ public class WeaponManager : MonoBehaviour
             {
                 TimeController.instance.StartSlowMotion();
             }
-            currentWeapon.Shoot(weaponAnimator);
+
+            currentWeapon.Shoot(weaponAnimator, direction);
         }
     }
 
@@ -97,6 +99,12 @@ public class WeaponManager : MonoBehaviour
     }
 
     void Update(){
+        Vector3 cursorPosition =  CursorGO.GetComponent<RectTransform>().anchoredPosition;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 10);
+        direction = mousePosition - Camera.main.transform.position;
+
+        transform.rotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * 5  );
+
         if (Input.GetMouseButton(0))
             Shoot();
         
@@ -105,5 +113,6 @@ public class WeaponManager : MonoBehaviour
         
         if(Input.GetKeyDown("r"))
             Reload();
+
     }
 }
