@@ -8,7 +8,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Space]
     [Header("INFORMATIONS")]
     [SerializeField] protected int m_Damage;
-    [SerializeField] protected float m_FireRate;
+     public float m_FireRate;
     [SerializeField] protected LayerMask bulletCollisionLayerMask;
 
     [Space]

@@ -6,19 +6,6 @@ using UnityEngine.AI;
 public class EnnemyBehaviours : HealthManager
 {
 
-    private enum Status
-    {
-        NONE,
-        STOP,
-        HIDE_UP,
-        HIDE_DOWN,
-        MOVE,
-        RUSH,
-        HIDE_LEFT,
-        HIDE_RIGHT,
-        SHOOT,
-    }
-
     [Space]
     [Header("Status")]
     [SerializeField] private bool loopAction;
@@ -31,16 +18,17 @@ public class EnnemyBehaviours : HealthManager
     public GameObject m_PositionHolderGO_PreAction;
 
     [Space]
-    [Header("Speed Variables")]
-    [SerializeField] private float speed;
-    [SerializeField] private float rotationSpeed;
-
-    [Space]
     [Header("Distance morte")]
     [SerializeField] private float minDistance;
     [SerializeField] private float minDistancePlayer;
 
     [SerializeField] private float waitTime;
+
+    [Space]
+    [Header ("Var")]
+    [SerializeField] private float ennemiSpeed;
+    [SerializeField] private float ennemiRotationSpeed;
+    [SerializeField] private int NBShoot_remaning;
 
     private PlayerController player;
     private WeaponManager weaponManager;
@@ -56,19 +44,17 @@ public class EnnemyBehaviours : HealthManager
 
     private NavMeshAgent agent;
 
-    private Timer attackTimer;
-    [SerializeField] private float timeBtwAttack;
-
-    Timer waitTimer;
-    Timer waitTimerpreAction;
     Timer hitWaitTimer;
+    Timer waitShoot;
 
     [Space]
     [Header ("IA")]
     [Tooltip (" This parameter content all action the ennemie can do before the actione phase ")]
-    [SerializeField] private List<Status> listOfPreAction;
-    [SerializeField] private List<Status> listOfAction;
-   
+    [SerializeField] private List<EnnemiAction> listOfPreAction;
+    [SerializeField] private List<EnnemiAction> listOfAction;
+
+    public List<EnnemiAction> ListOfPreAction { get => listOfPreAction; set => listOfPreAction = value; }
+    public List<EnnemiAction> ListOfAction { get => listOfAction; set => listOfAction = value; }
 
     private void Start()
     {
@@ -80,6 +66,8 @@ public class EnnemyBehaviours : HealthManager
 
         SetListOfPOsition();
 
+        //retirer des parents
+
         player = FindObjectOfType<PlayerController>();
         weapon = GetComponentInChildren<EnnemyWeaponsBehaviours>();
 
@@ -89,10 +77,9 @@ public class EnnemyBehaviours : HealthManager
 
         agent = GetComponent<NavMeshAgent>();
 
-        attackTimer = new Timer(timeBtwAttack);
-        waitTimer = new Timer(waitTime, NewAction);
-        waitTimerpreAction = new Timer(waitTime, NewPreAction);
         hitWaitTimer = new Timer(.5f);
+
+        waitShoot = new Timer(weapon.m_FireRate);
     }
 
     private void Update()
@@ -118,36 +105,36 @@ public class EnnemyBehaviours : HealthManager
         
     }
 
-    void DoAction(Status action, List<Vector3> positions)
+    void DoAction(EnnemiAction action, List<Vector3> positions)
     {
         Debug.Log(action);
-        switch (action)
+        switch (action.ennemiState)
         {
-            case Status.NONE:
-                EnnemyDoNothing();
+            case EnnemiAction.Status.NONE:
+                EnnemyDoNothing(action);
                 break;
-            case Status.STOP:
-                EnnemyStopAndReload();
+            case EnnemiAction.Status.STOP:
+                EnnemyStopAndReload(action);
                 break;
-            case Status.HIDE_UP:
+            case EnnemiAction.Status.HIDE_UP:
                 EnnemyHideUp();
                 break;
-            case Status.HIDE_DOWN:
+            case EnnemiAction.Status.HIDE_DOWN:
                 break;
-            case Status.MOVE:
-                EnnemyMovement(positions);
+            case EnnemiAction.Status.MOVE:
+                EnnemyMovement(positions, action);
                 break;
-            case Status.RUSH:
-                Rush();
+            case EnnemiAction.Status.RUSH:
+                Rush(action);
                 break;
-            case Status.HIDE_LEFT:
-                HideLeft();
+            case EnnemiAction.Status.HIDE_LEFT:
+                HideLeft(action);
                 break;
-            case Status.HIDE_RIGHT:
-                HideRight();
+            case EnnemiAction.Status.HIDE_RIGHT:
+                HideRight(action);
                 break;
-            case Status.SHOOT:
-                EnnemyShoot();
+            case EnnemiAction.Status.SHOOT:
+                EnnemyShoot(action);
                 break;
             default:
                 break;
@@ -156,34 +143,27 @@ public class EnnemyBehaviours : HealthManager
 
     #region IA
 
-    /*void EnnemyDoNothing()
-    {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
-        //Debug.Log("EnnemyDoNothing");
-        if (!waitTimer.IsStarted())
-        {
-            Debug.Log("blabla pas lancé");
-            waitTimer.Play();
-            if (waitTimer.IsFinished())
-                waitTimer.Reset();
-        }
-    }*/
-    void EnnemyDoNothing()
+    void EnnemyDoNothing(EnnemiAction action)
     {
         if (animator.GetBool("IsWalking"))
             animator.SetBool("IsWalking", false);
         //Debug.Log("EnnemyDoNothing");
         if (GameManager.instance.canAction)
-            waitTimer.ResetPlay();
+        {
+            Timer stopTimerAction = new Timer(action.waitTime, NewAction);
+            stopTimerAction.Play();
+        }
         else
-            waitTimerpreAction.ResetPlay();
+        {
+            Timer stopTimerPreAction = new Timer(action.waitTime, NewPreAction);
+            stopTimerPreAction.Play();
+        }
     }
 
-    void EnnemyStopAndReload()
+    void EnnemyStopAndReload(EnnemiAction action)
     {
         Debug.Log("reload");
-        EnnemyDoNothing();
+        EnnemyDoNothing(action);
         //weaponManager.Reload();
         //animator.SetTrigger("Trigger_Reload");
 
@@ -209,7 +189,7 @@ public class EnnemyBehaviours : HealthManager
         NewAction();
     }
 
-    void HideLeft()
+    void HideLeft(EnnemiAction action)
     {
         if (animator.GetBool("IsWalking"))
             animator.SetBool("IsWalking", false);
@@ -217,10 +197,10 @@ public class EnnemyBehaviours : HealthManager
         if (!animator.GetBool("IsHidingLeft"))
             animator.SetBool("IsHidingLeft", true);
 
-        EnnemyDoNothing();
+        EnnemyDoNothing(action);
     }
 
-    void HideRight()
+    void HideRight(EnnemiAction action)
     {
         if (animator.GetBool("IsWalking"))
             animator.SetBool("IsWalking", false);
@@ -228,18 +208,22 @@ public class EnnemyBehaviours : HealthManager
         if (!animator.GetBool("IsHidingRight"))
             animator.SetBool("IsHidingRight", true);
 
-        EnnemyDoNothing();
+        Debug.Log(action.waitTime);
+        EnnemyDoNothing(action);
     }
 
-    void Rush()
+    void Rush(EnnemiAction action)
     {
-        agent.speed *= 2.5f;
+        if (action.overrideSpeed)
+            ennemiSpeed = action.speed;
+
+        agent.speed = ennemiSpeed;
+
         if (Vector3.Distance(transform.position, player.gameObject.transform.position) < minDistancePlayer)
         {
             if (animator.GetBool("IsWalking"))
                 animator.SetBool("IsWalking", false);
             agent.SetDestination(transform.position);
-            attackTimer.ResetPlay();
             weapon.Shoot(animator);
         }
         else
@@ -251,12 +235,12 @@ public class EnnemyBehaviours : HealthManager
         canDoAction = true;
     }
 
-    void Roulade()
+    void Roulade(EnnemiAction action)
     {
         if (!animator.GetBool("IsWalking"))
             animator.SetBool("IsWalking", true);
 
-        CalculeRotation(listOfPosition_Action[m_MouvementIndex]);
+        CalculeRotation(listOfPosition_Action[m_MouvementIndex], action);
         /*if (!isRotating)
             transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
             //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);*/
@@ -276,8 +260,13 @@ public class EnnemyBehaviours : HealthManager
         }
     }
 
-    void EnnemyMovement(List<Vector3> listOfPosition)
+    void EnnemyMovement(List<Vector3> listOfPosition, EnnemiAction action)
     {
+        if (action.overrideSpeed)
+            ennemiSpeed = action.speed;
+
+        agent.speed = ennemiSpeed;
+
         if (animator.GetBool("IsHidingLeft"))
             animator.SetBool("IsHidingLeft", false);
 
@@ -287,7 +276,7 @@ public class EnnemyBehaviours : HealthManager
         if (!animator.GetBool("IsWalking"))
             animator.SetBool("IsWalking", true);
 
-        CalculeRotation(listOfPosition[m_MouvementIndex]);
+        CalculeRotation(listOfPosition[m_MouvementIndex], action);
         /*if (!isRotating)
             transform.position = Vector3.MoveTowards(transform.position, listOfPosition[m_MouvementIndex], speed * Time.deltaTime);
             //rb.velocity = Mathf.Lerp(rb.velocity.magnitude, speed, .9f) * (listOfPosition[m_MouvementIndex] - transform.position);*/
@@ -309,19 +298,29 @@ public class EnnemyBehaviours : HealthManager
 
     }
 
-    void EnnemyShoot()
+    void EnnemyShoot(EnnemiAction action)
     {
         if (animator.GetBool("Trigger_Walk"))
             animator.SetBool("Trigger_Walk", false);
-        CalculeRotation(player.transform.position);
+        CalculeRotation(player.transform.position, action);
 
-        if (!isRotating)
+        if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))
         {
             Debug.Log("shoot");
             animator.SetTrigger("Trigger_Shoot");
-            weapon.Shoot(animator);
-            Timer waitTimer = new Timer(waitTime, NewAction);
-            waitTimer.Play();
+
+            NBShoot_remaning--;
+
+            if(NBShoot_remaning > 0)
+            {
+                weapon.Shoot(animator);
+                canDoAction = true;
+                waitShoot.ResetPlay();
+            }
+            else
+            {
+                NewPreAction();
+            }
         }
         else
         {
@@ -339,13 +338,15 @@ public class EnnemyBehaviours : HealthManager
                 Debug.Log("shoot");*/
     }
 
-    public void CalculeRotation(Vector3 position)
+    public void CalculeRotation(Vector3 position, EnnemiAction action)
     {
-        
+        if (action.overrideRotationSpeed)
+            ennemiRotationSpeed = action.rotationSpeed;
+
         isRotating = true;
 
         Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, ennemiRotationSpeed * Time.deltaTime);
 
         if (1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < .01f)
             isRotating = false;
@@ -390,21 +391,18 @@ public class EnnemyBehaviours : HealthManager
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
 
+        switch (listOfAction[m_ActionIndex].ennemiState)
+        {
+            case EnnemiAction.Status.SHOOT:
+                NBShoot_remaning = listOfAction[m_ActionIndex].amountOfShoot;
+                break;
+
+            default:
+                break;
+        }
+
         canDoAction = true;
-        /*if (loopAction)
-        {
-            m_ActionIndex++;
-            if (m_ActionIndex >= listOfAction.Count)
-                m_ActionIndex = 0;
-        }
-        else
-        {
-            if (m_ActionIndex <= listOfAction.Count)
-            {
-                m_ActionIndex++;
-            }
-        }
-        canDoAction = true;*/
+        
     }
 
     void NewPreAction()
@@ -427,6 +425,17 @@ public class EnnemyBehaviours : HealthManager
                     animator.SetBool("IsWalking", false);
             }
         }
+
+        switch (listOfPreAction[m_PreActionIndex].ennemiState)
+        {
+            case EnnemiAction.Status.SHOOT:
+                NBShoot_remaning = listOfPreAction[m_PreActionIndex].amountOfShoot;
+                break;
+
+            default:
+                break;
+        }
+
         canDoAction = true;
 
         /*m_PreActionIndex++;
@@ -474,6 +483,9 @@ public class EnnemyBehaviours : HealthManager
         {
             listOfPosition_Ronde.Add(m_PositionHolderGO_PreAction.transform.GetChild(i).position);
         }
+
+        m_PositionHolderGO_Action.transform.parent = null;
+        m_PositionHolderGO_PreAction.transform.parent = null;
     }
     #endregion
 
@@ -491,4 +503,9 @@ public class EnnemyBehaviours : HealthManager
         }
     }
     #endregion
+
+    public EnnemiAction.Status GetCurrentState()
+    {
+        return listOfPreAction[m_PreActionIndex].ennemiState;
+    }
 }

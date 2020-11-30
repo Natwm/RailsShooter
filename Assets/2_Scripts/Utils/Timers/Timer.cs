@@ -73,11 +73,19 @@ public class Timer {
 	public bool IsFinished () {
 		return state == TimerState.FINISHED;
 	}
-	/// <summary>
-	/// Détermine si ce timer est lancé ou non.
+
+    /// <summary>
+	/// Détermine si ce timer est en Pause.
 	/// </summary>
-	/// <returns><c>true</c> if this instance is started; otherwise, <c>false</c>.</returns>
-	public bool IsStarted() {
+    public bool IsPaused()
+    {
+        return state == TimerState.PAUSED;
+    }
+    /// <summary>
+    /// Détermine si ce timer est lancé ou non.
+    /// </summary>
+    /// <returns><c>true</c> if this instance is started; otherwise, <c>false</c>.</returns>
+    public bool IsStarted() {
 		return state == TimerState.UPDATING;
 	}
 	/// <summary>
