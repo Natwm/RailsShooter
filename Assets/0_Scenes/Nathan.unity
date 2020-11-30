@@ -1718,33 +1718,12 @@ MonoBehaviour:
   ennemiRotationSpeed: 2
   NBShoot_remaning: 1
   listOfPreAction:
-  - ennemiState: 4
+  - ennemiState: 6
     waitTime: 0
-    overrideSpeed: 1
+    overrideSpeed: 0
     speed: 3
     overrideRotationSpeed: 0
     rotationSpeed: 2.5
-    amountOfShoot: 1
-  - ennemiState: 6
-    waitTime: 5
-    overrideSpeed: 1
-    speed: 5
-    overrideRotationSpeed: 1
-    rotationSpeed: 5
-    amountOfShoot: 2
-  - ennemiState: 4
-    waitTime: 1
-    overrideSpeed: 0
-    speed: 0
-    overrideRotationSpeed: 0
-    rotationSpeed: 1
-    amountOfShoot: 1
-  - ennemiState: 6
-    waitTime: 2
-    overrideSpeed: 0
-    speed: 0
-    overrideRotationSpeed: 0
-    rotationSpeed: 1
     amountOfShoot: 1
   listOfAction:
   - ennemiState: 0
@@ -3304,6 +3283,11 @@ PrefabInstance:
       propertyPath: mouseSpeed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3330726813298044821, guid: fb3afa80e55d41043a2e50cf21da41da,
+        type: 3}
+      propertyPath: followMouse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3330726813298044823, guid: fb3afa80e55d41043a2e50cf21da41da,
         type: 3}
       propertyPath: m_Name
@@ -4042,6 +4026,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 526488046955505157, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314331975709366839, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: CursorGO
@@ -7824,6 +7813,18 @@ Transform:
   m_Father: {fileID: 1708758872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668251024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7310026365800562269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d704606547617bd47b42a83f81f14454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676948475
 GameObject:
   m_ObjectHideFlags: 0
@@ -9318,7 +9319,14 @@ MonoBehaviour:
   ennemiRotationSpeed: 2
   NBShoot_remaning: 1
   listOfPreAction:
-  - ennemiState: 0
+  - ennemiState: 1
+    waitTime: 1
+    overrideSpeed: 0
+    speed: 2
+    overrideRotationSpeed: 0
+    rotationSpeed: 2.5
+    amountOfShoot: 1
+  - ennemiState: 4
     waitTime: 10
     overrideSpeed: 0
     speed: 2
@@ -20051,15 +20059,30 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7310026365227986643, guid: 52ca1e8e489d5274f8761a89eec957d9,
+        type: 3}
+      propertyPath: m_healthManager
+      value: 
+      objectReference: {fileID: 1668251024}
     - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
       propertyPath: m_ExplosionRadius
       value: 7.12
       objectReference: {fileID: 0}
+    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
+        type: 3}
+      propertyPath: m_ExplosionLayer.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
+        type: 3}
+      propertyPath: m_ExplosionDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
@@ -20069,7 +20092,7 @@ PrefabInstance:
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.059999
+      value: 7.7999997
       objectReference: {fileID: 0}
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
