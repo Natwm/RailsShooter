@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{2bb6ce6a-eb82-4ae7-a05e-79c98608c986}">
+        <property name="name">
+            <value>ralenti</value>
+        </property>
+        <relationship name="folder">
+            <destination>{4a901db8-af81-4da3-8418-5ebcfc904f69}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{af587a43-f9d4-4ca0-be5c-c8be1ecaf11d}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{af587a43-f9d4-4ca0-be5c-c8be1ecaf11d}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.94000005722045898</value>
+        </property>
+    </object>
+</objects>
