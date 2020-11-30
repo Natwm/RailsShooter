@@ -41,6 +41,14 @@ public class ParticleManagement : MonoBehaviour
         Reload.start();
     }
 
+    public void EnemyShoot()
+    {
+        shoot.gameObject.SetActive(true);
+        shoot.Play();
+
+        Bang.start();
+    }
+
     void Start()
     {
         Bang = FMODUnity.RuntimeManager.CreateInstance(BangSound);
