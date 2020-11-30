@@ -13,7 +13,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] public GameObject CursorGO;
 
     [SerializeField] private float weaponSwapDuration;
-
+    [SerializeField] [Range (0.1f, 5)] private float rotationSpeed;
     [SerializeField] private Animator weaponAnimator;
 
     #endregion
@@ -103,7 +103,7 @@ public class WeaponManager : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 10);
         direction = mousePosition - Camera.main.transform.position;
 
-        transform.rotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * 5  );
+        transform.rotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * rotationSpeed);
 
         if (Input.GetMouseButton(0))
             Shoot();

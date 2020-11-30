@@ -670,11 +670,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 579079189}
     m_Modifications:
+    - target: {fileID: 963194228, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5314331975709366839, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: CursorGO
       value: 
       objectReference: {fileID: 662876217}
+    - target: {fileID: 5314331975709366839, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
