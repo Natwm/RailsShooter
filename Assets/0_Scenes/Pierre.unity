@@ -670,45 +670,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 579079189}
     m_Modifications:
-    - target: {fileID: 1749792006, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666979327259366045, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666979327259366045, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_Name
-      value: Visuel
-      objectReference: {fileID: 0}
     - target: {fileID: 5314331975709366839, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: CursorGO
       value: 
       objectReference: {fileID: 662876217}
-    - target: {fileID: 5854386450170564952, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.882
-      objectReference: {fileID: 0}
-    - target: {fileID: 5854386450170564952, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 5854386450170564952, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.28699994
-      objectReference: {fileID: 0}
-    - target: {fileID: 7869939294951095196, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -768,26 +734,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638176467121321966, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.159
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638176467121321966, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.114
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638176467121321966, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.287
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638176467121321967, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
