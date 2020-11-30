@@ -20,7 +20,6 @@ public class EnnemiBehavioursEditor : Editor
         for (int i = 0; i < t.m_PositionHolderGO_Action.transform.childCount; i++)
         {
             Handles.Label(t.m_PositionHolderGO_Action.transform.GetChild(i).position, i.ToString());
-
         }
 
         //Handles.Label(t.transform.position, ennemiStatus.ToString());

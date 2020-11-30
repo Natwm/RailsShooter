@@ -16,6 +16,7 @@ public class EnnemyBehaviours : HealthManager
     private List<Vector3> listOfPosition_Ronde = new List<Vector3>();
     public GameObject m_PositionHolderGO_Action;
     public GameObject m_PositionHolderGO_PreAction;
+    public GameObject colliders;
 
     [Space]
     [Header("Distance morte")]
@@ -465,9 +466,10 @@ public class EnnemyBehaviours : HealthManager
     protected override void Death()
     {
         animator.SetTrigger("Trigger_Die");
+        colliders.SetActive(false);
 
         GameManager.instance.DecreaseAmountofEnnemy();
-        Destroy(this.gameObject, 2);
+        Destroy(this.gameObject,1);
     }
 
     #region Getter && Setter
