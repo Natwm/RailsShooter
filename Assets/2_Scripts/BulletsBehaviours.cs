@@ -50,14 +50,14 @@ public class BulletsBehaviours : MonoBehaviour
             }
                 if (other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
             {
-                other.GetComponent<BodyPartBehaviours>().GetDamage(damage, shooter);
+                other.GetComponent<BodyPartBehaviours>().GetDamage(damage, shooter, this.gameObject);
                 this.OnPoolEnter();
             }
         }
 
         if(other.gameObject.layer == DamagebleLayer)
         {
-            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter);
+            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
             switch (other.gameObject.GetComponent<Renderer>().material.name)
             {

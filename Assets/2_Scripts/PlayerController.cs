@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : HealthManager
 {
-    protected override void Death()
+    protected override void Death(GameObject bullet)
     {
         deathSoundEffect.start();
         GameManager.instance.GameOver();

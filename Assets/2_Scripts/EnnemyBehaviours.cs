@@ -48,6 +48,8 @@ public class EnnemyBehaviours : HealthManager
     Timer hitWaitTimer;
     Timer waitShoot;
 
+    public RagdollManager m_Ragdoll;
+
     [Space]
     [Header ("IA")]
     [Tooltip (" This parameter content all action the ennemie can do before the actione phase ")]
@@ -307,13 +309,14 @@ public class EnnemyBehaviours : HealthManager
         if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))
         {
             Debug.Log("shoot");
-            animator.SetTrigger("Trigger_Shoot");
+            
 
             NBShoot_remaning--;
 
-            if(NBShoot_remaning > 0)
+            if(NBShoot_remaning >= 0)
             {
-                weapon.Shoot(animator, Vector3.zero);
+                animator.SetTrigger("Trigger_Shoot");
+                //weapon.Shoot(animator, Vector3.zero);
                 canDoAction = true;
                 waitShoot.ResetPlay();
             }
@@ -325,7 +328,6 @@ public class EnnemyBehaviours : HealthManager
         else
         {
             canDoAction = true;
-            Debug.Log("Rotation");
         }
             
     }
@@ -445,13 +447,13 @@ public class EnnemyBehaviours : HealthManager
         */
     }
 
-    public override void DeacreseLife(int damage)
+    public override void DeacreseLife(int damage, GameObject bullet)
     {
         m_AmountOfLive -= damage;
 
         if (m_AmountOfLive <= 0)
         {
-            Death();
+            Death(bullet);
         }
         else
         {
@@ -462,16 +464,17 @@ public class EnnemyBehaviours : HealthManager
         }
     }
 
-    protected override void Death()
+    protected override void Death(GameObject Bullet)
     {
-        animator.SetTrigger("Trigger_Die");
+        //animator.SetTrigger("Trigger_Die");
         colliders.SetActive(false);
 
         Destroy(m_PositionHolderGO_Action);
         Destroy(m_PositionHolderGO_PreAction);
 
         GameManager.instance.DecreaseAmountofEnnemy();
-        Destroy(this.gameObject,1);
+        m_Ragdoll.Ragdoll(Bullet.transform.position);
+        //Destroy(this.gameObject,1);
     }
 
     #region Getter && Setter
