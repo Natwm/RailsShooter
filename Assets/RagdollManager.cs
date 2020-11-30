@@ -6,6 +6,8 @@ public class RagdollManager : MonoBehaviour
 {
     Rigidbody[] AllRigids;
     Collider[] AllColliders;
+    public Rigidbody mainRigid;
+    
     public Collider Body;
     public Collider Head;
     Animator mainAnimation;
@@ -20,19 +22,27 @@ public class RagdollManager : MonoBehaviour
         {
             item.enabled = false;
         }
+        foreach (Rigidbody item in AllRigids)
+        {
+            item.isKinematic = true;
+        }
         
     }
 
     public void Ragdoll(Vector3 _impact)
     {
+        Body.enabled = false;
+        Head.enabled = false;
+        Destroy(mainRigid);
         foreach (Collider item in AllColliders)
         {
             item.enabled = true;
         }
         foreach (Rigidbody item in AllRigids)
         {
+            item.isKinematic = false;
             item.useGravity = true;
-            item.AddExplosionForce(50f, _impact, 100f,0.8f,ForceMode.Impulse);
+            item.AddExplosionForce(50f, _impact, 1f,1f,ForceMode.Impulse);
         }
         mainAnimation.enabled = false;
     }
