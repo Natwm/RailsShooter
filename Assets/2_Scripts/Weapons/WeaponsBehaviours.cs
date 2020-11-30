@@ -74,7 +74,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
             Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
 
-            if(Physics.SphereCast(Camera.main.transform.position, raycasRadius, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
+            if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
                 if(UseProjectile == true)
                 {
@@ -123,8 +123,8 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void RefillMagazine()
     {
+        m_TotalNumberOfBullets -= (m_NumberOfBulletsPerMagazine - currentNumberOfBullets);
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
-        m_TotalNumberOfBullets -= currentNumberOfBullets;
         // reloadEffect.start();
     }
 
