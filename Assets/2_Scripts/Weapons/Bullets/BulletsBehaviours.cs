@@ -67,11 +67,11 @@ public class BulletsBehaviours : MonoBehaviour
             switch (other.gameObject.GetComponent<Renderer>().material.name)
             {
                 case "Ground (Instance)":
-                    groundHitEffect.start();
+                    glassHitEffect.start();
                     break;
 
                 case "Wall (Instance)":
-                    wallHitEffect.start();
+                    dirtHitEffect.start();
                     break;
             }
             
@@ -93,11 +93,11 @@ public class BulletsBehaviours : MonoBehaviour
 
     private void Start()
     {
-        wallHitEffect = FMODUnity.RuntimeManager.CreateInstance(wallHitSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(wallHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        dirtHitEffect = FMODUnity.RuntimeManager.CreateInstance(dirtHitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dirtHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
-        groundHitEffect = FMODUnity.RuntimeManager.CreateInstance(groundHitSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(groundHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        glassHitEffect = FMODUnity.RuntimeManager.CreateInstance(glassHitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(glassHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
     void Update()
