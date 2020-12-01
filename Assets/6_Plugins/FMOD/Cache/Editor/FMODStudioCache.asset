@@ -17,23 +17,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &-9052306614268300992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Musique/menu
-  m_EditorClassIdentifier: 
-  Name: menu
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-8969310048145721773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +32,7 @@ MonoBehaviour:
   Path: event:/Player/WalkDirt
   guid: 781e916052e5a34593f0373609ddba84
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -57,23 +40,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &-8877159911680035586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Gase/GasVolume
-  m_EditorClassIdentifier: 
-  Name: GasVolume
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-7912617459858806507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +57,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-7828922116340505165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gase/GasVolume
+  m_EditorClassIdentifier: 
+  Name: GasVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7619569272472964894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +89,7 @@ MonoBehaviour:
   Path: event:/Ennemis/HitMarv
   guid: df86d8381aed64449c6ab0720d207854
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -129,7 +112,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsPierre
   guid: 95272ba72154014aa012e2d5be9c29e8
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -152,7 +135,7 @@ MonoBehaviour:
   Path: event:/Player/WalkRock
   guid: f8273a9018568242b545339e273edd3a
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -175,7 +158,7 @@ MonoBehaviour:
   Path: event:/UI/Survoler
   guid: 268e066ce8c82b4a80f36a8aac4d07a4
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -198,7 +181,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsMetal
   guid: 9bb102cd512b584eb689f118ff18e099
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -221,7 +204,7 @@ MonoBehaviour:
   Path: event:/Player/HitPlayer
   guid: 11562e90aa301f4bbf22f7e0c5778ed6
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -244,7 +227,7 @@ MonoBehaviour:
   Path: event:/Arme/DouilleEject
   guid: 6043456b5677f34ea0ac9e64a1d930f0
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -267,7 +250,7 @@ MonoBehaviour:
   Path: event:/Impacts/VitreBrise
   guid: f5f0b9687301c547b1ca552d70ddbec1
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -290,7 +273,7 @@ MonoBehaviour:
   Path: event:/Ennemis/DieStella
   guid: 41c4dabeca0dc14cae6baf2d9233f232
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -313,7 +296,7 @@ MonoBehaviour:
   Path: event:/Arme/Tir1
   guid: 0f6a2fb4c048a64a8d1bff6965fbf97b
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -336,7 +319,7 @@ MonoBehaviour:
   Path: event:/Ennemis/DieHerc
   guid: e154bc1437de614ba0d8b1139e977e47
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -344,6 +327,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &-5985974473822295337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique/ralenti
+  m_EditorClassIdentifier: 
+  Name: ralenti
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5971241886046843349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
   Path: event:/Ennemis/HitHerc
   guid: 6882eef76e91354281c56f280a7f52f7
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -418,6 +418,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-5290072114725651683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/menu
+  m_EditorClassIdentifier: 
+  Name: menu
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5006522298168976341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +467,7 @@ MonoBehaviour:
   Path: event:/Ennemis/DieUgg
   guid: 9c6f5694dbda74448e74eebc39d8c7f1
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -490,7 +507,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactDecorsVerre
   guid: bc156d1e0a5ee042b80557bf1643a306
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -513,7 +530,7 @@ MonoBehaviour:
   Path: event:/Arme/Tir2
   guid: 853f0a0f28f9e445a853a2cde3cfac7e
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -553,7 +570,7 @@ MonoBehaviour:
   Path: event:/Player/DiePlayer
   guid: 65653795739b0a44bc9ddaf861d28e54
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -578,7 +595,7 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
---- !u!114 &-2888052202172920517
+--- !u!114 &-3323170671468503267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,9 +605,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Musique/ralenti
+  m_Name: parameter:/Musique/fin
   m_EditorClassIdentifier: 
-  Name: ralenti
+  Name: fin
   Min: 0
   Max: 1
   Default: 0
@@ -643,12 +660,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\julie\OneDrive\Documents\GitHub\RailsShooter\railFMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 637423519677629126
+  lastModified: 637423520510476777
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 6040864
-  Exists: 0
+  Exists: 1
 --- !u!114 &-1896290854471375275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +681,7 @@ MonoBehaviour:
   Path: event:/Ennemis/HitStella
   guid: 7d4ca0dbee601d4f8257485a05c28667
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -723,6 +740,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-930690553024621997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique/menu
+  m_EditorClassIdentifier: 
+  Name: menu
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-898905522441856061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +772,7 @@ MonoBehaviour:
   Path: event:/Decors/CordeCasse
   guid: 5c94b994095db14a97106eae09a5da3c
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -795,7 +829,7 @@ MonoBehaviour:
   Path: event:/Ennemis/HitUgg
   guid: cdf214f3c4860f4fa44ebc944e375756
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -892,7 +926,7 @@ MonoBehaviour:
   Path: event:/SlowMotion/BulletTimeStart
   guid: 0ea0e7238862af4682e40044939190e8
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -931,7 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1295752062723131497}
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   EditorEvents:
   - {fileID: 163509516864733411}
   - {fileID: -6710169606746554267}
@@ -970,10 +1004,10 @@ MonoBehaviour:
   - {fileID: -1896290854471375275}
   - {fileID: 4418625124578879910}
   MasterBanks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   StringsBanks:
   - {fileID: 1295752062723131497}
-  stringsBankWriteTime: 637423526747809696
+  stringsBankWriteTime: 637423520510536614
   cacheVersion: 3
 --- !u!114 &163509516864733411
 MonoBehaviour:
@@ -990,7 +1024,7 @@ MonoBehaviour:
   Path: event:/Arme/Recharge
   guid: 0245c07d2e197f46bec923bd4c6b48d9
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1013,7 +1047,7 @@ MonoBehaviour:
   Path: event:/SlowMotion/BulletTimeStop
   guid: 6459495e219451459a941a55347e2fee
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1058,43 +1092,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 721888
   Exists: 0
---- !u!114 &594442051610492389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Menu/menu
-  m_EditorClassIdentifier: 
-  Name: menu
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &772063951298587097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master Bank.bank
-  m_EditorClassIdentifier: 
-  Path: "D:\\D\\ICAN\\Semaine th\xE9matique\\RailShooter\\railFMOD\\Build\\Desktop\\Master
-    Bank.bank"
-  lastModified: 637423526747799641
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 6040864
-  Exists: 1
 --- !u!114 &1295752062723131497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1105,7 @@ MonoBehaviour:
   m_Name: bank:/Master Bank.strings.bank
   m_EditorClassIdentifier: 
   Path: railFMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637423526747809696
+  lastModified: 637423520510536614
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1131,23 +1128,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
---- !u!114 &1364170975067217485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Musique/fin
-  m_EditorClassIdentifier: 
-  Name: fin
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &1578365326915404939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1143,7 @@ MonoBehaviour:
   Path: event:/UI/Selectionner
   guid: 55a38ae85152b940b366268fe6f928af
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1203,7 +1183,7 @@ MonoBehaviour:
   Path: event:/Decors/GaseExplosion
   guid: a2a64affdc16ae4eb525fa26a89c9ee0
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1226,7 +1206,7 @@ MonoBehaviour:
   Path: event:/Arme/DouilleSol
   guid: 6b074a82cd94174cbeb1fec2394036c6
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1249,7 +1229,7 @@ MonoBehaviour:
   Path: event:/Arme/Zoom
   guid: 2ae61512f01b8f499185d3b88e5ab3b2
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1272,15 +1252,32 @@ MonoBehaviour:
   Path: snapshot:/SlowMotion
   guid: 57f81f7fabc0dc43980df1c8378cd578
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4049144270834342604}
+  - {fileID: 7878122610482035632}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &2552375235907459140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Musique/moiti\xE9"
+  m_EditorClassIdentifier: 
+  Name: "moiti\xE9"
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &2570662742354188614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,12 +1293,12 @@ MonoBehaviour:
   Path: snapshot:/Menu
   guid: 68f1ea0b324a3c478d809039a7071b1d
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 594442051610492389}
+  - {fileID: -5290072114725651683}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1339,23 +1336,6 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
---- !u!114 &4049144270834342604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SlowMotion/Intensity
-  m_EditorClassIdentifier: 
-  Name: Intensity
-  Min: 0
-  Max: 100
-  Default: 0
-  Exists: 1
 --- !u!114 &4090732173316572121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,7 +1351,7 @@ MonoBehaviour:
   Path: event:/Ennemis/HitJack
   guid: b335fc37f248fa4489983847a5fb4882
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1394,15 +1374,15 @@ MonoBehaviour:
   Path: event:/Musique
   guid: e61d7a69431ef54dafa5da4d75705962
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -9052306614268300992}
-  - {fileID: 1364170975067217485}
-  - {fileID: -2888052202172920517}
-  - {fileID: 7315345062338267152}
+  - {fileID: -930690553024621997}
+  - {fileID: -3323170671468503267}
+  - {fileID: -5985974473822295337}
+  - {fileID: 2552375235907459140}
   MinDistance: 1
   MaxDistance: 20
   Length: 118032
@@ -1438,12 +1418,12 @@ MonoBehaviour:
   Path: event:/Decors/Gase
   guid: ee64f334b178ef439d49220992f3baff
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8877159911680035586}
+  - {fileID: -7828922116340505165}
   MinDistance: 1
   MaxDistance: 20
   Length: 3500
@@ -1479,7 +1459,7 @@ MonoBehaviour:
   Path: event:/Impacts/ImpactEnnemis
   guid: 149c807030ab8e4fb21f6e44b67053cc
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1536,7 +1516,7 @@ MonoBehaviour:
   Path: event:/Ennemis/DieMarv
   guid: 6675f4c0df915a41a7dbb89f9adecc80
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1578,23 +1558,6 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
---- !u!114 &7315345062338267152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: "parameter:/Musique/moiti\xE9"
-  m_EditorClassIdentifier: 
-  Name: "moiti\xE9"
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &7771926875864652099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,7 +1573,7 @@ MonoBehaviour:
   Path: event:/Arme/Sniper
   guid: 1f2ddec9ba79fb4cb2bde62e1ef1b6dc
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1633,7 +1596,7 @@ MonoBehaviour:
   Path: event:/Ennemis/DieJack
   guid: fe5fc18021fd2d4588dc463855b74086
   Banks:
-  - {fileID: 772063951298587097}
+  - {fileID: -1979367861948437794}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1675,6 +1638,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &7878122610482035632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SlowMotion/Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &7953308949466554611
 MonoBehaviour:
   m_ObjectHideFlags: 0
