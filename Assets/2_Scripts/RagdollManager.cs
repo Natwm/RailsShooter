@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RagdollManager : MonoBehaviour
 {
+    public bool isDebug;
     Rigidbody[] AllRigids;
     Collider[] AllColliders;
     public Rigidbody mainRigid;
@@ -47,4 +48,11 @@ public class RagdollManager : MonoBehaviour
         mainAnimation.enabled = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) && isDebug)
+        {
+            Ragdoll(impact.transform.position);
+        }
+    }
 }
