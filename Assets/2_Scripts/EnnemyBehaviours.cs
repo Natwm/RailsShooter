@@ -355,11 +355,6 @@ public class EnnemyBehaviours : HealthManager
 
     int NewAction(int index)
     {
-        /*index++;
-        if (index >= listOfPosition_Action.Count)
-            index = 0;
-
-        return index;*/
 
         if (loopAction)
         {
@@ -370,7 +365,7 @@ public class EnnemyBehaviours : HealthManager
         }
         else
         {
-            if (index <= listOfPosition_Action.Count)
+            if (index < listOfPosition_Action.Count)
             {
                 index++;
             }
