@@ -386,7 +386,6 @@ public class EnnemyBehaviours : HealthManager
 
     void NewAction()
     {
-        Debug.Log("NewAction");
         m_ActionIndex++;
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
@@ -472,6 +471,9 @@ public class EnnemyBehaviours : HealthManager
 
         GameManager.instance.DecreaseAmountofEnnemy();
         m_Ragdoll.Ragdoll(Bullet.transform.position);
+
+        hitWaitTimer.Pause();
+        waitShoot.Pause();
         TimeController.instance.MaintainSlowMotion();
         //Destroy(this.gameObject,1);
     }
@@ -498,14 +500,19 @@ public class EnnemyBehaviours : HealthManager
     #region Gizmo
     private void OnDrawGizmos()
     {
-        for (int i = 1; i < m_PositionHolderGO_Action.transform.childCount; i++)
+        if(m_PositionHolderGO_Action != null)
         {
-            Gizmos.DrawLine(m_PositionHolderGO_Action.transform.GetChild(i - 1).position, m_PositionHolderGO_Action.transform.GetChild(i).position);
+            for (int i = 1; i < m_PositionHolderGO_Action.transform.childCount; i++)
+            {
+                Gizmos.DrawLine(m_PositionHolderGO_Action.transform.GetChild(i - 1).position, m_PositionHolderGO_Action.transform.GetChild(i).position);
+            }
         }
-
-        for (int i = 1; i < m_PositionHolderGO_PreAction.transform.childCount; i++)
+        if(m_PositionHolderGO_PreAction != null)
         {
-            Gizmos.DrawLine(m_PositionHolderGO_PreAction.transform.GetChild(i - 1).position, m_PositionHolderGO_PreAction.transform.GetChild(i).position);
+            for (int i = 1; i < m_PositionHolderGO_PreAction.transform.childCount; i++)
+            {
+                Gizmos.DrawLine(m_PositionHolderGO_PreAction.transform.GetChild(i - 1).position, m_PositionHolderGO_PreAction.transform.GetChild(i).position);
+            }
         }
     }
     #endregion

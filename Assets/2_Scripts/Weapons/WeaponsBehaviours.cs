@@ -124,7 +124,6 @@ public class WeaponsBehaviours : MonoBehaviour
         {
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             reloadTimer.ResetPlay();
-            reloadEffect.start();
         }
     }
 
