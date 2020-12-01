@@ -20,8 +20,15 @@ public class RopeMaintainedObject : HealthManager
         rig.isKinematic = true;
     }
 
+    private void Start()
+    {
+        ropeEffect = FMODUnity.RuntimeManager.CreateInstance(ropeSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ropeEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+    }
+
     protected override void Death(GameObject bullet)
     {
+        ropeEffect.start();
         rig.isKinematic = false;
         ropeTransform.gameObject.SetActive(false);
     }

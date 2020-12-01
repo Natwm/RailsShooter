@@ -8,6 +8,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField] public int m_AmountOfLive;
     [SerializeField] protected Animator animator;
 
+    [Space]
+    [Header ("Sound")]
     protected FMOD.Studio.EventInstance hitSoundEffect;
     [FMODUnity.EventRef] [SerializeField] protected string hitSound;
 
@@ -29,6 +31,7 @@ public class HealthManager : MonoBehaviour
     public virtual void DeacreseLife( int damage, GameObject Bullet)
     {
         m_AmountOfLive -= damage;
+
         
         if (m_AmountOfLive <= 0)
         {

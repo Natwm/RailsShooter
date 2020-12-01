@@ -19,8 +19,15 @@ public class AoEDamageObject : HealthManager
     FMOD.Studio.EventInstance explosionHitEffect;
     [FMODUnity.EventRef] [SerializeField] private string explosionHitSound;
 
+    private void Start()
+    {
+        explosionHitEffect = FMODUnity.RuntimeManager.CreateInstance(explosionHitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(explosionHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+    }
+
     protected override void Death(GameObject bullet)
     {
+        explosionHitEffect.start();
         Debug.Log("Explosion");
         GameObject objectCheck = null;
 
