@@ -8,7 +8,8 @@ public class WeaponsBehaviours : MonoBehaviour
     [Space]
     [Header("INFORMATIONS")]
     [SerializeField] protected int m_Damage;
-     public float m_FireRate;
+    [Min (.1f)]
+     public float m_FireRate = 1f;
     [SerializeField] protected LayerMask bulletCollisionLayerMask;
 
     [Space]
@@ -47,8 +48,8 @@ public class WeaponsBehaviours : MonoBehaviour
 
     #endregion
 
-    
 
+    //Vector3 shootTargetDebug;
 
     public virtual void Equip()
     {
@@ -78,7 +79,10 @@ public class WeaponsBehaviours : MonoBehaviour
 
             if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
-                if(UseProjectile == true)
+               /* shootTargetDebug = hit.point;
+                Debug.Break();*/
+
+                if (UseProjectile == true)
                 {
                     direction = hit.point - transform.position;
                     projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
@@ -144,5 +148,10 @@ public class WeaponsBehaviours : MonoBehaviour
         reloadEffect = FMODUnity.RuntimeManager.CreateInstance(reloadSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(reloadEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
+    }
+
+    private void OnDrawGizmos()
+    {
+       // Gizmos.DrawWireSphere(shootTargetDebug, 0.5f);
     }
 }

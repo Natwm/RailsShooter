@@ -42,17 +42,9 @@ public class RagdollManager : MonoBehaviour
         {
             item.isKinematic = false;
             item.useGravity = true;
-            item.AddExplosionForce(50f, _impact, 3f,1.5f,ForceMode.Impulse);
+            item.AddExplosionForce(50f, _impact, 1f,1f,ForceMode.Impulse);
         }
         mainAnimation.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            Ragdoll(impact.transform.position);
-        }
-    }
 }

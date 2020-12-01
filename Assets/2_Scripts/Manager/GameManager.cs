@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         endGame = true;
         Debug.Log("GameOver");
+        Destroy(player);
         CanvaManager.instance.EndGame("Défaite");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

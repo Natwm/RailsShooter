@@ -9,4 +9,21 @@ public class PlayerController : HealthManager
         deathSoundEffect.start();
         GameManager.instance.GameOver();
     }
+
+    public override void DeacreseLife(int damage, GameObject Bullet)
+    {
+        animator.SetTrigger("Trigger_PlayerHit");
+        m_AmountOfLive -= damage;
+
+        if (m_AmountOfLive <= 0)
+        {
+            Death(Bullet);
+        }
+        else
+        {
+            hitSoundEffect.start();
+        }
+
+    }
+
 }

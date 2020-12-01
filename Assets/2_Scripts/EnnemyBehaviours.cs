@@ -82,7 +82,7 @@ public class EnnemyBehaviours : HealthManager
 
         hitWaitTimer = new Timer(.5f);
 
-        waitShoot = new Timer(weapon.m_FireRate);
+        waitShoot = new Timer(weapon.m_FireRate + 1);
     }
 
     private void Update()
@@ -309,12 +309,10 @@ public class EnnemyBehaviours : HealthManager
         if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))
         {
             Debug.Log("shoot");
-            
 
-            NBShoot_remaning--;
-
-            if(NBShoot_remaning >= 0)
+            if(NBShoot_remaning > 0)
             {
+                NBShoot_remaning--;
                 animator.SetTrigger("Trigger_Shoot");
                 //weapon.Shoot(animator, Vector3.zero);
                 canDoAction = true;
