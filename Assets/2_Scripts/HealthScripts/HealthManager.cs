@@ -22,10 +22,10 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, transform, GetComponentInParent<Rigidbody>());
 
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, transform, GetComponentInParent<Rigidbody>());
     }
 
     public virtual void DeacreseLife( int damage, GameObject Bullet)
@@ -39,6 +39,7 @@ public class HealthManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("blabla");
             hitSoundEffect.start();
         }
             

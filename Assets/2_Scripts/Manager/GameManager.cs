@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         victoryEffect = FMODUnity.RuntimeManager.CreateInstance(victorySound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(victoryEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(victoryEffect, GameManager.instance.player.transform, GetComponentInParent<Rigidbody>());
 
         loseEffect = FMODUnity.RuntimeManager.CreateInstance(loseSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(loseEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());

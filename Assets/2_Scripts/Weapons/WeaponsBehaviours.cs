@@ -37,7 +37,7 @@ public class WeaponsBehaviours : MonoBehaviour
     protected FMOD.Studio.EventInstance buckshotEffect;
     [FMODUnity.EventRef] [SerializeField] private string buckshotSound;
     protected FMOD.Studio.EventInstance emptyMagasinSoundEffect;
-    [FMODUnity.EventRef] [SerializeField] private string emptyMagasinSoundSound;
+    [FMODUnity.EventRef] [SerializeField] private string emptyMagasinSound;
 
 
     [Space]
@@ -52,8 +52,10 @@ public class WeaponsBehaviours : MonoBehaviour
     protected Timer fireRateTimer;
 
     public int TotalNumberOfBullets { get => m_TotalNumberOfBullets; set => m_TotalNumberOfBullets = value; }
+    
 
     #endregion
+
 
 
     //Vector3 shootTargetDebug;
@@ -156,6 +158,8 @@ public class WeaponsBehaviours : MonoBehaviour
         reloadEffect = FMODUnity.RuntimeManager.CreateInstance(reloadSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(reloadEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
+        emptyMagasinSoundEffect = FMODUnity.RuntimeManager.CreateInstance(emptyMagasinSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(emptyMagasinSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
     private void OnDrawGizmos()

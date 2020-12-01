@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f799e072412985b4683c1db6cc4d5f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallHitSound: event:/Impacts/ImpactDecorsMetal
-  groundHitSound: event:/Impacts/ImpactDecorsPierre
+  dirtHitSound: event:/Impacts/ImpactDecorsPierre
+  steelHitSound: event:/Impacts/ImpactDecorsMetal
+  glassHitSound: event:/Impacts/ImpactDecorsVerre
   DamagebleLayer:
     serializedVersion: 2
     m_Bits: 0

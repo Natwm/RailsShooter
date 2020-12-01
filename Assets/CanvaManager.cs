@@ -18,6 +18,14 @@ public class CanvaManager : MonoBehaviour
     [SerializeField] private TMP_Text m_AmountOfLife_Text;
     [SerializeField] private TMP_Text m_AmountOfBullet_Text;
 
+    [Space]
+    [Header("SOUND")]
+    protected FMOD.Studio.EventInstance hoverEffect;
+    [FMODUnity.EventRef] [SerializeField] private string hoverSound;
+    protected FMOD.Studio.EventInstance selectEffect;
+    [FMODUnity.EventRef] [SerializeField] private string selectSound;
+    
+
     void Awake()
     {
         if (instance != null)
@@ -33,6 +41,22 @@ public class CanvaManager : MonoBehaviour
         }
         m_AmountOfLife_Text.text = GameManager.instance.player.m_AmountOfLive.ToString();
         m_AmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.currentNumberOfBullets.ToString();
+
+        hoverEffect = FMODUnity.RuntimeManager.CreateInstance(hoverSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hoverEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        selectEffect = FMODUnity.RuntimeManager.CreateInstance(selectSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(selectEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+    }
+    
+    public void playhover()
+    {
+        hoverEffect.start();
+    }
+
+    public void playSelect()
+    {
+        selectEffect.start();
     }
 
     public void UpdateAmountOfLife(int life)

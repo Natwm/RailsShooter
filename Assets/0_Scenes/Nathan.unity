@@ -217,6 +217,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 757508105}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: victorySound
+      value: event:/Decors/Gase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: loseSound
+      value: event:/Player/WalkDirt
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b021d0609ce25f24b915636e3f890008, type: 3}
 --- !u!1 &620671414 stripped
@@ -237,6 +247,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1808904142094074472, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: BangSound
+      value: event:/Arme/Tir1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314331975709366839, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: CursorGO
@@ -246,6 +261,21 @@ PrefabInstance:
         type: 3}
       propertyPath: projectileSpeed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/EmptyMag2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662217562174913843, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: shootSound
+      value: event:/Arme/Tir2
       objectReference: {fileID: 0}
     - target: {fileID: 8638176466994600536, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
@@ -316,6 +346,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ReloadTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/EmptyMag1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638176467121321965, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: shootSound
+      value: event:/Impacts/ImpactEnnemis
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: hitSound
+      value: event:/Player/HitPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: deathSound
+      value: event:/Player/DiePlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
@@ -946,6 +1001,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 178.44557
       objectReference: {fileID: 0}
+    - target: {fileID: 5843701756168751534, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: stepSound
+      value: event:/Player/WalkRock
+      objectReference: {fileID: 0}
     - target: {fileID: 6008310519355828574, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -999,7 +1059,7 @@ PrefabInstance:
     - target: {fileID: 6568209306194223263, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.56
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 6568209306194223263, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -1009,7 +1069,7 @@ PrefabInstance:
     - target: {fileID: 6568209306194223263, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.11
+      value: -5.18
       objectReference: {fileID: 0}
     - target: {fileID: 6568209306194223263, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -1086,10 +1146,25 @@ PrefabInstance:
       propertyPath: listOfPreAction.Array.data[1].amountOfShoot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: hitSound
+      value: event:/Impacts/ImpactEnnemis
+      objectReference: {fileID: 0}
     - target: {fileID: 6653702092722077204, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: m_CollisionDetection
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702092774035014, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702092774035014, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/Tir1
       objectReference: {fileID: 0}
     - target: {fileID: 6735776372675506469, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -1268,6 +1343,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa902eef2c48a1640a821f67d4dbbcad, type: 3}
+--- !u!1 &1173917392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 963194225, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 757508101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173917397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173917392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1001 &1588153364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8473,6 +8567,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6157930883310169151, guid: 05e3603d949c7f34b84f181fd497f02d,
+        type: 3}
+      propertyPath: hoverSound
+      value: event:/UI/Survoler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157930883310169151, guid: 05e3603d949c7f34b84f181fd497f02d,
+        type: 3}
+      propertyPath: selectSound
+      value: event:/UI/Selectionner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e3603d949c7f34b84f181fd497f02d, type: 3}
 --- !u!23 &6160537324700982761
@@ -10139,6 +10243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ExplosionDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
+        type: 3}
+      propertyPath: explosionHitSound
+      value: event:/Decors/GaseExplosion
       objectReference: {fileID: 0}
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}

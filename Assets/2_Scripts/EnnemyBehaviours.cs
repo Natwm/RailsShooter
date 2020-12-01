@@ -83,6 +83,12 @@ public class EnnemyBehaviours : HealthManager
         hitWaitTimer = new Timer(.5f);
 
         waitShoot = new Timer(weapon.m_FireRate + 1);
+
+        hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
     private void Update()
@@ -447,7 +453,10 @@ public class EnnemyBehaviours : HealthManager
         }
         else
         {
+            Debug.Log("aie");
+
             hitSoundEffect.start();
+
             animator.SetTrigger("Trigger_Hit");
             agent.SetDestination(transform.position);
             hitWaitTimer.ResetPlay();
@@ -457,6 +466,7 @@ public class EnnemyBehaviours : HealthManager
     protected override void Death(GameObject Bullet)
     {
         //animator.SetTrigger("Trigger_Die");
+        deathSoundEffect.start();
         colliders.SetActive(false);
 
         Destroy(m_PositionHolderGO_Action);
