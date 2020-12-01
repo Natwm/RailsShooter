@@ -8,11 +8,16 @@ public class BulletsBehaviours : MonoBehaviour
     private int damage;
     private HealthManager shooter;
 
-    FMOD.Studio.EventInstance wallHitEffect;
-    [FMODUnity.EventRef] [SerializeField] private string wallHitSound;
+    [Space]
+    [Header("Sound")]
+    FMOD.Studio.EventInstance dirtHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string dirtHitSound;
 
-    FMOD.Studio.EventInstance groundHitEffect;
-    [FMODUnity.EventRef] [SerializeField] private string groundHitSound;
+    FMOD.Studio.EventInstance steelHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string steelHitSound;
+
+    FMOD.Studio.EventInstance glassHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string glassHitSound;
 
     [SerializeField] private LayerMask DamagebleLayer;
 
