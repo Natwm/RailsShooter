@@ -40,11 +40,12 @@ public class WeaponsBehaviours : MonoBehaviour
     [Header("FLAG")]
     [SerializeField] protected bool AutoReload = false;
     [SerializeField] protected bool UseProjectile = true;
+    [HideInInspector] public bool isReloading = false;
 
     [Space]
     [Header("OTHER")]
     [SerializeField] protected HealthManager myHealthManager;
-    protected Timer fireRateTimer, reloadTimer;
+    protected Timer fireRateTimer;
 
     #endregion
 
@@ -63,7 +64,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Shoot(Animator anim, Vector3 direction)
     {
-        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false && reloadTimer.IsStarted() == false)
+        if(currentNumberOfBullets > 0 && fireRateTimer.IsStarted() == false && isReloading == false)
         {
             anim.SetTrigger("Trigger_Shoot");
 
@@ -120,11 +121,9 @@ public class WeaponsBehaviours : MonoBehaviour
 
     public virtual void Reload()
     {
-        if(reloadTimer.IsStarted() == false && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
+        if(!isReloading && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
         {
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
-            reloadTimer.ResetPlay();
-            reloadEffect.start();
         }
     }
 
@@ -140,7 +139,6 @@ public class WeaponsBehaviours : MonoBehaviour
         RefillMagazine();
         fireRateTimer = new Timer(m_FireRate);
         fireRateTimer.Play();
-        reloadTimer = new Timer(m_ReloadTime, RefillMagazine);
 
         shootEffect = FMODUnity.RuntimeManager.CreateInstance(shootSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(shootEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
