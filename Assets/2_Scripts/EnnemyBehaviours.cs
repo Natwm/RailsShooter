@@ -308,8 +308,6 @@ public class EnnemyBehaviours : HealthManager
 
         if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))
         {
-            Debug.Log("shoot");
-
             if(NBShoot_remaning > 0)
             {
                 NBShoot_remaning--;
