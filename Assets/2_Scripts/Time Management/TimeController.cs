@@ -36,6 +36,7 @@ public class TimeController : MonoBehaviour
         instance = this;
 
         targetFlowTime = 1;
+        Time.fixedDeltaTime = 0.02f;
         baseFixedDeltaTime = Time.fixedDeltaTime;
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
     }

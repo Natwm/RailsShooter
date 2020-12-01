@@ -302,8 +302,8 @@ public class EnnemyBehaviours : HealthManager
 
     void EnnemyShoot(EnnemiAction action)
     {
-        if (animator.GetBool("Trigger_Walk"))
-            animator.SetBool("Trigger_Walk", false);
+        if (animator.GetBool("IsWalking"))
+            animator.SetBool("IsWalking", false);
         CalculeRotation(player.transform.position, action);
 
         if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))

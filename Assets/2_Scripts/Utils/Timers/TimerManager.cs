@@ -13,7 +13,10 @@ public class TimerManager : MonoBehaviour {
 
     public static void Init() {
         if (GameObject.Find("Timer Manager") != null)
-            return; 
+        {
+            timers.Clear();
+            return;
+        } 
         GameObject timerManager = new GameObject("Timer Manager");
         timerManager.AddComponent<TimerManager>();
         Object.DontDestroyOnLoad(timerManager);
