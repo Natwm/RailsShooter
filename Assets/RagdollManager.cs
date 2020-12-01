@@ -26,13 +26,13 @@ public class RagdollManager : MonoBehaviour
         {
             item.isKinematic = true;
         }
-        
+        Head.enabled = true;
     }
 
     public void Ragdoll(Vector3 _impact)
     {
         Body.enabled = false;
-        Head.enabled = false;
+
         Destroy(mainRigid);
         foreach (Collider item in AllColliders)
         {
