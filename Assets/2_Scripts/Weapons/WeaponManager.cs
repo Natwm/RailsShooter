@@ -19,7 +19,7 @@ public class WeaponManager : MonoBehaviour
     #endregion
 
     private Timer weaponSwapTimer;
-    private WeaponsBehaviours currentWeapon;
+    public WeaponsBehaviours currentWeapon;
     private Vector3 direction;
 
     public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
@@ -67,7 +67,7 @@ public class WeaponManager : MonoBehaviour
         currentWeapon.UnEquip();
         weapon.Equip();
         currentWeapon = weapon;
-
+        GameManager.instance.UpdateAmountOfBulltes(weapon.currentNumberOfBullets);
         Debug.Log("Swap Weapon (" + currentWeapon.name + ") : Play Sound here");
     }
 

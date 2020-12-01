@@ -468,7 +468,10 @@ public class EnnemyBehaviours : HealthManager
         hitWaitTimer.Pause();
         waitShoot.Pause();
         TimeController.instance.MaintainSlowMotion();
-        //Destroy(this.gameObject,1);
+
+        Destroy(gameObject, 5f);
+        Destroy(this);
+        
     }
 
     #region Getter && Setter
