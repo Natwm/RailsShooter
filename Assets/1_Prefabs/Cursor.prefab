@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c09a76179fd40145a7872a28b6bdd6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a176e707c6bb37042b192480ea89cdd4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -88,5 +88,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSpeed: 15
-  sensibility: 15
+  deathZoneRadiusInPixel: 15
+  strengthShake: 2
   followMouse: 0
