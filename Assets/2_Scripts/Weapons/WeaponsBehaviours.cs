@@ -17,7 +17,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] private int m_TotalNumberOfBullets;
     [SerializeField] private int m_NumberOfBulletsPerMagazine;
     [SerializeField] private float m_ReloadTime;
-    protected int currentNumberOfBullets;
+    public int currentNumberOfBullets;
 
     [Space]
     [Header("PROJECTILE")]
@@ -47,6 +47,8 @@ public class WeaponsBehaviours : MonoBehaviour
     [SerializeField] protected HealthManager myHealthManager;
     protected Timer fireRateTimer;
 
+    public int TotalNumberOfBullets { get => m_TotalNumberOfBullets; set => m_TotalNumberOfBullets = value; }
+
     #endregion
 
 
@@ -69,6 +71,8 @@ public class WeaponsBehaviours : MonoBehaviour
             anim.SetTrigger("Trigger_Shoot");
 
             currentNumberOfBullets --;
+
+            GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
 
             GameObject projectile = null;
             //shootEffect.start();
@@ -124,6 +128,7 @@ public class WeaponsBehaviours : MonoBehaviour
         if(!isReloading && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
         {
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
+            GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
         }
     }
 
@@ -131,6 +136,7 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         m_TotalNumberOfBullets -= (m_NumberOfBulletsPerMagazine - currentNumberOfBullets);
         currentNumberOfBullets = Mathf.Min(m_TotalNumberOfBullets, m_NumberOfBulletsPerMagazine);
+        GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
         // reloadEffect.start();
     }
 

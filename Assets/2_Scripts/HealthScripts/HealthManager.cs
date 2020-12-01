@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     #region PARAM
-    [SerializeField] protected int m_AmountOfLive;
+    [SerializeField] public int m_AmountOfLive;
     [SerializeField] protected Animator animator;
 
     protected FMOD.Studio.EventInstance hitSoundEffect;
@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
 
     protected FMOD.Studio.EventInstance deathSoundEffect;
     [FMODUnity.EventRef] [SerializeField] protected string deathSound;
+
 
     #endregion
 

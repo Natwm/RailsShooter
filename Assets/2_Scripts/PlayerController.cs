@@ -15,6 +15,8 @@ public class PlayerController : HealthManager
         animator.SetTrigger("Trigger_PlayerHit");
         m_AmountOfLive -= damage;
 
+        GameManager.instance.UpdateAmountOfLife(m_AmountOfLive);
+
         if (m_AmountOfLive <= 0)
         {
             Death(Bullet);

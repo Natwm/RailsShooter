@@ -7,9 +7,16 @@ public class CanvaManager : MonoBehaviour
 {
     public static CanvaManager instance;
 
-    [SerializeField] private GameObject victoryObject;
+    [Space]
+    [Header("Panel")]
+    [SerializeField] private GameObject endGame_Panel;
+    [SerializeField] private GameObject infos_Panel;
 
-    [SerializeField] private TMP_Text m_VictoryText;
+    [Space]
+    [Header ("Text")]
+    [SerializeField] private TMP_Text m_EndGame_Text;
+    [SerializeField] private TMP_Text m_AmountOfLife_Text;
+    [SerializeField] private TMP_Text m_AmountOfBullet_Text;
 
     void Awake()
     {
@@ -20,16 +27,27 @@ public class CanvaManager : MonoBehaviour
 
     private void Start()
     {
-        if (victoryObject.active)
+        if (endGame_Panel.active)
         {
-            victoryObject.SetActive(false);
+            endGame_Panel.SetActive(false);
         }
+        m_AmountOfLife_Text.text = GameManager.instance.player.m_AmountOfLive.ToString();
+        m_AmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.currentNumberOfBullets.ToString();
+    }
+
+    public void UpdateAmountOfLife(int life)
+    {
+        m_AmountOfLife_Text.text = "Amount Of Life : " + life.ToString();
+    }
+    public void UpdateAmountOfBullets(int bullets)
+    {
+        m_AmountOfBullet_Text.text = "Amount Of Bullet : "+ bullets.ToString();
     }
 
     public void EndGame(string message)
     {
-        victoryObject.active = true;
-        m_VictoryText.text = message;
+        endGame_Panel.active = true;
+        m_EndGame_Text.text = message;
     }
 
 }

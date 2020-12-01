@@ -353,11 +353,6 @@ public class EnnemyBehaviours : HealthManager
 
     int NewAction(int index)
     {
-        /*index++;
-        if (index >= listOfPosition_Action.Count)
-            index = 0;
-
-        return index;*/
 
         if (loopAction)
         {
@@ -368,7 +363,7 @@ public class EnnemyBehaviours : HealthManager
         }
         else
         {
-            if (index <= listOfPosition_Action.Count)
+            if (index < listOfPosition_Action.Count)
             {
                 index++;
             }
@@ -473,7 +468,10 @@ public class EnnemyBehaviours : HealthManager
         hitWaitTimer.Pause();
         waitShoot.Pause();
         TimeController.instance.MaintainSlowMotion();
-        //Destroy(this.gameObject,1);
+
+        Destroy(gameObject, 5f);
+        Destroy(this);
+        
     }
 
     #region Getter && Setter

@@ -41,6 +41,16 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void UpdateAmountOfLife(int life)
+    {
+        CanvaManager.instance.UpdateAmountOfLife(life);
+    }
+
+    public void UpdateAmountOfBulltes(int bullets)
+    {
+        CanvaManager.instance.UpdateAmountOfBullets(bullets);
+    }
+
     public void GameWin()
     {
         endGame = true;
