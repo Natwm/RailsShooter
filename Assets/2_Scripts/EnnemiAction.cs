@@ -17,9 +17,11 @@ public class EnnemiAction
         HIDE_RIGHT,
         SHOOT,
     }
+    [Tooltip(" L'action à effectué")]
     public Status ennemiState;
 
     [Min(1)]
+    [Tooltip(" Modifie le temps d'attente lors de l'action 'HIDE_LEFT', 'HIDE_RIGHT', 'STOP' et 'NONE'")]
     public float waitTime;
 
     [Space]
@@ -39,6 +41,6 @@ public class EnnemiAction
     [Space]
     [Header("Shoot")]
     [Min(1)]
-    [Tooltip(" Nombre de fois que l'ennemi shoot")]
+    [Tooltip(" Nombre de fois que l'ennemi shoot lors des action 'SHOOT' et 'RUSH'")]
     public int amountOfShoot = 1;
 }
