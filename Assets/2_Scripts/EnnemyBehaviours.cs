@@ -320,7 +320,7 @@ public class EnnemyBehaviours : HealthManager
             }
             else
             {
-                NewPreAction();
+                NewAction();
             }
         }
         else
