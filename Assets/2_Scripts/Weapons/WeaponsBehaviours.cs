@@ -34,6 +34,10 @@ public class WeaponsBehaviours : MonoBehaviour
     [FMODUnity.EventRef] [SerializeField] private string shootSound;
     protected FMOD.Studio.EventInstance reloadEffect;
     [FMODUnity.EventRef] [SerializeField] private string reloadSound;
+    protected FMOD.Studio.EventInstance buckshotEffect;
+    [FMODUnity.EventRef] [SerializeField] private string buckshotSound;
+    protected FMOD.Studio.EventInstance emptyMagasinSoundEffect;
+    [FMODUnity.EventRef] [SerializeField] private string emptyMagasinSoundSound;
 
 
     [Space]

@@ -14,6 +14,11 @@ public class AoEDamageObject : HealthManager
     [SerializeField] private float m_ExplosionRadius;
     [SerializeField] private LayerMask m_ExplosionLayer;
 
+    [Space]
+    [Header("Sound")]
+    FMOD.Studio.EventInstance explosionHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string explosionHitSound;
+
     protected override void Death(GameObject bullet)
     {
         Debug.Log("Explosion");

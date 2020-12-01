@@ -15,6 +15,15 @@ public class GameManager : MonoBehaviour
     public bool canAction;
 
     private bool endGame;
+
+    [Space]
+    [Header("SOUND")]
+    protected FMOD.Studio.EventInstance victoryEffect;
+    [FMODUnity.EventRef] [SerializeField] private string victorySound;
+
+    protected FMOD.Studio.EventInstance loseEffect;
+    [FMODUnity.EventRef] [SerializeField] private string loseSound;
+
     #endregion
 
     void Awake()
