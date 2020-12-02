@@ -5,7 +5,7 @@
             <value>DiePlayer</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{0bbd98e7-781b-4292-8c29-05b6f4da4d5e}</destination>
@@ -116,7 +116,6 @@
     <object class="MixerBusEffectChain" id="{289c7aa7-0341-4462-9e56-821ff63eef07}">
         <relationship name="effects">
             <destination>{871bac79-d157-4209-bbf1-a105b6032a83}</destination>
-            <destination>{3c64a136-a592-415c-9e37-c3ade6ff6bbe}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{7d6b7449-744f-41fe-9660-61a5a31c4cf6}"/>
@@ -148,6 +147,5 @@
     </object>
     <object class="MixerBusPanner" id="{853bf0bc-ab1b-4d6f-a523-ea611c5cc7ca}"/>
     <object class="MixerBusFader" id="{871bac79-d157-4209-bbf1-a105b6032a83}"/>
-    <object class="SpatialiserEffect" id="{3c64a136-a592-415c-9e37-c3ade6ff6bbe}"/>
     <object class="MixerBusFader" id="{db051ec7-42a3-4761-939f-04be341e33e2}"/>
 </objects>

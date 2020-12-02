@@ -5,7 +5,7 @@
             <value>Survoler</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{535b38bb-706c-4cc8-b788-5037f5d9d5aa}</destination>
@@ -116,7 +116,6 @@
     <object class="MixerBusEffectChain" id="{34af933c-6213-49ba-ab12-54589fe6fad1}">
         <relationship name="effects">
             <destination>{879441f1-425a-4b71-98d3-220b720acc3f}</destination>
-            <destination>{2c45a118-26e8-4de6-ae30-3140a8a728a0}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{68c701be-9471-4781-a0e2-c36c8f72dfb4}"/>
@@ -136,6 +135,5 @@
     </object>
     <object class="MixerBusPanner" id="{1c40dad8-fc13-4bae-bb19-626cdbce24d5}"/>
     <object class="MixerBusFader" id="{879441f1-425a-4b71-98d3-220b720acc3f}"/>
-    <object class="SpatialiserEffect" id="{2c45a118-26e8-4de6-ae30-3140a8a728a0}"/>
     <object class="MixerBusFader" id="{032ba3a0-0cbb-45f5-8a3b-d239ce6b5b77}"/>
 </objects>

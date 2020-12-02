@@ -5,7 +5,7 @@
             <value>HitPlayer</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{0bbd98e7-781b-4292-8c29-05b6f4da4d5e}</destination>
@@ -122,7 +122,6 @@
     <object class="MixerBusEffectChain" id="{e9639909-2405-4879-b62c-284166b7cfe2}">
         <relationship name="effects">
             <destination>{bfcca7d7-11b7-41db-9a37-7be00ae92e89}</destination>
-            <destination>{edf36c34-687c-464a-9570-0a124e2bb369}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{06157256-eaab-4190-8ecd-3638b749e80b}"/>
@@ -184,6 +183,5 @@
     </object>
     <object class="MixerBusPanner" id="{95b896a1-1d16-43e3-8847-0d3ccd4712aa}"/>
     <object class="MixerBusFader" id="{bfcca7d7-11b7-41db-9a37-7be00ae92e89}"/>
-    <object class="SpatialiserEffect" id="{edf36c34-687c-464a-9570-0a124e2bb369}"/>
     <object class="MixerBusFader" id="{3789feb1-426f-4ed8-9a0a-0e0c33983a04}"/>
 </objects>
