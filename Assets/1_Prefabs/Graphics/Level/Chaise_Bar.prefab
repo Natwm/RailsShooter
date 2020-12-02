@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6534215651085188614}
-  m_Layer: 28
+  m_Layer: 9
   m_Name: Chaise_Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &516487106100445482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261796184466899889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46944517, y: 0.53407407, z: 0.8478225}
+  m_Center: {x: -0.000006264449, y: 0.00053534145, z: 0.42949855}
 --- !u!1001 &7495816027190787808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,10 +119,21 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d55d6e5d7d1c6a247936f7791a121582,
         type: 3}
       propertyPath: m_Layer
-      value: 28
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d55d6e5d7d1c6a247936f7791a121582,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d55d6e5d7d1c6a247936f7791a121582, type: 3}
+--- !u!1 &7261796184466899889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d55d6e5d7d1c6a247936f7791a121582,
+    type: 3}
+  m_PrefabInstance: {fileID: 7495816027190787808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8038016636493469963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d55d6e5d7d1c6a247936f7791a121582,

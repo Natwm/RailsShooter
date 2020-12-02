@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 435572}
   - component: {fileID: 19824298}
   - component: {fileID: 19974936}
-  m_Layer: 10
+  m_Layer: 29
   m_Name: Wood Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4783,7 +4783,7 @@ GameObject:
   - component: {fileID: 5091309006667038801}
   - component: {fileID: 2581955632164713071}
   - component: {fileID: 4689734435907774628}
-  m_Layer: 10
+  m_Layer: 29
   m_Name: dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}

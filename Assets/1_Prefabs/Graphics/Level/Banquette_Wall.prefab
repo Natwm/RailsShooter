@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 527425655235366673}
   - component: {fileID: 4092358135156882058}
   - component: {fileID: 5566595519649353866}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: banquette_blender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4603469307139063869}
   - component: {fileID: 684212803666474153}
   - component: {fileID: 3540920134159934747}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: banquette_blender.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,9 +167,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4016663801670331926}
-  m_Layer: 0
+  - component: {fileID: 3728146067551892096}
+  - component: {fileID: 4510016929519130957}
+  m_Layer: 9
   m_Name: Banquette_Wall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,3 +192,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3728146067551892096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392662060157809836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.072454, y: 0.6047058, z: 0.92764664}
+  m_Center: {x: 0, y: 0.29284668, z: 0.020097733}
+--- !u!65 &4510016929519130957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392662060157809836}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1214252, y: 2.012085, z: 0.2275486}
+  m_Center: {x: 0, y: 0.9975891, z: -0.31317616}

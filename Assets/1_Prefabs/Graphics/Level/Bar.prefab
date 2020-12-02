@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2351842930947003600}
-  m_Layer: 0
+  - component: {fileID: 3717135201295165993}
+  - component: {fileID: 6145848821097286122}
+  m_Layer: 9
   m_Name: Bar
-  m_TagString: Untagged
+  m_TagString: Steel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +33,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3717135201295165993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550212157410387576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8285103, y: 0.92826843, z: 0.5576782}
+  m_Center: {x: -0.0059757233, y: 0.46619415, z: -2.4679909}
+--- !u!65 &6145848821097286122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550212157410387576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5919094, y: 0.92826843, z: 4.8699265}
+  m_Center: {x: 1.1123247, y: 0.46619415, z: 0.26919556}
 --- !u!1 &8872180110251169123
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,9 +70,9 @@ GameObject:
   - component: {fileID: 8872180110251169145}
   - component: {fileID: 8872180110251169144}
   - component: {fileID: 8872180110251169127}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Bar
-  m_TagString: Untagged
+  m_TagString: Steel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

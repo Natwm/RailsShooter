@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &7808620821449899684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825436019966209306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00017560401, y: 0.000087656976, z: 0.00030642306}
+  m_Center: {x: 0, y: 0.00004382851, z: -7.275958e-12}
 --- !u!1 &7252582876075465201
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +22,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2220251588624075756}
-  m_Layer: 28
+  m_Layer: 9
   m_Name: Billard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,10 +119,21 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d56beafaa500ff844b556fbb77817bad,
         type: 3}
       propertyPath: m_Layer
-      value: 28
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d56beafaa500ff844b556fbb77817bad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56beafaa500ff844b556fbb77817bad, type: 3}
+--- !u!1 &825436019966209306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d56beafaa500ff844b556fbb77817bad,
+    type: 3}
+  m_PrefabInstance: {fileID: 555596961741852747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &17830794166122400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d56beafaa500ff844b556fbb77817bad,
