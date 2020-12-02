@@ -255,7 +255,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.05019423, y: -0.0578452, z: -0.009143997}
+  m_ConnectedAnchor: {x: 0.050194122, y: -0.05784521, z: -0.009144087}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -644,7 +644,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.05019418, y: -0.057845205, z: -0.011558063}
+  m_ConnectedAnchor: {x: -0.050194208, y: -0.057845213, z: -0.011558149}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -904,7 +904,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.20525064, y: 0.34051573, z: 0.042016692}
+  m_ConnectedAnchor: {x: 0.20525065, y: 0.34051573, z: 0.042016618}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1104,7 +1104,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000074505806, y: 0.45306036, z: -0.000000014901161}
+  m_ConnectedAnchor: {x: 0.000000029802322, y: 0.45306033, z: -0.00000011920929}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1274,7 +1274,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000067055225, y: 0.4530654, z: 0.000000014901161}
+  m_ConnectedAnchor: {x: -0.000000031664968, y: 0.4530654, z: -0.000000044703484}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1383,7 +1383,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.20885003, y: 0.33407125, z: 0.00464917}
+  m_ConnectedAnchor: {x: -0.20884995, y: 0.33407122, z: 0.004649131}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1673,7 +1673,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000115484, y: 0.104142666, z: -0.00845206}
+  m_ConnectedAnchor: {x: 0.000000011641532, y: 0.104142666, z: -0.008452117}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2391,7 +2391,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000007194467, y: 0.2730222, z: -0.000000014901161}
+  m_ConnectedAnchor: {x: -0.000000040745363, y: 0.27302215, z: -0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2500,7 +2500,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000009778887, y: 0.2730605, z: 0.000000055879354}
+  m_ConnectedAnchor: {x: 0.00000004377216, y: 0.27306056, z: 0.000000067055225}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3063,7 +3063,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.011137631, y: 0.5004953, z: 0.085414395}
+  m_ConnectedAnchor: {x: -0.0111376345, y: 0.5004953, z: 0.085414395}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3659,7 +3659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfPreAction.Array.data[0].ennemiState
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfAction.Array.data[1].ennemiState
@@ -3744,37 +3744,37 @@ PrefabInstance:
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.76
+      value: -1.00256
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.26999998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.71
+      value: -3.6726658
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.9820431
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.18865678
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
@@ -3789,7 +3789,7 @@ PrefabInstance:
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 158.251
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
