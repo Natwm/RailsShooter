@@ -372,7 +372,8 @@ PrefabInstance:
       propertyPath: deathSound
       value: event:/Player/DiePlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 963194226, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e25a3cfcd43e1ed42bbefaf263342d1e, type: 3}
 --- !u!114 &757508105 stripped
 MonoBehaviour:
@@ -1343,25 +1344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa902eef2c48a1640a821f67d4dbbcad, type: 3}
---- !u!1 &1173917392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 963194225, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 757508101}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1173917397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173917392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!1001 &1588153364
 PrefabInstance:
   m_ObjectHideFlags: 0
