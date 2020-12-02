@@ -12,7 +12,7 @@ public class Sound_Anim : MonoBehaviour
     void Start()
     {
         stepSoundEffect = FMODUnity.RuntimeManager.CreateInstance(stepSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(stepSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(stepSoundEffect, transform.parent.parent, transform.parent.parent.GetComponentInParent<Rigidbody>());
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Sound_Anim : MonoBehaviour
         
     }
 
-    public void PlayAnimSound()
+    public void PlayAnimStepSound()
     {
         stepSoundEffect.start();
     }

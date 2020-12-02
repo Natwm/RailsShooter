@@ -52,7 +52,7 @@ MonoBehaviour:
   glassHitSound: event:/Impacts/ImpactDecorsVerre
   DamagebleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2147483648
   hitHumanParticules: {fileID: 4038872650185871203, guid: cc7e2084d4d291c4fb9114467301be13,
     type: 3}
   hitDecorsParticules: {fileID: 4038872650185871203, guid: cc7e2084d4d291c4fb9114467301be13,

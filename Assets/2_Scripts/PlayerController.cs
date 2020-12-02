@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class PlayerController : HealthManager
 {
+
+    private void Start()
+    {
+        hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+    }
+
     protected override void Death(GameObject bullet)
     {
         deathSoundEffect.start();
@@ -23,6 +33,7 @@ public class PlayerController : HealthManager
         }
         else
         {
+            Debug.Log("tet");
             hitSoundEffect.start();
         }
 

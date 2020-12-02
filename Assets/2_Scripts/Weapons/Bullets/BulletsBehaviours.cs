@@ -46,6 +46,7 @@ public class BulletsBehaviours : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.layer + " " + other.gameObject.name);
         if(other.gameObject.layer == 8 || other.gameObject.layer == 10)
         {
             if(other.gameObject.layer == 8)
@@ -59,22 +60,25 @@ public class BulletsBehaviours : MonoBehaviour
                 this.OnPoolEnter();
             }
         }
-
-        if(other.gameObject.layer == DamagebleLayer)
+        else
         {
             other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
-            switch (other.gameObject.GetComponent<Renderer>().material.name)
+
+            switch (other.gameObject.tag)
             {
-                case "Ground (Instance)":
+                case "Glass":
                     glassHitEffect.start();
                     break;
 
-                case "Wall (Instance)":
+                case "Ground":
                     dirtHitEffect.start();
                     break;
+
+                case "Steel":
+                    steelHitEffect.start();
+                    break;
             }
-            
             this.OnPoolEnter();
         }
     }
@@ -98,6 +102,10 @@ public class BulletsBehaviours : MonoBehaviour
 
         glassHitEffect = FMODUnity.RuntimeManager.CreateInstance(glassHitSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(glassHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        steelHitEffect = FMODUnity.RuntimeManager.CreateInstance(steelHitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
     }
 
     void Update()

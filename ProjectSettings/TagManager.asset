@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Steel
+  - Glass
   layers:
   - Default
   - TransparentFX
@@ -36,7 +39,7 @@ TagManager:
   - Meubles
   - Particles
   - Player_Weapon
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0
