@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   canAction: 0
-  victorySound: event:/Decors/GaseExplosion
-  loseSound: event:/Ennemis/DieStella
-  MainMusiqueSound: 
+  victorySound: event:/UI/Selectionner
+  loseSound: event:/Ennemis/DieHerc
+  MainMusiqueSound: event:/Musique2
 --- !u!114 &7459193833032316627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,10 +74,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2f0356268169d40a9fb5aa87e3709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minKillForSlowMotion: 0
   slowMotionBaseDuration: 10
   slowMotionGain: 5
   normalFlowTime: 1
   slowMotionFlowTime: 0.1
   FlowTimeLerpValue: 0.2
   slowMotionSnapshot: snapshot:/SlowMotion
+  startSlowSound: event:/SlowMotion/BulletTimeStart
+  endSlowSound: event:/SlowMotion/BulletTimeStop
   isActivedOnce: 0
