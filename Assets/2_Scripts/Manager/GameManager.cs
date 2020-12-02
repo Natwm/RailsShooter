@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         amountOfEnnemy--;
         if(totalAmountOfEnnemy / 2 < amountOfEnnemy)
         {
-            MainMusique.setParameterValue("moitié", 1);
+            MainMusique.setParameterValue("moitie", 1);
         }
 
         if(amountOfEnnemy <= 0)
