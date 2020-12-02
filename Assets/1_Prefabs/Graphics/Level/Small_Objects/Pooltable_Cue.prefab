@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5662676298182923027}
   - component: {fileID: 8735300483297090742}
   - component: {fileID: 6836168241898350716}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Pooltable_Cue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
