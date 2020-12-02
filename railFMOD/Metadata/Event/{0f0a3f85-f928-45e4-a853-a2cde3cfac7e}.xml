@@ -5,7 +5,7 @@
             <value>Tir2</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{09489623-4279-4534-a613-32637a3ed291}</destination>
@@ -170,7 +170,6 @@
     <object class="MixerBusEffectChain" id="{5c1c317e-53db-4d58-8ff5-773c3428744e}">
         <relationship name="effects">
             <destination>{5c6ae5eb-73d4-40b0-9049-80e10df386ef}</destination>
-            <destination>{e33a3989-08ff-4baf-a0f6-4b8d22f73db7}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{701e3fd9-4b90-48ae-ac9a-304c9e6167db}"/>
@@ -221,7 +220,6 @@
     </object>
     <object class="MixerBusPanner" id="{ec178782-3644-4605-baf4-c61e127572c4}"/>
     <object class="MixerBusFader" id="{5c6ae5eb-73d4-40b0-9049-80e10df386ef}"/>
-    <object class="SpatialiserEffect" id="{e33a3989-08ff-4baf-a0f6-4b8d22f73db7}"/>
     <object class="MixerBusFader" id="{5b9270f1-0705-45ce-887f-5c74b3a86d5b}"/>
     <object class="MixerBusFader" id="{46244e32-4cf1-41c2-9e65-ec268cff8a6a}"/>
 </objects>

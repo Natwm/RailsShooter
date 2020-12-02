@@ -5,7 +5,7 @@
             <value>EmptyMag2</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{09489623-4279-4534-a613-32637a3ed291}</destination>
@@ -113,7 +113,6 @@
     <object class="MixerBusEffectChain" id="{e2307e57-ab19-4734-98ea-9043f81a8301}">
         <relationship name="effects">
             <destination>{13baabb6-6747-4548-88d7-7fb7b537aa20}</destination>
-            <destination>{8a25707f-13bc-4e79-93ff-fe7d884701a3}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{cb45ff26-8683-43ac-9c5f-0486dbb91257}"/>
@@ -125,6 +124,5 @@
     </object>
     <object class="MixerBusPanner" id="{181d0172-e447-4156-b50c-1b165af38ea5}"/>
     <object class="MixerBusFader" id="{13baabb6-6747-4548-88d7-7fb7b537aa20}"/>
-    <object class="SpatialiserEffect" id="{8a25707f-13bc-4e79-93ff-fe7d884701a3}"/>
     <object class="MixerBusFader" id="{a79f83ab-d96a-4cbb-86b8-1ec041d53a8c}"/>
 </objects>

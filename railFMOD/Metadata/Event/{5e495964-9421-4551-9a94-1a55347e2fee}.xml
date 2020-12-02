@@ -5,7 +5,7 @@
             <value>BulletTimeStop</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{6368e677-7ef0-4fe9-83ec-24bf1b2016e5}</destination>
@@ -119,7 +119,6 @@
     <object class="MixerBusEffectChain" id="{c97f8f50-aaca-484f-940a-1c30ef89c52b}">
         <relationship name="effects">
             <destination>{36676fb8-7ed2-4e1a-9c94-cc8090876b25}</destination>
-            <destination>{7643f83b-403d-4587-9750-4411bb871b82}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{8851a5bc-6f25-4c16-92b0-f1e7f7dc6309}"/>
@@ -131,6 +130,5 @@
     </object>
     <object class="MixerBusPanner" id="{1c587a90-72f0-4a2f-bdb8-f7f85bf924e2}"/>
     <object class="MixerBusFader" id="{36676fb8-7ed2-4e1a-9c94-cc8090876b25}"/>
-    <object class="SpatialiserEffect" id="{7643f83b-403d-4587-9750-4411bb871b82}"/>
     <object class="MixerBusFader" id="{bf7ab6d4-f907-4c90-95b0-053255610c35}"/>
 </objects>

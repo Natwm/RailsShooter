@@ -128,6 +128,7 @@ public class EnnemyBehaviours : HealthManager
                 EnnemyHideUp();
                 break;
             case EnnemiAction.Status.HIDE_DOWN:
+                EnnemyHideDown();
                 break;
             case EnnemiAction.Status.MOVE:
                 EnnemyMovement(positions, action);
@@ -149,12 +150,25 @@ public class EnnemyBehaviours : HealthManager
         }
     }
 
+    void SetState(bool standUp, bool walking, bool hidingRight, bool hidingLeft)
+    {
+        animator.SetBool("StandUp", standUp);
+        animator.SetBool("IsWalking", walking);
+        animator.SetBool("IsHidingRight", hidingRight);
+        animator.SetBool("IsHidingLeft", hidingLeft);
+    }
+
+    void ResetState()
+    {
+        SetState(true, false, false, false);
+    }
+
     #region IA
 
     void EnnemyDoNothing(EnnemiAction action)
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
+        ResetState();
+        
         //Debug.Log("EnnemyDoNothing");
         if (GameManager.instance.canAction)
         {
@@ -181,8 +195,7 @@ public class EnnemyBehaviours : HealthManager
 
     void EnnemyHideUp()
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
+        ResetState();
         //play Animation hide
         Debug.Log("Hide");
         NewAction();
@@ -190,31 +203,23 @@ public class EnnemyBehaviours : HealthManager
 
     void EnnemyHideDown()
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
+        SetState(false, false, false, false);
+        
         //play Animation hide
-        Debug.Log("Hide");
         NewAction();
     }
 
     void HideLeft(EnnemiAction action)
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
-
-        if (!animator.GetBool("IsHidingLeft"))
-            animator.SetBool("IsHidingLeft", true);
+        SetState(true, false, false, true);
 
         EnnemyDoNothing(action);
     }
 
     void HideRight(EnnemiAction action)
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
+        SetState(false, false, true, false);
 
-        if (!animator.GetBool("IsHidingRight"))
-            animator.SetBool("IsHidingRight", true);
 
         Debug.Log(action.waitTime);
         EnnemyDoNothing(action);
@@ -229,15 +234,13 @@ public class EnnemyBehaviours : HealthManager
 
         if (Vector3.Distance(transform.position, player.gameObject.transform.position) < minDistancePlayer)
         {
-            if (animator.GetBool("IsWalking"))
-                animator.SetBool("IsWalking", false);
+            ResetState();
             agent.SetDestination(transform.position);
             weapon.Shoot(animator, Vector3.zero);
         }
         else
         {
-            if (!animator.GetBool("IsWalking"))
-                animator.SetBool("IsWalking", true);
+            SetState(true, true, false, false);
             agent.SetDestination(player.gameObject.transform.position);
         }
         canDoAction = true;
@@ -275,14 +278,8 @@ public class EnnemyBehaviours : HealthManager
 
         agent.speed = ennemiSpeed;
 
-        if (animator.GetBool("IsHidingLeft"))
-            animator.SetBool("IsHidingLeft", false);
+        SetState(true, true, false, false);
 
-        if (animator.GetBool("IsHidingRight"))
-            animator.SetBool("IsHidingRight", false);
-
-        if (!animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", true);
 
         CalculeRotation(listOfPosition[m_MouvementIndex], action);
         /*if (!isRotating)
@@ -308,8 +305,7 @@ public class EnnemyBehaviours : HealthManager
 
     void EnnemyShoot(EnnemiAction action)
     {
-        if (animator.GetBool("IsWalking"))
-            animator.SetBool("IsWalking", false);
+        SetState(true, false, false, false);
         CalculeRotation(player.transform.position, action);
 
         if (!isRotating && (waitShoot.IsFinished() || waitShoot.IsPaused()))

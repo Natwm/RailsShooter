@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 6560854}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -77,14 +77,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!54 &963194229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -101,6 +93,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6560854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1749792005
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +281,7 @@ MonoBehaviour:
   weaponSwapDuration: 0.2
   rotationSpeed: 2
   weaponAnimator: {fileID: 8872893653873757158}
+  currentWeapon: {fileID: 0}
 --- !u!114 &3844685225549508774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,8 +343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AmountOfLive: 50
   animator: {fileID: 8628977594250876932}
-  hitSound: event:/Impacts/VitreBrise
-  deathSound: event:/Player/WalkRock
+  hitSound: event:/Player/HitPlayer
+  deathSound: event:/Player/DiePlayer
 --- !u!1001 &525095170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
         type: 3}
       propertyPath: shootSound
-      value: event:/Arme/Tir1
+      value: event:/Arme/Tir2
       objectReference: {fileID: 0}
     - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
         type: 3}
@@ -521,7 +527,42 @@ PrefabInstance:
     - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
         type: 3}
       propertyPath: projectileSpeed
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: m_Damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: bulletCollisionLayerMask.m_Bits
+      value: 2415919872
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/EmptyMag2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: dirtHitSound
+      value: event:/Impacts/ImpactDecorsPierre
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: steelHitSound
+      value: event:/Impacts/ImpactDecorsMetal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199943412701089413, guid: 6f2e8399697b87d4a803070476604528,
+        type: 3}
+      propertyPath: glassHitSound
+      value: event:/Impacts/ImpactDecorsVerre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2e8399697b87d4a803070476604528, type: 3}
@@ -734,12 +775,42 @@ PrefabInstance:
     - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
         type: 3}
       propertyPath: m_ReloadTime
-      value: 1.55
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
         type: 3}
       propertyPath: projectileSpeed
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: bulletCollisionLayerMask.m_Bits
+      value: 2415919872
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/EmptyMag1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: dirtHitSound
+      value: event:/Impacts/ImpactDecorsPierre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: steelHitSound
+      value: event:/Impacts/ImpactDecorsMetal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746466920852475962, guid: 6b30dd069f982e54f8fd668ee531e722,
+        type: 3}
+      propertyPath: glassHitSound
+      value: event:/Impacts/ImpactDecorsVerre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b30dd069f982e54f8fd668ee531e722, type: 3}

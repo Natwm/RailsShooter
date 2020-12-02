@@ -89,8 +89,17 @@
     </object>
     <object class="MixerBusPanner" id="{0bd96c11-03ce-4320-9e52-a8de52ef9339}"/>
     <object class="MultiSound" id="{415cce25-8dd8-4988-9e55-b63883bde356}">
+        <property name="isAsync">
+            <value>true</value>
+        </property>
         <property name="length">
             <value>2</value>
+        </property>
+        <property name="randomized">
+            <value>false</value>
+        </property>
+        <property name="playlistMode">
+            <value>1</value>
         </property>
         <relationship name="sounds">
             <destination>{764089f7-3bab-49d6-ad48-f070035dcb46}</destination>
@@ -142,6 +151,10 @@
     </object>
     <object class="MixerBusPanner" id="{9c715a59-5015-4b5c-89e1-28284ffa4848}"/>
     <object class="MixerBusFader" id="{59da2324-328c-4e94-addb-3a4dd88f62d1}"/>
-    <object class="SpatialiserEffect" id="{abce30d0-5f20-48ce-ab63-f86bdc9d42ab}"/>
+    <object class="SpatialiserEffect" id="{abce30d0-5f20-48ce-ab63-f86bdc9d42ab}">
+        <property name="extentMode">
+            <value>1</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{95e5f8ee-fdd4-42fd-9234-011d5d100e33}"/>
 </objects>

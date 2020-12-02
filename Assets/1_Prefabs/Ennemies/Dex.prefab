@@ -255,7 +255,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.050194, y: -0.05784534, z: -0.009144157}
+  m_ConnectedAnchor: {x: 0.05019423, y: -0.0578452, z: -0.009143997}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -644,7 +644,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.05019418, y: -0.057845153, z: -0.01155817}
+  m_ConnectedAnchor: {x: -0.05019418, y: -0.057845205, z: -0.011558063}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -904,7 +904,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.20525064, y: 0.34051573, z: 0.042016648}
+  m_ConnectedAnchor: {x: 0.20525064, y: 0.34051573, z: 0.042016692}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1104,7 +1104,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000018253922, y: 0.45306033, z: -0.00000011920929}
+  m_ConnectedAnchor: {x: -0.000000074505806, y: 0.45306036, z: -0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1274,7 +1274,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000016205013, y: 0.45306534, z: 0.00000013411045}
+  m_ConnectedAnchor: {x: 0.000000067055225, y: 0.4530654, z: 0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1383,7 +1383,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.2088498, y: 0.33407125, z: 0.0046490007}
+  m_ConnectedAnchor: {x: -0.20885003, y: 0.33407125, z: 0.00464917}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1673,7 +1673,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000114087015, y: 0.10414267, z: -0.008451926}
+  m_ConnectedAnchor: {x: 0.000000115484, y: 0.104142666, z: -0.00845206}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2391,7 +2391,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000013015233, y: 0.27302223, z: 0.00000009685755}
+  m_ConnectedAnchor: {x: -0.00000007194467, y: 0.2730222, z: -0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2500,7 +2500,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00000027287751, y: 0.27306047, z: -0.000000018626451}
+  m_ConnectedAnchor: {x: 0.00000009778887, y: 0.2730605, z: 0.000000055879354}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec9f665b9cdee74398c704a0e8214fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepSound: event:/Arme/Tir1
+  stepSound: event:/Player/WalkRock
 --- !u!114 &7755619744026482485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce33a60c49a5704d9b675cbe819f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebug: 0
   mainRigid: {fileID: 6653702092722077204}
   Body: {fileID: 879609367803697743}
   Head: {fileID: 1425813350}
@@ -3062,7 +3063,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.011137634, y: 0.5004952, z: 0.08541423}
+  m_ConnectedAnchor: {x: -0.011137631, y: 0.5004953, z: 0.085414395}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3382,11 +3383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfPreAction.Array.size
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfAction.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: animator
@@ -3450,7 +3451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfPreAction.Array.data[1].waitTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfPreAction.Array.data[1].overrideSpeed
@@ -3470,7 +3471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfPreAction.Array.data[1].amountOfShoot
-      value: 2
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: listOfAction.Array.data[0].waitTime
@@ -3644,6 +3645,34 @@ PrefabInstance:
       propertyPath: listOfPreAction.Array.data[7].amountOfShoot
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: listOfPreAction.Array.data[0].amountOfShoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: hitSound
+      value: event:/Impacts/ImpactEnnemis
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: loopAction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: listOfPreAction.Array.data[0].ennemiState
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: listOfAction.Array.data[1].ennemiState
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: listOfAction.Array.data[1].waitTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: listOfAction.Array.data[1].amountOfShoot
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 530881262, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.6300001
@@ -3672,6 +3701,26 @@ PrefabInstance:
       propertyPath: m_FireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: buckshotSound
+      value: event:/Arme/DouilleEject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: emptyMagasinSound
+      value: event:/Arme/Tir1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: dirtHitSound
+      value: event:/Impacts/ImpactDecorsPierre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: steelHitSound
+      value: event:/Impacts/ImpactDecorsMetal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506768995, guid: ca27377a28cdc484cad83acf8b56e4ff, type: 3}
+      propertyPath: glassHitSound
+      value: event:/Impacts/ImpactDecorsVerre
+      objectReference: {fileID: 0}
     - target: {fileID: 536004619938305276, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3690,22 +3739,22 @@ PrefabInstance:
     - target: {fileID: 536004620363863736, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_Name
-      value: Dex (3)
+      value: Dex
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.52
+      value: 3.76
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.86
+      value: -0.26999998
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 536004620363863738, guid: ca27377a28cdc484cad83acf8b56e4ff,
         type: 3}
