@@ -39,6 +39,15 @@ public class WeaponsBehaviours : MonoBehaviour
     protected FMOD.Studio.EventInstance emptyMagasinSoundEffect;
     [FMODUnity.EventRef] [SerializeField] private string emptyMagasinSound;
 
+    FMOD.Studio.EventInstance dirtHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string dirtHitSound;
+
+    FMOD.Studio.EventInstance steelHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string steelHitSound;
+
+    FMOD.Studio.EventInstance glassHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string glassHitSound;
+
 
     [Space]
     [Header("FLAG")]
@@ -109,6 +118,28 @@ public class WeaponsBehaviours : MonoBehaviour
                         hit.transform.GetComponent<BodyPartBehaviours>().GetDamage(m_Damage, myHealthManager,projectile);
                     }
                 }
+
+                //other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
+                //Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
+
+                switch (hit.collider.gameObject.tag)
+                {
+                    case "Glass":
+                        FMODUnity.RuntimeManager.AttachInstanceToGameObject(glassHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
+                        glassHitEffect.start();
+                        break;
+
+                    case "Ground":
+                        Debug.Log("pan");
+                        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dirtHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
+                        dirtHitEffect.start();
+                        break;
+
+                    case "Steel":
+                        FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
+                        steelHitEffect.start();
+                        break;
+                }
             }
             else
             {
@@ -160,6 +191,17 @@ public class WeaponsBehaviours : MonoBehaviour
 
         emptyMagasinSoundEffect = FMODUnity.RuntimeManager.CreateInstance(emptyMagasinSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(emptyMagasinSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        //
+
+        dirtHitEffect = FMODUnity.RuntimeManager.CreateInstance(dirtHitSound);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(dirtHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        glassHitEffect = FMODUnity.RuntimeManager.CreateInstance(glassHitSound);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(glassHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        steelHitEffect = FMODUnity.RuntimeManager.CreateInstance(steelHitSound);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
 
     private void OnDrawGizmos()

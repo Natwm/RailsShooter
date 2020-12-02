@@ -60,9 +60,9 @@ public class BulletsBehaviours : MonoBehaviour
                 this.OnPoolEnter();
             }
         }
-        else
+       else
         {
-            other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
+            /* other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
 
             switch (other.gameObject.tag)
@@ -78,7 +78,7 @@ public class BulletsBehaviours : MonoBehaviour
                 case "Steel":
                     steelHitEffect.start();
                     break;
-            }
+            }*/
             this.OnPoolEnter();
         }
     }
