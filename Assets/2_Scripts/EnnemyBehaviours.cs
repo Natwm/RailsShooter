@@ -461,6 +461,9 @@ public class EnnemyBehaviours : HealthManager
 
     protected override void Death(GameObject Bullet)
     {
+        if(!TimeController.instance.IsSlowMotion())
+            TimeController.instance.increaseSlowMoTime();
+
         //animator.SetTrigger("Trigger_Die");
         deathSoundEffect.start();
         colliders.SetActive(false);
@@ -475,8 +478,9 @@ public class EnnemyBehaviours : HealthManager
         waitShoot.Pause();
         TimeController.instance.MaintainSlowMotion();
 
-        Destroy(gameObject, 5f);
-        Destroy(this);
+        Destroy(agent);
+        Destroy(gameObject, 1f);
+        
         
     }
 

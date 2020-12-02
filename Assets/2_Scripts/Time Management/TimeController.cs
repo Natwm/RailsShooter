@@ -6,8 +6,15 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     public static TimeController instance;
+
+    private float slowmoTimer = 0f;
+
+    [Tooltip ("Valeurs min pour relancer le slowmo")]
+    [SerializeField] private float minSlowVal;
+
     [SerializeField] private float slowMotionBaseDuration;
     [SerializeField] private float slowMotionGain;
+
 
     [Space]
     [Header ("FLOW TIME CONTROL")]
@@ -18,7 +25,13 @@ public class TimeController : MonoBehaviour
     [Space]
     [Header("Sound")]
     FMOD.Studio.EventInstance slowMotionEffect;
-    [FMODUnity.EventRef] [SerializeField] private string slowMotionSnapshot; 
+    [FMODUnity.EventRef] [SerializeField] private string slowMotionSnapshot;
+
+    protected FMOD.Studio.EventInstance startSlowEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string startSlowSound;
+
+    protected FMOD.Studio.EventInstance endSlowEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string endSlowSound;
 
 
     private float targetFlowTime = 1;
@@ -45,6 +58,13 @@ public class TimeController : MonoBehaviour
     {
         slowMotionEffect = FMODUnity.RuntimeManager.CreateInstance(slowMotionSnapshot);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(slowMotionEffect, GameManager.instance.player.transform, GameManager.instance.player.GetComponent<Rigidbody>());
+
+        endSlowEffect = FMODUnity.RuntimeManager.CreateInstance(endSlowSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(endSlowEffect, GameManager.instance.player.GetComponent<Transform>(), GameManager.instance.player.GetComponentInParent<Rigidbody>());
+
+        startSlowEffect = FMODUnity.RuntimeManager.CreateInstance(startSlowSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(startSlowEffect, GameManager.instance.player.GetComponent<Transform>(), GameManager.instance.player.GetComponentInParent<Rigidbody>());
+
         slowMotionEffect.start();
         slowMotionEffect.setParameterValue("Instance", 0f);
     }
@@ -56,6 +76,12 @@ public class TimeController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z) && slowmoTimer >= minSlowVal)
+        {
+            slowmoTimer = 0;
+            StartSlowMotion();
+        }
+
         if(Input.GetKeyDown("[+]"))
             StartSlowMotion();
         if(Input.GetKeyDown("[-]"))
@@ -68,10 +94,24 @@ public class TimeController : MonoBehaviour
         Time.fixedDeltaTime = baseFixedDeltaTime * Time.timeScale;
     }
 
+    public void LaunchSlowMotion()
+    {
+        slowMotionEffect.setParameterValue("Intensity", 100f);
+
+        GameManager.instance.StartSlowmo();
+
+        slowMotionTimer = new TimeNonAffectedTimer(slowmoTimer, EndSlowMotion);
+
+        isActivedOnce = true;
+        slowMotionTimer.ResetPlay();
+    }
+
     public void StartSlowMotion()
     {
         SetTime(slowMotionFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 100f);
+
+        startSlowEffect.start();
 
         GameManager.instance.StartSlowmo();
 
@@ -96,6 +136,12 @@ public class TimeController : MonoBehaviour
         SetTime(normalFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 0f);
         GameManager.instance.EndSlowmo();
+        endSlowEffect.start();
+    }
+
+    public void increaseSlowMoTime()
+    {
+        slowmoTimer += 0.5f;
     }
 
     public bool IsSlowMotion()
