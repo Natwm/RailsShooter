@@ -7,10 +7,10 @@ public class TimeController : MonoBehaviour
 {
     public static TimeController instance;
 
-    private float slowmoTimer = 0f;
+    private int slowmoTimer = 0;
 
     [Tooltip ("Valeurs min pour relancer le slowmo")]
-    [SerializeField] private float minSlowVal;
+    [SerializeField] private float minKillForSlowMotion;
 
     [SerializeField] private float slowMotionBaseDuration;
     [SerializeField] private float slowMotionGain;
@@ -76,7 +76,7 @@ public class TimeController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && slowmoTimer >= minSlowVal)
+        if (Input.GetKeyDown(KeyCode.Z) && slowmoTimer >= minKillForSlowMotion)
         {
             slowmoTimer = 0;
             StartSlowMotion();
@@ -141,7 +141,7 @@ public class TimeController : MonoBehaviour
 
     public void increaseSlowMoTime()
     {
-        slowmoTimer += 0.5f;
+        slowmoTimer += 1;
     }
 
     public bool IsSlowMotion()
