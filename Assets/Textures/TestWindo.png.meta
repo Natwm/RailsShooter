@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 296c85be7a167044d8a3ee497fe7d4b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9158900818407800482
+    second: TestWindo_0
+  - first:
+      213: -7021655853152777227
+    second: TestWindo_1
+  - first:
+      213: 1761996279672501846
+    second: TestWindo_2
+  - first:
+      213: 719675692603504719
+    second: TestWindo_3
+  - first:
+      213: 8197461287519060740
+    second: TestWindo_4
+  - first:
+      213: -6320802420086909483
+    second: TestWindo_5
+  - first:
+      213: 5792822070106081215
+    second: TestWindo_6
+  - first:
+      213: 7552489542709736494
+    second: TestWindo_7
+  - first:
+      213: -8684932643008348311
+    second: TestWindo_8
+  - first:
+      213: 877898401807787359
+    second: TestWindo_9
+  - first:
+      213: -2808983485411701465
+    second: TestWindo_10
+  - first:
+      213: 1351761041464188537
+    second: TestWindo_11
+  - first:
+      213: -28865586526370264
+    second: TestWindo_12
+  - first:
+      213: 3106205150398254009
+    second: TestWindo_13
+  - first:
+      213: 8173965518954876341
+    second: TestWindo_14
+  - first:
+      213: 2468145814472020478
+    second: TestWindo_15
+  - first:
+      213: 1983697866931420142
+    second: TestWindo_16
+  - first:
+      213: 8585415841884903126
+    second: TestWindo_17
+  - first:
+      213: -708302048639203354
+    second: TestWindo_18
+  - first:
+      213: 8350276844901004071
+    second: TestWindo_19
+  - first:
+      213: -8696286660891503905
+    second: TestWindo_20
+  - first:
+      213: -5274408286780353270
+    second: TestWindo_21
+  - first:
+      213: -1402782567839034168
+    second: TestWindo_22
+  - first:
+      213: 9130104396863414203
+    second: TestWindo_23
+  - first:
+      213: -3872454373392205100
+    second: TestWindo_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestWindo_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 3860
+        width: 461
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51c4c94b3c05e080800000000000000
+      internalID: -9158900818407800482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_1
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3860
+        width: 463
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb49c134311e8e90800000000000000
+      internalID: -7021655853152777227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_2
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 3860
+        width: 461
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6567079e74ed37810800000000000000
+      internalID: 1761996279672501846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_3
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 3860
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f487d1bba3dccf900800000000000000
+      internalID: 719675692603504719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 3118
+        width: 461
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4030796eb9b33c170800000000000000
+      internalID: 8197461287519060740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_5
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3118
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d55a4f10bff748a0800000000000000
+      internalID: -6320802420086909483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_6
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 3120
+        width: 461
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb747b72bfc346050800000000000000
+      internalID: 5792822070106081215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_7
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 3097
+        width: 463
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24f01b6935dfc860800000000000000
+      internalID: 7552489542709736494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_8
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2365
+        width: 461
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ffa43a6cbe87780800000000000000
+      internalID: -8684932643008348311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_9
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2365
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55e2a4f1fbee2c00800000000000000
+      internalID: 877898401807787359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_10
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 2381
+        width: 461
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72dc814176c7409d0800000000000000
+      internalID: -2808983485411701465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_11
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 2333
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e5fa9518b62c210800000000000000
+      internalID: 1351761041464188537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1582
+        width: 461
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826ccd8e6e2799ff0800000000000000
+      internalID: -28865586526370264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_13
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1582
+        width: 463
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb0afc70257b1b20800000000000000
+      internalID: 3106205150398254009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_14
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1582
+        width: 461
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdc89bf452cf6170800000000000000
+      internalID: 8173965518954876341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_15
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1594
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1d87d9a8d904220800000000000000
+      internalID: 2468145814472020478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_16
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 829
+        width: 461
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebb52c23b2878b10800000000000000
+      internalID: 1983697866931420142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_17
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 820
+        width: 463
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d69f808836852770800000000000000
+      internalID: 8585415841884903126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_18
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 820
+        width: 461
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7cd2d1a0b9b26f0800000000000000
+      internalID: -708302048639203354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_19
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 820
+        width: 463
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7237e7c7c8422e370800000000000000
+      internalID: 8350276844901004071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_20
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 61
+        width: 461
+        height: 695
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd218985b55905780800000000000000
+      internalID: -8696286660891503905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_21
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 65
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a059412bb998dc6b0800000000000000
+      internalID: -5274408286780353270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_22
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 61
+        width: 461
+        height: 695
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c418d2dfa0588ce0800000000000000
+      internalID: -1402782567839034168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_23
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 65
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf96495395a4be70800000000000000
+      internalID: 9130104396863414203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestWindo_24
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 65
+        width: 463
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dabc09b347424ac0800000000000000
+      internalID: -3872454373392205100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f358f191b0fadf24d8e0209fc2802901
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
