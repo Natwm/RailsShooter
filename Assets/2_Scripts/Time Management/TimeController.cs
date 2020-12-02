@@ -72,10 +72,12 @@ public class TimeController : MonoBehaviour
     {
         SetTime(slowMotionFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 100f);
+
+        GameManager.instance.StartSlowmo();
+
         slowMotionTimer = new TimeNonAffectedTimer(slowMotionBaseDuration, EndSlowMotion);
 
         isActivedOnce = true;
-
         slowMotionTimer.ResetPlay();
     }
 
@@ -93,6 +95,7 @@ public class TimeController : MonoBehaviour
     {
         SetTime(normalFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 0f);
+        GameManager.instance.EndSlowmo();
     }
 
     public bool IsSlowMotion()

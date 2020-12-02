@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
 
     private int amountOfEnnemy;
+    private int totalAmountOfEnnemy;
 
     public bool canAction;
 
     private bool endGame;
+
+   
 
     [Space]
     [Header("SOUND")]
@@ -23,6 +26,12 @@ public class GameManager : MonoBehaviour
 
     protected FMOD.Studio.EventInstance loseEffect;
     [FMODUnity.EventRef] [SerializeField] private string loseSound;
+
+    protected FMOD.Studio.EventInstance MainMusique;
+    [FMODUnity.EventRef] [SerializeField] private string MainMusiqueSound;
+
+
+
 
     #endregion
 
@@ -40,6 +49,11 @@ public class GameManager : MonoBehaviour
 
         loseEffect = FMODUnity.RuntimeManager.CreateInstance(loseSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(loseEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        MainMusique = FMODUnity.RuntimeManager.CreateInstance(MainMusiqueSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(MainMusique, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        MainMusique.start();
+        //
     }
 
     private void Update()
@@ -81,15 +95,33 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseAmountofEnnemy()
     {
+        totalAmountOfEnnemy++;
         amountOfEnnemy++;
     }
 
     public void DecreaseAmountofEnnemy()
     {
         amountOfEnnemy--;
+        if(totalAmountOfEnnemy / 2 < amountOfEnnemy)
+        {
+            MainMusique.setParameterValue("moitie", 1);
+        }
+
         if(amountOfEnnemy <= 0)
         {
+            MainMusique.setParameterValue("fin", 1);
             GameWin();
         }
+    }
+
+    public void StartSlowmo()
+    {
+        MainMusique.setParameterValue("ralenti", 1);
+        //MainMusique.start();
+    }
+    
+    public void EndSlowmo()
+    {
+        MainMusique.setParameterValue("ralenti", 0f);
     }
 }
