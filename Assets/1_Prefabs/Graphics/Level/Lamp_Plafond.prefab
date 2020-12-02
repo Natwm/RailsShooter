@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7562729989497451335}
-  m_Layer: 0
+  - component: {fileID: 2473142326110197910}
+  m_Layer: 9
   m_Name: Lamp_Plafond
-  m_TagString: Untagged
+  m_TagString: Steel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2473142326110197910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175361762213068864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6402664, y: 0.77511597, z: 0.6402626}
+  m_Center: {x: 0.1998539, y: -0.37730408, z: 0.0099925995}
 --- !u!1 &5094052679245482746
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6054638342682943218}
   - component: {fileID: 2325643741864369217}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +223,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plafonnier
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb94e9140b62e9f4cbae34fd612b4373,
+        type: 3}
+      propertyPath: m_TagString
+      value: Steel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb94e9140b62e9f4cbae34fd612b4373,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb94e9140b62e9f4cbae34fd612b4373, type: 3}

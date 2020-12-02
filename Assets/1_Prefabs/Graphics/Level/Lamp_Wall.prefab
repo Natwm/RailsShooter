@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4733099281208928334}
   - component: {fileID: 4652171475527714331}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,9 +101,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7798784460325420167}
-  m_Layer: 0
+  - component: {fileID: 2925260785393967942}
+  m_Layer: 9
   m_Name: Lamp_Wall
-  m_TagString: Untagged
+  m_TagString: Steel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +124,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2925260785393967942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165626542453830863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25585175, y: 0.6365814, z: 0.37114334}
+  m_Center: {x: 0.0017471313, y: -0.10832977, z: 0.1851635}
 --- !u!1001 &483746108214446942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209,6 +223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LampWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f1437540abf923478630129829951f4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1437540abf923478630129829951f4, type: 3}

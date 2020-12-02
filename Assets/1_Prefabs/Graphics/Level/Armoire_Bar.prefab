@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597510762387596596}
-  m_Layer: 0
+  - component: {fileID: 2372609295037539509}
+  m_Layer: 9
   m_Name: Armoire_Bar
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2372609295037539509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487710738902697180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2.175644, z: 2.6857262}
+  m_Center: {x: 0, y: 1.0272903, z: 0.018190384}
 --- !u!1001 &1658209167468752620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,6 +56,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Closet bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703036519981813601, guid: bbabb2875d31364499f51b935b296822,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703036519981813601, guid: bbabb2875d31364499f51b935b296822,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1703036519981813603, guid: bbabb2875d31364499f51b935b296822,
         type: 3}
