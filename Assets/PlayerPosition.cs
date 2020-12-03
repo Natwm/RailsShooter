@@ -6,7 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerPosition 
 {
-    public Transform position;
+    public Transform stepRotation;
+
+    public Vector3 stepPosition;
 
     [Min (1)]
     public int AmountOfEnnemiToKill = 1;

@@ -27,7 +27,11 @@ public class RagdollManager : MonoBehaviour
         {
             item.isKinematic = true;
         }
-        Head.enabled = true;
+        
+        if(Head != null)
+        {
+            Head.enabled = true;
+        }
     }
 
     public void Ragdoll(Vector3 _impact)

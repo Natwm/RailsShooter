@@ -55,7 +55,7 @@ public class BulletsBehaviours : MonoBehaviour
                 bulletParticule.transform.LookAt(GameManager.instance.player.transform.position);
             }
             
-            if (other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
+            if (other.GetComponent<BodyPartBehaviours>()?.m_healthManager != shooter)
             {
                 other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             }
