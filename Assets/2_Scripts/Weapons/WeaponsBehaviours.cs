@@ -94,12 +94,10 @@ public class WeaponsBehaviours : MonoBehaviour
             
             RaycastHit hit;
 
-            Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
+            // Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
 
             if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
-                Debug.Log(hit.transform.name);
-
                 if (UseProjectile == true)
                 {
                     direction = hit.point - transform.position;
@@ -108,6 +106,9 @@ public class WeaponsBehaviours : MonoBehaviour
                     projectile.transform.rotation = Quaternion.Euler(direction);
                     projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
                     projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
+
+                    Debug.DrawLine(transform.position, transform.position + direction * 10, Color.red, 10);
+
                 }
                 else
                 {

@@ -197,7 +197,7 @@ public class EnnemyBehaviours : HealthManager
     {
         ResetState();
         //play Animation hide
-        Debug.Log("Hide");
+        // Debug.Log("Hide");
         NewAction();
     }
 
@@ -221,7 +221,7 @@ public class EnnemyBehaviours : HealthManager
         SetState(false, false, true, false);
 
 
-        Debug.Log(action.waitTime);
+        // Debug.Log(action.waitTime);
         EnnemyDoNothing(action);
     }
 
@@ -359,7 +359,7 @@ public class EnnemyBehaviours : HealthManager
 
         if (loopAction)
         {
-            Debug.Log("loop");
+            // Debug.Log("loop");
             index++;
             if (index >= listOfPosition_Action.Count)
                 index = 0;
