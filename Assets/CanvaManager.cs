@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CanvaManager : MonoBehaviour
@@ -19,12 +20,17 @@ public class CanvaManager : MonoBehaviour
     [SerializeField] private TMP_Text m_AmountOfBullet_Text;
 
     [Space]
+    [Header("Slider")]
+    [SerializeField] private Slider slowMotionSlider ;
+
+    [Space]
     [Header("SOUND")]
     protected FMOD.Studio.EventInstance hoverEffect;
     [FMODUnity.EventRef] [SerializeField] private string hoverSound;
     protected FMOD.Studio.EventInstance selectEffect;
     [FMODUnity.EventRef] [SerializeField] private string selectSound;
-    
+
+    private float newSlowmoValue = 0f;
 
     void Awake()
     {
@@ -48,7 +54,12 @@ public class CanvaManager : MonoBehaviour
         selectEffect = FMODUnity.RuntimeManager.CreateInstance(selectSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(selectEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
-    
+
+    private void Update()
+    {
+        slowMotionSlider.value = Mathf.Lerp(slowMotionSlider.value, newSlowmoValue, 1*Time.deltaTime);
+    }
+
     public void playhover()
     {
         hoverEffect.start();
@@ -57,6 +68,16 @@ public class CanvaManager : MonoBehaviour
     public void playSelect()
     {
         selectEffect.start();
+    }
+
+    public void UpdateSlider(float value)
+    {
+        newSlowmoValue = slowMotionSlider.value + value;
+    }
+
+    public void ResetSlider()
+    {
+        newSlowmoValue = 0;
     }
 
     public void UpdateAmountOfLife(int life)
