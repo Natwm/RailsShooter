@@ -90,7 +90,6 @@ public class WeaponsBehaviours : MonoBehaviour
             GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
 
             GameObject projectile = null;
-            //shootEffect.start();
             fireRateTimer.ResetPlay();
             
             RaycastHit hit;
@@ -99,8 +98,7 @@ public class WeaponsBehaviours : MonoBehaviour
 
             if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
-               /* shootTargetDebug = hit.point;
-                Debug.Break();*/
+                Debug.Log(hit.transform.name);
 
                 if (UseProjectile == true)
                 {

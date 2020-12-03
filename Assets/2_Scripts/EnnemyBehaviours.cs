@@ -185,7 +185,6 @@ public class EnnemyBehaviours : HealthManager
 
     void EnnemyStopAndReload(EnnemiAction action)
     {
-        Debug.Log("reload");
         EnnemyDoNothing(action);
         //weaponManager.Reload();
         //animator.SetTrigger("Trigger_Reload");
