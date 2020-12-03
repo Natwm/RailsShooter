@@ -108,6 +108,8 @@ public class TimeController : MonoBehaviour
 
     public void StartSlowMotion()
     {
+        GameManager.instance.ResetSloMotionUI();
+
         SetTime(slowMotionFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 100f);
 
@@ -142,6 +144,7 @@ public class TimeController : MonoBehaviour
     public void increaseSlowMoTime()
     {
         slowmoTimer += 1;
+        GameManager.instance.UpdateSlowMotionUI(slowmoTimer / minKillForSlowMotion);
     }
 
     public bool IsSlowMotion()
