@@ -5,7 +5,7 @@
             <value>Musique2</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{a7f6ad81-313f-450b-92c6-52890d02a979}</destination>
@@ -9868,7 +9868,6 @@
     <object class="MixerBusEffectChain" id="{e8d30563-98af-48e0-983a-bd6f881436f3}">
         <relationship name="effects">
             <destination>{f7fb36eb-2e29-483e-bab4-fc65ed77e245}</destination>
-            <destination>{35885204-20da-4dfc-bc9b-bc59161d061a}</destination>
             <destination>{bb37bb08-963b-4655-bcbc-1d2447630fd3}</destination>
         </relationship>
     </object>
@@ -17895,7 +17894,6 @@
         </relationship>
     </object>
     <object class="MixerBusFader" id="{f7fb36eb-2e29-483e-bab4-fc65ed77e245}"/>
-    <object class="SpatialiserEffect" id="{35885204-20da-4dfc-bc9b-bc59161d061a}"/>
     <object class="MultibandEqEffect" id="{bb37bb08-963b-4655-bcbc-1d2447630fd3}">
         <property name="frequencyA">
             <value>22000</value>
