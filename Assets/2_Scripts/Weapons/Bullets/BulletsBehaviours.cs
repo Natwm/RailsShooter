@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletsBehaviours : MonoBehaviour
 {
@@ -73,6 +74,8 @@ public class BulletsBehaviours : MonoBehaviour
 
         timeToLive = new Timer(5, OnPoolEnter);
         timeToLive.ResetPlay();
+
+        transform.DORotate(GetComponent<Rigidbody>().velocity, 0);
     }
 
     private void Start()
@@ -86,10 +89,5 @@ public class BulletsBehaviours : MonoBehaviour
         steelHitEffect = FMODUnity.RuntimeManager.CreateInstance(steelHitSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
-    }
-
-    void Update()
-    {
-        transform.rotation = Quaternion.Euler(GetComponent<Rigidbody>().velocity);
     }
 }
