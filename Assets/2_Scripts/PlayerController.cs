@@ -21,14 +21,17 @@ public class PlayerController : HealthManager
 
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        positionHolder.transform.parent = null;
     }
 
     private void Update()
     {
-        if(positionIndex <= condition.Length && GameManager.instance.amountOfKill >= condition[positionIndex].AmountOfEnnemiToKill)
+        if(positionIndex < condition.Length && GameManager.instance.amountOfKill >= condition[positionIndex].AmountOfEnnemiToKill)
         {
             transform.DOMove(condition[positionIndex].position.position, condition[positionIndex].moveSpeed);
-            //transform.DORotate(condition[positionIndex].position.position, condition[positionIndex].moveSpeed);
+
+            transform.DORotate(new Vector3(0, condition[positionIndex].position.position.y, 0), condition[positionIndex].moveSpeed);
             GameManager.instance.amountOfKill = 0;
 
             positionIndex++;
