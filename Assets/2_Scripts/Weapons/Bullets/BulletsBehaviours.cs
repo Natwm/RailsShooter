@@ -6,7 +6,7 @@ public class BulletsBehaviours : MonoBehaviour
 {
     #region PARAM
     private int damage;
-    private HealthManager shooter;
+    [HideInInspector] public HealthManager shooter;
 
     [Space]
     [Header("Sound")]
@@ -47,40 +47,20 @@ public class BulletsBehaviours : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.layer + " " + other.gameObject.name);
-        if(other.gameObject.layer == 8 || other.gameObject.layer == 10)
+        if(other.gameObject.layer == 8 || other.gameObject.layer == 10 || other.gameObject.layer == 9)
         {
             if(other.gameObject.layer == 8)
             {
                 GameObject bulletParticule = Instantiate(hitHumanParticules, transform.position, Quaternion.identity);
                 bulletParticule.transform.LookAt(GameManager.instance.player.transform.position);
             }
-                if (other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
+            
+            if (other.GetComponent<BodyPartBehaviours>().m_healthManager != shooter)
             {
-                other.GetComponent<BodyPartBehaviours>().GetDamage(damage, shooter, this.gameObject);
-                this.OnPoolEnter();
+                other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             }
         }
-       else
-        {
-            /* other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
-            Instantiate(hitDecorsParticules, transform.position, Quaternion.identity);
-
-            switch (other.gameObject.tag)
-            {
-                case "Glass":
-                    glassHitEffect.start();
-                    break;
-
-                case "Ground":
-                    dirtHitEffect.start();
-                    break;
-
-                case "Steel":
-                    steelHitEffect.start();
-                    break;
-            }*/
-            this.OnPoolEnter();
-        }
+        this.OnPoolEnter();
     }
 
     public void Launch(int damage, HealthManager shooter)

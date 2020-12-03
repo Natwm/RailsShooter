@@ -39,10 +39,20 @@ public class HealthManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("blabla");
             hitSoundEffect.start();
         }
             
+    }
+
+    public virtual void Heal(int heal)
+    {
+        if(heal <= 0)
+        {
+            Debug.LogError("heal must be positive");
+            return;
+        }
+        
+        m_AmountOfLive += heal;
     }
 
     protected virtual void Death(GameObject Bullet)
