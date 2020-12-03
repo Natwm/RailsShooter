@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
 
     private bool endGame;
 
-   
+    public int amountOfKill = 0;
+
+
 
     [Space]
     [Header("SOUND")]
@@ -111,6 +113,7 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseAmountofEnnemy()
     {
+        amountOfKill ++;
         amountOfEnnemy--;
         if(totalAmountOfEnnemy / 2 < amountOfEnnemy)
         {
