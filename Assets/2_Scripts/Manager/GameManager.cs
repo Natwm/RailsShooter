@@ -81,6 +81,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("Win");
     }
 
+    public void UpdateSlowMotionUI(float value)
+    {
+        CanvaManager.instance.UpdateSlider(value);
+    }
+
+    public void ResetSloMotionUI()
+    {
+        CanvaManager.instance.ResetSlider();
+    }
+
     public void UpdateAmountOfLife(int life)
     {
         CanvaManager.instance.UpdateAmountOfLife(life);

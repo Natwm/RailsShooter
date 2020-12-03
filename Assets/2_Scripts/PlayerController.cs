@@ -33,10 +33,14 @@ public class PlayerController : HealthManager
         }
         else
         {
-            Debug.Log("tet");
             hitSoundEffect.start();
         }
+    }
 
+    public override void Heal(int heal)
+    {
+        base.Heal(heal);
+        GameManager.instance.UpdateAmountOfLife(m_AmountOfLive);
     }
 
 }

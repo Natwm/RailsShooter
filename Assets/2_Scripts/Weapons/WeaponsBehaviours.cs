@@ -15,7 +15,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Space]
     [Header("MAGAZINE")]
     [SerializeField] private int m_TotalNumberOfBullets;
-    [SerializeField] private int m_NumberOfBulletsPerMagazine;
+    [SerializeField] protected int m_NumberOfBulletsPerMagazine;
     [SerializeField] private float m_ReloadTime;
     public int currentNumberOfBullets;
 
@@ -164,6 +164,7 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         if(!isReloading && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
         {
+            Debug.LogError("oui");
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
         }

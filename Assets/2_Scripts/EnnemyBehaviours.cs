@@ -236,7 +236,8 @@ public class EnnemyBehaviours : HealthManager
         {
             ResetState();
             agent.SetDestination(transform.position);
-            weapon.Shoot(animator, Vector3.zero);
+            animator.SetTrigger("Trigger_Shoot");
+            // weapon.Shoot(animator, Vector3.zero);
         }
         else
         {
