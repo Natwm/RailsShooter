@@ -5,7 +5,7 @@
             <value>Musique</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{a7f6ad81-313f-450b-92c6-52890d02a979}</destination>
@@ -1007,6 +1007,7 @@
             <destination>{2c3c5d1a-1b74-4a02-9287-defc35ea2394}</destination>
             <destination>{69a94566-6000-408d-b735-a4cd1d039f75}</destination>
             <destination>{efed7f21-4ed0-47f6-845d-441f48cf209c}</destination>
+            <destination>{20bcf126-e99f-43ed-89c0-0ef528b88429}</destination>
         </relationship>
         <relationship name="mixerGroup">
             <destination>{e40b5c30-8994-4d80-85d8-76111e9a1cee}</destination>
@@ -1017,6 +1018,7 @@
             <destination>{52364035-9227-4fee-8d70-7a4f5b5c62c9}</destination>
             <destination>{c910cb5e-fa69-4814-a40b-d691b88c281d}</destination>
             <destination>{08934eb1-e9de-4d98-bcff-5d72edb1ca01}</destination>
+            <destination>{20bcf126-e99f-43ed-89c0-0ef528b88429}</destination>
         </relationship>
         <relationship name="markers">
             <destination>{56a348bd-69c7-403b-95e8-a94a002ab98a}</destination>
@@ -8036,6 +8038,17 @@
             <destination>{5e28de41-b50f-4f07-89af-0635c8aa79bc}</destination>
         </relationship>
     </object>
+    <object class="SingleSound" id="{20bcf126-e99f-43ed-89c0-0ef528b88429}">
+        <property name="length">
+            <value>2.3877541390728467</value>
+        </property>
+        <property name="pitch">
+            <value>-2.20000005</value>
+        </property>
+        <relationship name="audioFile">
+            <destination>{5e28de41-b50f-4f07-89af-0635c8aa79bc}</destination>
+        </relationship>
+    </object>
     <object class="EventMixerGroup" id="{e40b5c30-8994-4d80-85d8-76111e9a1cee}">
         <property name="name">
             <value>Audio 4</value>
@@ -9851,7 +9864,6 @@
     <object class="MixerBusEffectChain" id="{7a65246d-289a-480a-b42f-9d890df0a223}">
         <relationship name="effects">
             <destination>{1d543407-2599-4338-abef-906cda745afd}</destination>
-            <destination>{10712c8c-4371-4bb2-ab1f-a6ae6251e241}</destination>
             <destination>{e3c740e8-6085-4aaf-b418-a813d2d46af6}</destination>
         </relationship>
     </object>
@@ -17869,7 +17881,6 @@
         </relationship>
     </object>
     <object class="MixerBusFader" id="{1d543407-2599-4338-abef-906cda745afd}"/>
-    <object class="SpatialiserEffect" id="{10712c8c-4371-4bb2-ab1f-a6ae6251e241}"/>
     <object class="MultibandEqEffect" id="{e3c740e8-6085-4aaf-b418-a813d2d46af6}">
         <property name="frequencyA">
             <value>22000</value>

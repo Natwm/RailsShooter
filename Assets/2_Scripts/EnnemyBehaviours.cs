@@ -97,6 +97,7 @@ public class EnnemyBehaviours : HealthManager
         {
             if (canDoAction)
             {
+                animator.SetBool("PreFight", false);
                 canDoAction = false;
                 DoAction(listOfAction[m_ActionIndex], listOfPosition_Action);
             }
