@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f799e072412985b4683c1db6cc4d5f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
   dirtHitSound: event:/Impacts/ImpactDecorsPierre
   steelHitSound: event:/Impacts/ImpactDecorsMetal
   glassHitSound: event:/Impacts/ImpactDecorsVerre
@@ -99,7 +100,7 @@ GameObject:
   - component: {fileID: 2412374536717001276}
   - component: {fileID: 2616608444419320514}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +119,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 603235954484798553}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2412374536717001276
 MeshFilter:
   m_ObjectHideFlags: 0

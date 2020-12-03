@@ -164,7 +164,6 @@ public class WeaponsBehaviours : MonoBehaviour
     {
         if(!isReloading && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
         {
-            Debug.LogError("oui");
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
         }
