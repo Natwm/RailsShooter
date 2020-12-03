@@ -16,25 +16,37 @@ public class PlayerController : HealthManager
 
     private void Start()
     {
+
         hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
-
+        setUp();
         positionHolder.transform.parent = null;
+        //positionHolder.transform.rotation = Quaternion.identity;
     }
 
     private void Update()
     {
         if(positionIndex < condition.Length && GameManager.instance.amountOfKill >= condition[positionIndex].AmountOfEnnemiToKill)
         {
-            transform.DOMove(condition[positionIndex].position.position, condition[positionIndex].moveSpeed);
+            Debug.Log(condition[positionIndex].stepRotation.rotation.y);
 
-            transform.DORotate(new Vector3(0, condition[positionIndex].position.position.y, 0), condition[positionIndex].moveSpeed);
+            transform.DORotateQuaternion(condition[positionIndex].stepRotation.rotation, condition[positionIndex].moveSpeed);
+            transform.DOMove(condition[positionIndex].stepPosition, condition[positionIndex].moveSpeed);
+
             GameManager.instance.amountOfKill = 0;
 
             positionIndex++;
+        }
+    }
+
+    void setUp()
+    {
+        for (int i = 0; i < positionHolder.transform.childCount; i++)
+        {
+            condition[i].stepPosition = positionHolder.transform.GetChild(i).transform.position;
         }
     }
 
