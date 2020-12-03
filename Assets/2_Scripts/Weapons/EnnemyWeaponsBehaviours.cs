@@ -58,4 +58,12 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
 
     }
 
+    public override void Reload()
+    {
+        if(!isReloading && currentNumberOfBullets < m_NumberOfBulletsPerMagazine)
+        {
+            GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
+        }
+    }
+
 }
