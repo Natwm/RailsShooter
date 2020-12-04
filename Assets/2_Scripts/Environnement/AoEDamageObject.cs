@@ -33,22 +33,22 @@ public class AoEDamageObject : HealthManager
         GameObject objectCheck = null;
 
         Collider[] list = Physics.OverlapSphere(m_ExplosionTransform.position, m_ExplosionRadius, m_ExplosionLayer);
+        Debug.Log(list.Length);
 
         for (int i = 0; i < list.Length; i++)
         {
             if (list[i].gameObject != this.transform.GetChild(0).gameObject)
             {
-                if (objectCheck == null || list[i].transform.parent != objectCheck.transform.parent)
-                {
-                    if (list[i].gameObject.GetComponent<BodyPartBehaviours>() != null)
-                    {
-                        Debug.Log(list[i].gameObject.name);
-                        list[i].gameObject.GetComponent<BodyPartBehaviours>().GetDamage(m_ExplosionDamage, this, null) ;
-                    }  
-                }
                 objectCheck = list[i].gameObject;
+
+                if (list[i].gameObject.GetComponent<BodyPartBehaviours>() != null)
+                {
+                    Debug.Log(list[i].gameObject.name);
+                    list[i].gameObject.GetComponent<BodyPartBehaviours>().GetDamage(m_ExplosionDamage, this, list[i].gameObject);
+                }
             }
         }
+        
         Destroy(this.gameObject);
     }
 

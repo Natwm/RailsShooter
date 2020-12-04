@@ -12,7 +12,9 @@ public class PlayerController : HealthManager
     [SerializeField] private PlayerPosition[] condition;
 
     private bool canMove = false;
-    
+
+    [SerializeField] private GameObject m_weaponManager;
+    public GameObject visuel;
 
     private void Start()
     {
@@ -23,7 +25,9 @@ public class PlayerController : HealthManager
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
         setUp();
+
         positionHolder.transform.parent = null;
+
         //positionHolder.transform.rotation = Quaternion.identity;
     }
 
@@ -31,8 +35,6 @@ public class PlayerController : HealthManager
     {
         if(positionIndex < condition.Length && GameManager.instance.amountOfKill >= condition[positionIndex].AmountOfEnnemiToKill)
         {
-            Debug.Log(condition[positionIndex].stepRotation.rotation.y);
-
             transform.DORotateQuaternion(condition[positionIndex].stepRotation.rotation, condition[positionIndex].moveSpeed);
             transform.DOMove(condition[positionIndex].stepPosition, condition[positionIndex].moveSpeed);
 

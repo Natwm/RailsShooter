@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnnemyWeaponsBehaviours : WeaponsBehaviours
 {
+    public GameObject shootpos;
+
     public override void Shoot(Animator anim, Vector3 direction)
     {
         GameObject projectile;
@@ -18,10 +20,13 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
             fireRateTimer.ResetPlay();
 
             RaycastHit hit;
+
+            Debug.DrawRay(transform.position, direction);
+
             if (UseProjectile == true)
             {
                 projectile = BulletPool.instance.GetBullet(m_projectilePrefab);
-                projectile.transform.position = Camera.main.transform.position;
+                projectile.transform.position = shootpos.transform.position;
                 projectile.transform.rotation = Quaternion.Euler(direction);
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
                 projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);

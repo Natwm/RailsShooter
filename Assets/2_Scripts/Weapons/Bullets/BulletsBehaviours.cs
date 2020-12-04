@@ -47,7 +47,6 @@ public class BulletsBehaviours : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.layer + " " + other.gameObject.name);
         if(other.gameObject.layer == 8 || other.gameObject.layer == 10 || other.gameObject.layer == 9)
         {
             if(other.gameObject.layer == 8)

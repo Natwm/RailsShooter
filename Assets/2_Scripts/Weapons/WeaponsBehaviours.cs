@@ -132,7 +132,6 @@ public class WeaponsBehaviours : MonoBehaviour
                         break;
 
                     case "Ground":
-                        Debug.Log("pan");
                         FMODUnity.RuntimeManager.AttachInstanceToGameObject(dirtHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
                         dirtHitEffect.start();
                         break;
