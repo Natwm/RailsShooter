@@ -20,10 +20,10 @@ public class WeaponManager : MonoBehaviour
 
     private Timer weaponSwapTimer;
     public WeaponsBehaviours currentWeapon;
-    private Vector3 direction;
+    public Vector3 direction;
 
     public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
-     public bool hasWeaponOut = false;
+    public bool hasWeaponOut = false;
 
 
     private void Awake()
@@ -116,11 +116,11 @@ public class WeaponManager : MonoBehaviour
     }
 
     void Update(){
-        Vector3 cursorPosition =  CursorGO.GetComponent<RectTransform>().anchoredPosition;
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(cursorPosition + Camera.main.transform.forward * 5);
-        direction = mousePosition - Camera.main.transform.position;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x, Input.mousePosition.y,5));
 
-        transform.rotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * rotationSpeed);
+        direction = mousePosition - Camera.main.transform.position;
+        
+        transform.localRotation = Quaternion.Euler(new Vector3(- direction.y, direction.x, 0) * rotationSpeed);
 
         if (Input.GetMouseButton(0))
             Shoot();

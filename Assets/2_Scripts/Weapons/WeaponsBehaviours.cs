@@ -97,7 +97,7 @@ public class WeaponsBehaviours : MonoBehaviour
             
             RaycastHit hit;
 
-            // Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
+            Debug.DrawRay(Camera.main.transform.position, direction * 100, Color.green, 10f);
 
             if(Physics.Raycast(Camera.main.transform.position, direction, out hit, Mathf.Infinity, bulletCollisionLayerMask))
             {
