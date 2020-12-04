@@ -10,6 +10,7 @@ public class TimeController : MonoBehaviour
     private int slowmoTimer = 0;
 
     [Tooltip ("Valeurs min pour relancer le slowmo")]
+    [Min(1)]
     [SerializeField] private float minKillForSlowMotion;
 
     [SerializeField] private float slowMotionBaseDuration;
