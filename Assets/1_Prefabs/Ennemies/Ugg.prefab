@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 138296908}
   m_Layer: 8
   m_Name: PositionHolder
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 530881262}
   m_Layer: 8
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 1211189505}
   m_Layer: 8
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1394494691}
   m_Layer: 8
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1506768995}
   m_Layer: 8
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,11 +211,12 @@ MonoBehaviour:
   raycasRadius: 0.1
   shootSound: event:/Arme/Tir1
   reloadSound: event:/Arme/Recharge
-  buckshotSound: 
-  emptyMagasinSound: 
-  dirtHitSound: 
-  steelHitSound: 
-  glassHitSound: 
+  buckshotSound: event:/Arme/DouilleEject
+  emptyMagasinSound: event:/Arme/EmptyMag1
+  dirtHitSound: event:/Impacts/ImpactDecorsPierre
+  steelHitSound: event:/Impacts/ImpactDecorsMetal
+  glassHitSound: event:/Impacts/ImpactDecorsVerre
+  ennemiHitSound: event:/Impacts/ImpactEnnemis
   AutoReload: 1
   UseProjectile: 1
   isReloading: 0
@@ -261,7 +262,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000044703484, y: 0.34943825, z: -0.00000011920929}
+  m_ConnectedAnchor: {x: -0.00000015553087, y: 0.34943795, z: 0.0000000023283064}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -309,7 +310,7 @@ GameObject:
   - component: {fileID: 4874279189506759925}
   m_Layer: 8
   m_Name: Ugg
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,7 +442,7 @@ GameObject:
   - component: {fileID: 5792670100307127402}
   m_Layer: 8
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +502,7 @@ GameObject:
   - component: {fileID: 5266489124267711014}
   m_Layer: 8
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +566,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.06563336, y: -0.08282319, z: -0.0007989126}
+  m_ConnectedAnchor: {x: -0.065633416, y: -0.08282317, z: -0.0007994181}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -640,7 +641,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000029802322, y: 0.52284384, z: -0.00000012665987}
+  m_ConnectedAnchor: {x: -0.000000074505806, y: 0.5228439, z: 0.00000017881393}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -714,7 +715,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000002734887, y: 0.14922413, z: 0.005850957}
+  m_ConnectedAnchor: {x: -0.00000007610652, y: 0.14922416, z: 0.005850439}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -761,7 +762,7 @@ GameObject:
   - component: {fileID: 1157007640169164738}
   m_Layer: 8
   m_Name: Shoulders (1)
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +851,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.40245208, y: 0.45656592, z: 0.009115618}
+  m_ConnectedAnchor: {x: 0.402452, y: 0.45656592, z: 0.00911567}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1004,7 +1005,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.028664984, y: 0.9894836, z: -0.13812938}
+  m_ConnectedAnchor: {x: -0.028664842, y: 0.98948354, z: -0.13812964}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1049,7 +1050,7 @@ GameObject:
   - component: {fileID: 9103167578870767602}
   m_Layer: 8
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1109,7 +1110,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000018067658, y: 0.34945595, z: -0.00000014714897}
+  m_ConnectedAnchor: {x: 0.00000008009374, y: 0.3494558, z: -0.0000000018626451}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1184,7 +1185,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.4020225, y: 0.4537026, z: 0.005302839}
+  m_ConnectedAnchor: {x: -0.40202236, y: 0.45370266, z: 0.005303297}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1231,7 +1232,7 @@ GameObject:
   - component: {fileID: 6526039646377573673}
   m_Layer: 8
   m_Name: Shoulders
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1319,7 +1320,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0018903287, y: 0.6657014, z: -0.0364052}
+  m_ConnectedAnchor: {x: -0.0018902039, y: 0.6657014, z: -0.036405258}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1364,7 +1365,7 @@ GameObject:
   - component: {fileID: 6332396365136739834}
   m_Layer: 8
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1425,7 +1426,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0656336, y: -0.08282317, z: 0.0017543312}
+  m_ConnectedAnchor: {x: 0.06563351, y: -0.08282318, z: 0.0017547349}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1470,7 +1471,7 @@ GameObject:
   - component: {fileID: 5594153447714698466}
   m_Layer: 8
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1500,7 +1501,7 @@ GameObject:
   - component: {fileID: 2620304991907271890}
   m_Layer: 8
   m_Name: PositionHolder_PreAction
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2031,6 +2032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 95a748806654cb74ebfeab782dcc2f6e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ennemi
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: 95a748806654cb74ebfeab782dcc2f6e,
         type: 3}
