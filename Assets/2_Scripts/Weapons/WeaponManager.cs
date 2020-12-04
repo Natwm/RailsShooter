@@ -81,7 +81,11 @@ public class WeaponManager : MonoBehaviour
         if(weaponSwapTimer.IsStarted() == false)
         {
             if (!GameManager.instance.canAction)
+            {
                 GameManager.instance.canAction = true;
+                GameManager.instance.SetMusiqueOn();
+            }
+                
 
             if (!TimeController.instance.SlowMotionTimer.IsStarted() && !TimeController.instance.isActivedOnce)
             {

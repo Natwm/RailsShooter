@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     protected FMOD.Studio.EventInstance MainMusique;
     [FMODUnity.EventRef] [SerializeField] private string MainMusiqueSound;
 
-
+    protected FMOD.Studio.EventInstance AmbiantMusique;
+    [FMODUnity.EventRef] [SerializeField] private string AmbiantMusiqueSound;
 
 
     #endregion
@@ -54,7 +55,12 @@ public class GameManager : MonoBehaviour
 
         MainMusique = FMODUnity.RuntimeManager.CreateInstance(MainMusiqueSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(MainMusique, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
-        MainMusique.start();
+
+        AmbiantMusique = FMODUnity.RuntimeManager.CreateInstance(AmbiantMusiqueSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantMusique, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        AmbiantMusique.start();
+        //MainMusique.start();
         //
     }
 
@@ -127,10 +133,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetMusiqueOn()
+    {
+        AmbiantMusique.setParameterValue("volume",0f);
+        MainMusique.start();
+    }
+
     public void StartSlowmo()
     {
+        
         MainMusique.setParameterValue("ralenti", 1);
-        //MainMusique.start();
+        
     }
     
     public void EndSlowmo()
