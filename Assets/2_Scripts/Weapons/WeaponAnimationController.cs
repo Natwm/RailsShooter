@@ -14,4 +14,9 @@ public class WeaponAnimationController : MonoBehaviour
         WeaponManager.instance.GetCurrentWeapon().RefillMagazine();
         WeaponManager.instance.GetCurrentWeapon().isReloading = false;
     }
+
+    public void WeaponShown()
+    {
+        WeaponManager.instance.hasWeaponOut = true;
+    }
 }

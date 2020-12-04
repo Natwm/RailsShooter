@@ -48,6 +48,9 @@ public class WeaponsBehaviours : MonoBehaviour
     FMOD.Studio.EventInstance glassHitEffect;
     [FMODUnity.EventRef] [SerializeField] private string glassHitSound;
 
+    FMOD.Studio.EventInstance ennemiHitEffect;
+    [FMODUnity.EventRef] [SerializeField] private string ennemiHitSound;
+
 
     [Space]
     [Header("FLAG")]
@@ -138,6 +141,11 @@ public class WeaponsBehaviours : MonoBehaviour
                         FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
                         steelHitEffect.start();
                         break;
+
+                    case "Ennemi":
+                        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ennemiHitEffect, hit.collider.gameObject.transform, hit.collider.gameObject.GetComponentInParent<Rigidbody>());
+                        ennemiHitEffect.start();
+                        break;
                 }
             }
             else
@@ -176,12 +184,8 @@ public class WeaponsBehaviours : MonoBehaviour
         // reloadEffect.start();
     }
 
-    void Start()
+    void SetFmodSound()
     {
-        RefillMagazine();
-        fireRateTimer = new Timer(m_FireRate);
-        fireRateTimer.Play();
-
         shootEffect = FMODUnity.RuntimeManager.CreateInstance(shootSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(shootEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
@@ -201,6 +205,17 @@ public class WeaponsBehaviours : MonoBehaviour
 
         steelHitEffect = FMODUnity.RuntimeManager.CreateInstance(steelHitSound);
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(steelHitEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        ennemiHitEffect = FMODUnity.RuntimeManager.CreateInstance(ennemiHitSound);
+    }
+
+    void Start()
+    {
+        RefillMagazine();
+        fireRateTimer = new Timer(m_FireRate);
+        fireRateTimer.Play();
+
+        SetFmodSound();
     }
 
     private void OnDrawGizmos()

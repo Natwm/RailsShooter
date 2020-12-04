@@ -23,6 +23,8 @@ public class WeaponManager : MonoBehaviour
     private Vector3 direction;
 
     public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
+     public bool hasWeaponOut = false;
+
 
     private void Awake()
     {
@@ -78,10 +80,14 @@ public class WeaponManager : MonoBehaviour
 
     public void Shoot()
     {
-        if(weaponSwapTimer.IsStarted() == false)
+        if(weaponSwapTimer.IsStarted() == false && hasWeaponOut == true)
         {
             if (!GameManager.instance.canAction)
+            {
                 GameManager.instance.canAction = true;
+                GameManager.instance.SetMusiqueOn();
+            }
+                
 
             if (!TimeController.instance.SlowMotionTimer.IsStarted() && !TimeController.instance.isActivedOnce)
             {
@@ -90,6 +96,18 @@ public class WeaponManager : MonoBehaviour
 
             currentWeapon.Shoot(weaponAnimator, direction);
         }
+        else
+        {
+            if(hasWeaponOut == false)
+            {
+                TakeWeapon();
+            }
+        }
+    }
+
+    public void TakeWeapon()
+    {
+        weaponAnimator.SetTrigger("Trigger_ShowWeapon");
     }
 
     public void Reload()

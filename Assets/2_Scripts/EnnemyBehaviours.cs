@@ -84,9 +84,6 @@ public class EnnemyBehaviours : HealthManager
 
         waitShoot = new Timer(weapon.m_FireRate + 1);
 
-        hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
-
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
@@ -99,6 +96,7 @@ public class EnnemyBehaviours : HealthManager
             {
                 animator.SetBool("PreFight", false);
                 canDoAction = false;
+
                 DoAction(listOfAction[m_ActionIndex], listOfPosition_Action);
             }
         }
@@ -382,6 +380,8 @@ public class EnnemyBehaviours : HealthManager
 
     void NewAction()
     {
+
+
         m_ActionIndex++;
         if (m_ActionIndex >= listOfAction.Count)
             m_ActionIndex = 0;
@@ -443,6 +443,7 @@ public class EnnemyBehaviours : HealthManager
     public override void DeacreseLife(int damage, GameObject bullet)
     {
         m_AmountOfLive -= damage;
+        hitSoundEffect.start();
 
         if (m_AmountOfLive <= 0)
         {
@@ -450,10 +451,6 @@ public class EnnemyBehaviours : HealthManager
         }
         else
         {
-            Debug.Log("aie");
-
-            hitSoundEffect.start();
-
             animator.SetTrigger("Trigger_Hit");
             agent.SetDestination(transform.position);
             hitWaitTimer.ResetPlay();
