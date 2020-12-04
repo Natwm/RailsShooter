@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class AoEDamageObject : HealthManager
 {
@@ -13,6 +14,8 @@ public class AoEDamageObject : HealthManager
     [SerializeField] private Transform m_ExplosionTransform;
     [SerializeField] private float m_ExplosionRadius;
     [SerializeField] private LayerMask m_ExplosionLayer;
+
+    [SerializeField] private GameObject m_Explosionfx;
 
     [Space]
     [Header("Sound")]
@@ -48,7 +51,10 @@ public class AoEDamageObject : HealthManager
                 }
             }
         }
-        
+        GameObject a = Instantiate(m_Explosionfx, transform.position, Quaternion.identity);
+        a.transform.DOMoveY(1,1);
+        a.transform.DOScale(5, 1);
+
         Destroy(this.gameObject);
     }
 
