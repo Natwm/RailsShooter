@@ -172,6 +172,7 @@
     </object>
     <object class="MixerBusEffectChain" id="{498590fe-18be-459b-9eee-81b254403e6e}">
         <relationship name="effects">
+            <destination>{452f000d-338d-4a34-b28c-76b15e05ff93}</destination>
             <destination>{c7635514-0348-4043-a8fa-8b94fd461a6d}</destination>
             <destination>{c7a70afe-0df7-47a7-a8e6-6064397f422c}</destination>
         </relationship>
@@ -223,6 +224,14 @@
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{fe7600f4-3736-4ac2-98b9-994049cfcd81}"/>
+    <object class="CompressorEffect" id="{452f000d-338d-4a34-b28c-76b15e05ff93}">
+        <property name="threshold">
+            <value>-20.5</value>
+        </property>
+        <property name="gain">
+            <value>2.5</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{c7635514-0348-4043-a8fa-8b94fd461a6d}"/>
     <object class="SpatialiserEffect" id="{c7a70afe-0df7-47a7-a8e6-6064397f422c}">
         <property name="extentMode">
