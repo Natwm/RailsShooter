@@ -84,6 +84,9 @@ public class EnnemyBehaviours : HealthManager
 
         waitShoot = new Timer(weapon.m_FireRate + 1);
 
+        hitSoundEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(hitSoundEffect, transform, GetComponentInParent<Rigidbody>());
+
         deathSoundEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(deathSoundEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
     }
