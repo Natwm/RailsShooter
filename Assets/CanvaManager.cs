@@ -23,13 +23,16 @@ public class CanvaManager : MonoBehaviour
     [Header("Slider")]
     [SerializeField] private Slider slowMotionSlider ;
 
+    public Image Cadre_SlowMo;
+    public TimeController timeManager;
+
     [Space]
     [Header("SOUND")]
     protected FMOD.Studio.EventInstance hoverEffect;
     [FMODUnity.EventRef] [SerializeField] private string hoverSound;
     protected FMOD.Studio.EventInstance selectEffect;
     [FMODUnity.EventRef] [SerializeField] private string selectSound;
-
+    
     private float newSlowmoValue = 0f;
 
     void Awake()
@@ -53,11 +56,14 @@ public class CanvaManager : MonoBehaviour
 
         selectEffect = FMODUnity.RuntimeManager.CreateInstance(selectSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(selectEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+        
     }
 
     private void Update()
     {
         slowMotionSlider.value = Mathf.Lerp(slowMotionSlider.value, newSlowmoValue, 1*Time.deltaTime);
+        
+        
     }
 
     public void playhover()
