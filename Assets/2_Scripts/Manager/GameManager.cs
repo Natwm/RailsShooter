@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantMusique, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
         AmbiantMusique.start();
+        AmbiantMusique.setParameterValue("volume", 1f);
         //MainMusique.start();
         //
     }

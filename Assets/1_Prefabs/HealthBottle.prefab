@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 5902665528593082155}
   m_Layer: 0
   m_Name: HealthBottle
-  m_TagString: Untagged
+  m_TagString: Glass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AmountOfLive: 1
   animator: {fileID: 0}
-  hitSound: 
-  deathSound: 
+  hitSound: event:/Impacts/ImpactDecorsVerre
+  deathSound: event:/Decors/HeathBottle
   amountOfHealt: 10
 --- !u!1001 &1897449562468160640
 PrefabInstance:

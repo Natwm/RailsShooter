@@ -31,17 +31,13 @@ public class HealthManager : MonoBehaviour
     public virtual void DeacreseLife( int damage, GameObject Bullet)
     {
         m_AmountOfLive -= damage;
+        hitSoundEffect.start();
 
-        
         if (m_AmountOfLive <= 0)
         {
             Death(Bullet);
         }
-        else
-        {
-            hitSoundEffect.start();
-        }
-            
+           
     }
 
     public virtual void Heal(int heal)
