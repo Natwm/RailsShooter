@@ -348,8 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AmountOfLive: 2
   animator: {fileID: 3836694874208008051}
-  hitSound: event:/Impacts/ImpactDecorsPierre
-  deathSound: event:/Ennemis/DieHerc
+  hitSound: event:/Ennemis/DieUgg
+  deathSound: event:/Ennemis/DieUgg
   loopAction: 0
   m_PositionHolderGO_Action: {fileID: 138296907}
   m_PositionHolderGO_PreAction: {fileID: 8362127917325984684}
