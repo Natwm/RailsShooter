@@ -18,10 +18,13 @@ public class CanvaManager : MonoBehaviour
     [SerializeField] private TMP_Text m_EndGame_Text;
     [SerializeField] private TMP_Text m_AmountOfLife_Text;
     [SerializeField] private TMP_Text m_AmountOfBullet_Text;
+    [SerializeField] private TMP_Text m_MaxAmountOfBullet_Text;
 
     [Space]
     [Header("Slider")]
-    [SerializeField] private Slider slowMotionSlider ;
+    [SerializeField] private Image slowMotionSlider ;
+
+    public GameObject reload;
 
     public Image Cadre_SlowMo;
     public TimeController timeManager;
@@ -33,7 +36,7 @@ public class CanvaManager : MonoBehaviour
     protected FMOD.Studio.EventInstance selectEffect;
     [FMODUnity.EventRef] [SerializeField] private string selectSound;
     
-    private float newSlowmoValue = 0f;
+    private float newSlowmoValue = 1f;
 
     void Awake()
     {
@@ -48,8 +51,14 @@ public class CanvaManager : MonoBehaviour
         {
             endGame_Panel.SetActive(false);
         }
+
+        if (reload.active)
+            reload.SetActive(false);
+
         m_AmountOfLife_Text.text = GameManager.instance.player.m_AmountOfLive.ToString();
         m_AmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.currentNumberOfBullets.ToString();
+        m_MaxAmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.m_NumberOfBulletsPerMagazine.ToString();
+
 
         hoverEffect = FMODUnity.RuntimeManager.CreateInstance(hoverSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(hoverEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
@@ -61,9 +70,7 @@ public class CanvaManager : MonoBehaviour
 
     private void Update()
     {
-        slowMotionSlider.value = Mathf.Lerp(slowMotionSlider.value, newSlowmoValue, 1*Time.deltaTime);
-        
-        
+        slowMotionSlider.fillAmount = Mathf.Lerp(slowMotionSlider.fillAmount, newSlowmoValue, 2.25f*Time.deltaTime);
     }
 
     public void playhover()
@@ -78,7 +85,7 @@ public class CanvaManager : MonoBehaviour
 
     public void UpdateSlider(float value)
     {
-        newSlowmoValue = slowMotionSlider.value + value;
+        newSlowmoValue = value;
     }
 
     public void ResetSlider()
@@ -92,7 +99,12 @@ public class CanvaManager : MonoBehaviour
     }
     public void UpdateAmountOfBullets(int bullets)
     {
-        m_AmountOfBullet_Text.text = "Amount Of Bullet : "+ bullets.ToString();
+        m_AmountOfBullet_Text.text = bullets.ToString();
+    }
+
+    public void showRealod(bool status)
+    {
+        reload.SetActive(status);
     }
 
     public void EndGame(string message)

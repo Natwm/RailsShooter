@@ -37,7 +37,7 @@ public class TimeController : MonoBehaviour
 
     private float targetFlowTime = 1;
     private float baseFixedDeltaTime;
-    private TimeNonAffectedTimer slowMotionTimer;
+    public TimeNonAffectedTimer slowMotionTimer;
 
     public bool isActivedOnce = false;
 
@@ -109,7 +109,7 @@ public class TimeController : MonoBehaviour
 
     public void StartSlowMotion()
     {
-        GameManager.instance.ResetSloMotionUI();
+        
 
         SetTime(slowMotionFlowTime);
         slowMotionEffect.setParameterValue("Intensity", 100f);
@@ -122,6 +122,8 @@ public class TimeController : MonoBehaviour
 
         isActivedOnce = true;
         slowMotionTimer.ResetPlay();
+
+        CanvaManager.instance.UpdateSlider(slowMotionTimer.Time);
     }
 
     public void MaintainSlowMotion()

@@ -15,7 +15,7 @@ public class WeaponsBehaviours : MonoBehaviour
     [Space]
     [Header("MAGAZINE")]
     [SerializeField] private int m_TotalNumberOfBullets;
-    [SerializeField] protected int m_NumberOfBulletsPerMagazine;
+    [SerializeField] public int m_NumberOfBulletsPerMagazine;
     [SerializeField] private float m_ReloadTime;
     public int currentNumberOfBullets;
 
@@ -159,11 +159,18 @@ public class WeaponsBehaviours : MonoBehaviour
         }
         
         
-        if(currentNumberOfBullets == 0 && AutoReload == true)
+        if(currentNumberOfBullets == 0)
         {
-            WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
-            Reload();
-        }
+            GameManager.instance.ShowReload(true);
+
+            if (AutoReload)
+            {
+                WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
+                Reload();
+            }
+            
+        }else
+            GameManager.instance.ShowReload(false);
     }
 
     public virtual void Reload()
@@ -172,6 +179,7 @@ public class WeaponsBehaviours : MonoBehaviour
         {
             WeaponManager.instance.WeaponAnimator.SetTrigger("Trigger_Reload");
             GameManager.instance.UpdateAmountOfBulltes(currentNumberOfBullets);
+            GameManager.instance.ShowReload(false);
         }
     }
 
@@ -215,6 +223,15 @@ public class WeaponsBehaviours : MonoBehaviour
         fireRateTimer.Play();
 
         SetFmodSound();
+    }
+
+    private void Update()
+    {
+        /*if(currentNumberOfBullets > 0)
+        {
+            GameManager.instance.ShowReload(false);
+        }else
+            GameManager.instance.ShowReload(true);*/
     }
 
     private void OnDrawGizmos()

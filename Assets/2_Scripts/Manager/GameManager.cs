@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
         CanvaManager.instance.ResetSlider();
     }
 
+    public void ShowReload(bool status)
+    {
+        CanvaManager.instance.showRealod(status);
+    }
+
     public void UpdateAmountOfLife(int life)
     {
         CanvaManager.instance.UpdateAmountOfLife(life);
