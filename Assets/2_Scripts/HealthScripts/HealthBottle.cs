@@ -10,6 +10,7 @@ public class HealthBottle : HealthManager
         if(bullet.GetComponent<BulletsBehaviours>()?.shooter.gameObject.layer == 10)
         {
             bullet.GetComponent<BulletsBehaviours>()?.shooter.Heal(amountOfHealt);
+            Destroy(this.gameObject);
         }
     }
 }

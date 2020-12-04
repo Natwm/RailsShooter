@@ -23,7 +23,7 @@ public class WeaponManager : MonoBehaviour
     private Vector3 direction;
 
     public Animator WeaponAnimator { get => weaponAnimator; set => weaponAnimator = value; }
-    private bool hasWeaponOut = false;
+     public bool hasWeaponOut = false;
 
 
     private void Awake()
@@ -107,7 +107,7 @@ public class WeaponManager : MonoBehaviour
 
     public void TakeWeapon()
     {
-        // weaponAnimator.SetTrigger("Take_Weapon");
+        weaponAnimator.SetTrigger("Trigger_ShowWeapon");
     }
 
     public void Reload()
