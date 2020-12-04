@@ -27,7 +27,8 @@ public class AoEDamageObject : HealthManager
 
     protected override void Death(GameObject bullet)
     {
-        explosionHitEffect.start();
+        //explosionHitEffect.start();
+        deathSoundEffect.start();
         Debug.Log("Explosion");
         GameObject objectCheck = null;
 
