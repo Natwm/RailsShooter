@@ -4090,7 +4090,7 @@ PrefabInstance:
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: listOfAction.Array.data[0].waitTime
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -8376,6 +8376,10 @@ PrefabInstance:
       propertyPath: listOfAction.Array.data[0].ennemiState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 205966804, guid: 72488178472fcc6418d7c076757ada9c, type: 3}
+      propertyPath: listOfAction.Array.data[2].ennemiState
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 228834596, guid: 72488178472fcc6418d7c076757ada9c, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.06563315
@@ -8854,7 +8858,7 @@ PrefabInstance:
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: listOfAction.Array.data[0].waitTime
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -12905,7 +12909,7 @@ PrefabInstance:
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: listOfAction.Array.data[0].waitTime
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
