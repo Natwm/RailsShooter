@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 5031198646248052003}
   - component: {fileID: 1598279750}
   m_Layer: 8
-  m_Name: LightEnnemis
+  m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
