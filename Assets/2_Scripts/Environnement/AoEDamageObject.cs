@@ -52,8 +52,8 @@ public class AoEDamageObject : HealthManager
             }
         }
         GameObject a = Instantiate(m_Explosionfx, transform.position, Quaternion.identity);
-        a.transform.DOMoveY(1,1);
-        a.transform.DOScale(5, 1);
+        a.transform.DOMoveY(2,1);
+        a.transform.DOScale(6, 1);
 
         Destroy(this.gameObject);
     }
