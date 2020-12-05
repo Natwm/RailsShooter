@@ -23,6 +23,7 @@ public class CanvaManager : MonoBehaviour
     [Space]
     [Header("Slider")]
     [SerializeField] private Image slowMotionSlider ;
+    [SerializeField] private Image HealthSlider;
 
     public GameObject reload;
 
@@ -95,7 +96,11 @@ public class CanvaManager : MonoBehaviour
 
     public void UpdateAmountOfLife(int life)
     {
-        m_AmountOfLife_Text.text = "Amount Of Life : " + life.ToString();
+        m_AmountOfLife_Text.text = life.ToString();
+
+        Debug.Log(life / 150);
+
+        HealthSlider.fillAmount = (float) life / 150;
     }
     public void UpdateAmountOfBullets(int bullets)
     {

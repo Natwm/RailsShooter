@@ -826,6 +826,11 @@ PrefabInstance:
       propertyPath: visuel
       value: 
       objectReference: {fileID: 1679786053}
+    - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
+        type: 3}
+      propertyPath: m_AmountOfLive
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 9054126557662614219, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1066,6 +1071,16 @@ PrefabInstance:
       propertyPath: hitSound
       value: event:/Ennemis/HitJack
       objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: listOfAction.Array.data[0].ennemiState
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: listOfAction.Array.data[0].amountOfShoot
+      value: 281
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa902eef2c48a1640a821f67d4dbbcad, type: 3}
 --- !u!4 &977873161 stripped
@@ -1248,7 +1263,7 @@ PrefabInstance:
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: listOfAction.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
@@ -1263,12 +1278,27 @@ PrefabInstance:
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: listOfAction.Array.data[0].waitTime
-      value: 9.35
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
         type: 3}
       propertyPath: hitSound
       value: event:/Ennemis/HitUgg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: listOfAction.Array.data[1].ennemiState
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: listOfAction.Array.data[1].waitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653702091491015665, guid: aa902eef2c48a1640a821f67d4dbbcad,
+        type: 3}
+      propertyPath: listOfAction.Array.data[1].amountOfShoot
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa902eef2c48a1640a821f67d4dbbcad, type: 3}
@@ -2318,18 +2348,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbd4bf5d8bef812449c41ad1a199d6a0, type: 3}
---- !u!114 &1668251024 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7310026365800562269}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d704606547617bd47b42a83f81f14454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1679786053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1666979327259366045, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
@@ -2711,47 +2729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7310026365227986641, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026365227986641, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026365227986643, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_healthManager
-      value: 
-      objectReference: {fileID: 1668251024}
-    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_ExplosionRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_ExplosionLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_ExplosionDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: explosionHitSound
-      value: event:/Decors/GaseExplosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391688, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_Explosionfx
-      value: 
-      objectReference: {fileID: 204669320390144639, guid: d84d6002f8aaca9488554b5775518f59,
-        type: 3}
     - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2807,45 +2784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391689, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
         type: 3}
       propertyPath: m_Name
       value: Barrel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310026366016391692, guid: 52ca1e8e489d5274f8761a89eec957d9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52ca1e8e489d5274f8761a89eec957d9, type: 3}
