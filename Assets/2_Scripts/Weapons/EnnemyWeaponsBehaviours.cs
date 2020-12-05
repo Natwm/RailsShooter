@@ -12,7 +12,7 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
         if (currentNumberOfBullets > 0)
         {
             // print("Ennemy Shoot");
-            Vector3 targetPosition = GameManager.instance.player.transform.position;
+            Vector3 targetPosition = Camera.main.transform.position - Vector3.up * 0.5f;
             direction = targetPosition - transform.position;
 
             currentNumberOfBullets --;
