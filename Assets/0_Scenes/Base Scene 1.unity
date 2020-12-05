@@ -46726,7 +46726,7 @@ PrefabInstance:
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: m_AmountOfLive
-      value: 1500
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
@@ -46831,7 +46831,7 @@ PrefabInstance:
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: condition.Array.data[6].AmountOfEnnemiToKill
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
