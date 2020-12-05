@@ -47,7 +47,7 @@ public class BulletsBehaviours : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 8 || other.gameObject.layer == 10 || other.gameObject.layer == 9)
+        if(DamagebleLayer == (DamagebleLayer | (1 << other.gameObject.layer)))
         {
             if(other.gameObject.layer == 8)
             {
@@ -59,14 +59,16 @@ public class BulletsBehaviours : MonoBehaviour
             {
                 other.GetComponent<BodyPartBehaviours>()?.GetDamage(damage, shooter, this.gameObject);
             }
+            
+            this.OnPoolEnter();
         }
-        this.OnPoolEnter();
     }
 
-    public void Launch(int damage, HealthManager shooter)
+    public void Launch(int damage, HealthManager shooter, LayerMask collisionLayer)
     {
         this.damage = damage;
         this.shooter = shooter;
+        this.DamagebleLayer = collisionLayer;
 
         TrailRenderer tr = transform.GetChild(1).GetComponent<TrailRenderer>();
         tr.Clear();

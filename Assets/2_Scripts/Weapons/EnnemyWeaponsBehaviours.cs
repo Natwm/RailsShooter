@@ -29,7 +29,7 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
                 projectile.transform.position = shootpos.transform.position;
                 projectile.transform.rotation = Quaternion.Euler(direction);
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager, bulletCollisionLayerMask);
             }
             else
             {

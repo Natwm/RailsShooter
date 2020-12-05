@@ -312,6 +312,8 @@ MonoBehaviour:
   rotationSpeed: 2
   weaponAnimator: {fileID: 8872893653873757158}
   currentWeapon: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+  hasWeaponOut: 0
 --- !u!114 &3844685225549508774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,13 +409,18 @@ MonoBehaviour:
   hitSound: event:/Player/HitPlayer
   deathSound: event:/Player/DiePlayer
   positionHolder: {fileID: 9101654395474943409}
+  bulletPool: {fileID: 1942438055}
   condition:
-  - position: {fileID: 3082685693787570475}
+  - stepRotation: {fileID: 0}
+    stepPosition: {x: 0, y: 0, z: 0}
     AmountOfEnnemiToKill: 1
     moveSpeed: 1
-  - position: {fileID: 4161798735731857836}
+  - stepRotation: {fileID: 0}
+    stepPosition: {x: 0, y: 0, z: 0}
     AmountOfEnnemiToKill: 1
     moveSpeed: 1
+  m_weaponManager: {fileID: 0}
+  visuel: {fileID: 0}
 --- !u!1 &9101654395474943409
 GameObject:
   m_ObjectHideFlags: 0
