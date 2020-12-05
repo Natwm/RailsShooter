@@ -56,7 +56,7 @@ public class CanvaManager : MonoBehaviour
             reload.SetActive(false);
 
         m_AmountOfLife_Text.text = GameManager.instance.player.m_AmountOfLive.ToString();
-        m_AmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.currentNumberOfBullets.ToString();
+        m_AmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.m_NumberOfBulletsPerMagazine.ToString();
         m_MaxAmountOfBullet_Text.text = GameManager.instance.player.transform.GetComponentInChildren<WeaponManager>().currentWeapon.m_NumberOfBulletsPerMagazine.ToString();
 
 
