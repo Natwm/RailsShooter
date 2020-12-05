@@ -15,8 +15,8 @@ GameObject:
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7310026365227986640
 Transform:
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_DamageMultiplicator: 1
   m_DamageAdd: 0
   m_AmountOfArmor: 0
-  m_healthManager: {fileID: 0}
+  m_healthManager: {fileID: 7310026366016391688}
 --- !u!1 &7310026366016391692
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,10 +76,10 @@ GameObject:
   - component: {fileID: 7310026366016391688}
   m_Layer: 8
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7310026366016391689
 Transform:
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 7310026366016391692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0.72832, z: -0.60000014}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7310026365227986640}
   m_Father: {fileID: 0}
@@ -159,10 +159,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   hitSound: event:/Impacts/ImpactDecorsPierre
   deathSound: event:/Decors/GaseExplosion
-  m_ExplosionDamage: 1
+  m_ExplosionDamage: 10
   m_ExplosionTransform: {fileID: 7310026366016391689}
-  m_ExplosionRadius: 5
+  m_ExplosionRadius: 2
   m_ExplosionLayer:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 256
+  m_Explosionfx: {fileID: 204669320390144639, guid: d84d6002f8aaca9488554b5775518f59,
+    type: 3}
   explosionHitSound: event:/Decors/GaseExplosion
