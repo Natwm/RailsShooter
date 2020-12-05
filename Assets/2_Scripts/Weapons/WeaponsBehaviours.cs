@@ -108,7 +108,7 @@ public class WeaponsBehaviours : MonoBehaviour
                     projectile.transform.position = transform.position;
                     projectile.transform.rotation = Quaternion.Euler(direction);
                     projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                    projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
+                    projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager, bulletCollisionLayerMask);
 
                     Debug.DrawLine(transform.position, transform.position + direction * 10, Color.red, 10);
 
@@ -153,7 +153,7 @@ public class WeaponsBehaviours : MonoBehaviour
                 projectile.transform.position = transform.position;
                 projectile.transform.rotation = transform.rotation;
                 projectile.GetComponent<Rigidbody>().velocity = direction.normalized * projectileSpeed;
-                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager);
+                projectile.GetComponent<BulletsBehaviours>().Launch(m_Damage, myHealthManager, bulletCollisionLayerMask);
             }
 
         }

@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PlayerController : HealthManager
 {
-    public GameObject positionHolder;
+    public GameObject positionHolder, bulletPool;
 
     private int positionIndex = 0;
 
@@ -27,6 +27,7 @@ public class PlayerController : HealthManager
         setUp();
 
         positionHolder.transform.parent = null;
+        bulletPool.transform.parent = null;
 
         //positionHolder.transform.rotation = Quaternion.identity;
     }
