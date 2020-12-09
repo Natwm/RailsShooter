@@ -64,9 +64,13 @@ public class DialogRunner : MonoBehaviour
         }
         else
         {
-
-            DialogTexts[DialogIndex-1].CrossFadeAlpha(0, 0.2f, true);
-            DialogTexts[DialogIndex-2].CrossFadeAlpha(0, 0.1f, true);
+            if (DialogIndex > 1)
+            {
+                DialogTexts[DialogIndex - 1].CrossFadeAlpha(0, 0.2f, true);
+                DialogTexts[DialogIndex - 2].CrossFadeAlpha(0, 0.1f, true);
+            }
+            
+            GameObject.Find("SceneHolder").GetComponent<Animator>().SetTrigger("Trigger_End");
         }
     }
 

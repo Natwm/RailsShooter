@@ -3940,7 +3940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"Pourquoi ces hommes portent ils... notre insigne?"'
+  m_text: '"Pourquoi ces hommes portent-ils... notre insigne?"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9df9c1c995f62d54b8eecec3c3f3f68a, type: 2}
   m_sharedMaterial: {fileID: 7588408513358103959, guid: 9df9c1c995f62d54b8eecec3c3f3f68a,
@@ -6574,6 +6574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835899457}
   - component: {fileID: 1835899458}
+  - component: {fileID: 1835899459}
   m_Layer: 5
   m_Name: SceneHolder
   m_TagString: Untagged
@@ -6624,6 +6625,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1835899459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835899456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6f5e6eecb16c147aaa5007eb8676a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: Menu
 --- !u!1 &1846919297
 GameObject:
   m_ObjectHideFlags: 0
