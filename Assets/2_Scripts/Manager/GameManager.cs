@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         FindObjectOfType<SceneLoad>().SceneToLoad = "Narrative_Defeat";
+        MainMusique.setParameterValue("fin", 1);
         loseEffect.start();
         endGame = true;
         Debug.Log("GameOver");
