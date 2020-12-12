@@ -73,7 +73,7 @@ public class MenuManager : MonoBehaviour {
   }
 
   public void Play() {
-    //GameManager.instance.LoadGame(gameSceneName); 
+    GameManager.instance.LoadGame(); 
   }
 
   public void Leave() {

@@ -158,4 +158,9 @@ public class GameManager : MonoBehaviour
     {
         MainMusique.setParameterValue("ralenti", 0f);
     }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
