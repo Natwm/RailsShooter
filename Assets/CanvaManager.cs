@@ -8,6 +8,8 @@ public class CanvaManager : MonoBehaviour
 {
     public static CanvaManager instance;
 
+    [SerializeField] private GameObject fader;
+
     [Space]
     [Header("Panel")]
     [SerializeField] private GameObject endGame_Panel;
@@ -114,8 +116,9 @@ public class CanvaManager : MonoBehaviour
 
     public void EndGame(string message)
     {
-        endGame_Panel.active = true;
-        m_EndGame_Text.text = message;
+        fader.GetComponent<Animator>().SetTrigger("Trigger_End");
+        //endGame_Panel.active = true;
+        //m_EndGame_Text.text = message;
     }
 
 }

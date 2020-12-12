@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        FindObjectOfType<SceneLoad>().SceneToLoad = "Narrative_Defeat";
         loseEffect.start();
         endGame = true;
         Debug.Log("GameOver");
