@@ -9,19 +9,17 @@ public class EnnemyWeaponsBehaviours : WeaponsBehaviours
     public override void Shoot(Animator anim, Vector3 direction)
     {
         GameObject projectile;
-        if (currentNumberOfBullets > 0)
+        if (true) //currentNumberOfBullets > 0)
         {
-            // print("Ennemy Shoot");
             Vector3 targetPosition = Camera.main.transform.position - Vector3.up * 0.5f;
             direction = targetPosition - transform.position;
 
-            currentNumberOfBullets --;
-            //shootEffect.start();
             fireRateTimer.ResetPlay();
 
             RaycastHit hit;
 
-            Debug.DrawRay(transform.position, direction);
+            Debug.DrawRay(transform.position, direction, Color.red, 1f);
+            print("Ennemy Shoot");
 
             if (UseProjectile == true)
             {

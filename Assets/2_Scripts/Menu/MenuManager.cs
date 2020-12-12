@@ -46,8 +46,8 @@ public class MenuManager : MonoBehaviour {
       DisplayMenuPage(to);
       currentlyActiveMenuPage = to;
 
-      Camera.main.transform.DOMove(to.cameraTransform.position, 2);
-      Camera.main.transform.DORotate(to.cameraTransform.rotation.eulerAngles, 2);
+      // Camera.main.transform.DOMove(to.cameraTransform.position, 2);
+      // Camera.main.transform.DORotate(to.cameraTransform.rotation.eulerAngles, 2);
     }
   }
 

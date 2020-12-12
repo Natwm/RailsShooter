@@ -347,7 +347,8 @@ public class EnnemyBehaviours : HealthManager
 
         isRotating = true;
 
-        Quaternion TargetRotation = Quaternion.LookRotation(position - transform.position);
+        Vector3 targetPosition = new Vector3(position.x, transform.position.y, position.z);
+        Quaternion TargetRotation = Quaternion.LookRotation(targetPosition - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, ennemiRotationSpeed * Time.deltaTime);
 
         if (1 - Mathf.Abs(Quaternion.Dot(transform.rotation, TargetRotation)) < .01f)
