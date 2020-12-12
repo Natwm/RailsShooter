@@ -13,6 +13,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadScene()
     {
+        GameManager.instance.introScreenEffect.setParameterValue("start", 1f);
         SceneManager.LoadScene(SceneToLoad);
     }
 

@@ -45096,6 +45096,26 @@ PrefabInstance:
       propertyPath: AmbiantMusiqueSound
       value: event:/BarAmbiance
       objectReference: {fileID: 0}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: introScreenSound
+      value: event:/Debut
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: statusGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: victoryScreenSound
+      value: event:/Musique2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904393782063293017, guid: b021d0609ce25f24b915636e3f890008,
+        type: 3}
+      propertyPath: defeateScreenSound
+      value: event:/Musique2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b021d0609ce25f24b915636e3f890008, type: 3}
 --- !u!4 &7464747967652482225

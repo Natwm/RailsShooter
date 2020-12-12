@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private enum GameState
+    {
+        INTRO,
+        GAME,
+        VICTORY,
+        DEFEATE
+    }
+
+    [SerializeField] private GameState statusGame;
+
     public static GameManager instance;
 
     #region PARAM
@@ -35,6 +45,14 @@ public class GameManager : MonoBehaviour
     protected FMOD.Studio.EventInstance AmbiantMusique;
     [FMODUnity.EventRef] [SerializeField] private string AmbiantMusiqueSound;
 
+    public FMOD.Studio.EventInstance introScreenEffect;
+    [FMODUnity.EventRef] [SerializeField] private string introScreenSound;
+
+    protected FMOD.Studio.EventInstance victoryScreenEffect;
+    [FMODUnity.EventRef] [SerializeField] private string victoryScreenSound;
+
+    protected FMOD.Studio.EventInstance defeateScreenEffect;
+    [FMODUnity.EventRef] [SerializeField] private string defeateScreenSound;
 
     #endregion
 
@@ -48,7 +66,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         victoryEffect = FMODUnity.RuntimeManager.CreateInstance(victorySound);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(victoryEffect, GameManager.instance.player.transform, GetComponentInParent<Rigidbody>());
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(victoryEffect, GameManager.instance.transform, GetComponentInParent<Rigidbody>());
 
         loseEffect = FMODUnity.RuntimeManager.CreateInstance(loseSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(loseEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
@@ -59,11 +77,49 @@ public class GameManager : MonoBehaviour
         AmbiantMusique = FMODUnity.RuntimeManager.CreateInstance(AmbiantMusiqueSound);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(AmbiantMusique, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
 
-        AmbiantMusique.start();
-        AmbiantMusique.setParameterValue("volume", 1f);
-        //MainMusique.start();
-        //
+        victoryScreenEffect = FMODUnity.RuntimeManager.CreateInstance(victoryScreenSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(victoryScreenEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        defeateScreenEffect = FMODUnity.RuntimeManager.CreateInstance(defeateScreenSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(defeateScreenEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        introScreenEffect = FMODUnity.RuntimeManager.CreateInstance(introScreenSound);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(introScreenEffect, GetComponent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        introScreenEffect.setParameterValue("start", 0f);
+        StartMusique();
     }
+
+    void StartMusique()
+    {
+        Debug.Log(statusGame);
+        switch (statusGame)
+        {
+            case GameState.INTRO:
+                introScreenEffect.start();
+                introScreenEffect.setParameterValue("volume", 1f);
+                break;
+
+            case GameState.GAME:
+                AmbiantMusique.start();
+                AmbiantMusique.setParameterValue("volume", 1f);
+                break;
+
+            case GameState.VICTORY:
+                victoryScreenEffect.start();
+                victoryScreenEffect.setParameterValue("volume", 1f);
+                break;
+
+            case GameState.DEFEATE:
+                defeateScreenEffect.start();
+                defeateScreenEffect.setParameterValue("volume", 1f);
+                break;
+
+            default:
+                break;
+        }
+    }
+
 
     private void Update()
     {
