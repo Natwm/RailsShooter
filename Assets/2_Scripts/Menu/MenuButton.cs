@@ -24,6 +24,7 @@ public class MenuButton : MonoBehaviour
 
     public void Play() {
         selectEffect.start();
+        FindObjectOfType<Intro>().introScreenEffect.setParameterValue("start",1f);
         MenuManager.instance.Play();
     }
 

@@ -684,6 +684,7 @@ GameObject:
   - component: {fileID: 497891063}
   - component: {fileID: 497891062}
   - component: {fileID: 497891061}
+  - component: {fileID: 497891065}
   m_Layer: 31
   m_Name: Cube
   m_TagString: Untagged
@@ -765,6 +766,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &497891065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497891060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6be27880d456da4484f3c6cb4208acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusGame: 0
+  player: {fileID: 0}
+  canAction: 0
+  amountOfKill: 0
+  victorySound: event:/BarAmbiance
+  loseSound: event:/BarAmbiance
+  MainMusiqueSound: event:/Musique2
+  AmbiantMusiqueSound: event:/BarAmbiance
+  introScreenSound: event:/Debut
+  victoryScreenSound: event:/Arme/Tir1
+  defeateScreenSound: event:/Arme/Tir2
 --- !u!1 &535622886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,6 +2165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616252834851960155, guid: 9fa0279853831df48a00d223a64aaf52,
+        type: 3}
+      propertyPath: stepSound
+      value: event:/Decors/HeathBottle
       objectReference: {fileID: 0}
     - target: {fileID: 7675192580064610514, guid: 9fa0279853831df48a00d223a64aaf52,
         type: 3}
