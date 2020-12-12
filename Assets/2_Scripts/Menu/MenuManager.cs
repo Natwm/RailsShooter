@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour {
   public GameObject startingMenuPage;
   private MenuPage currentlyActiveMenuPage;
   private MenuPage currentOverlay;
+  public int narativeIntroSceneNumber;
 
   private Stack<MenuPage> overlays = new Stack<MenuPage>();
 
@@ -73,7 +74,7 @@ public class MenuManager : MonoBehaviour {
   }
 
   public void Play() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(narativeIntroSceneNumber);
     }
 
   public void Leave() {
