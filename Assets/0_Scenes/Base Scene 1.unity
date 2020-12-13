@@ -46954,7 +46954,7 @@ PrefabInstance:
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}
       propertyPath: condition.Array.data[6].AmountOfEnnemiToKill
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8755890222572902515, guid: e25a3cfcd43e1ed42bbefaf263342d1e,
         type: 3}

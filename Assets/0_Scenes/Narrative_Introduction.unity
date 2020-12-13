@@ -2981,7 +2981,7 @@ MonoBehaviour:
   SubText: {fileID: 289139793}
   DialogTexts: []
   DialogIndex: 0
-  textShift: 120
+  textShift: 150
   waitTime: 5
 --- !u!1 &1118162438
 GameObject:

@@ -3514,7 +3514,7 @@ MonoBehaviour:
   SubText: {fileID: 289139793}
   DialogTexts: []
   DialogIndex: 0
-  textShift: 120
+  textShift: 150
   waitTime: 5
 --- !u!1 &1118162438
 GameObject:
@@ -5784,7 +5784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Maintenant tu restera \xE0 ta place.\""
+  m_text: "\"Maintenant tu resteras \xE0 ta place.\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9df9c1c995f62d54b8eecec3c3f3f68a, type: 2}
   m_sharedMaterial: {fileID: 7588408513358103959, guid: 9df9c1c995f62d54b8eecec3c3f3f68a,
